@@ -17,7 +17,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     {
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
 
-        List<Concelhos> concelhos  = new List<Concelhos>();
+        List<Concelhos> concelhos;
 
         BindingList<Concelhos> BListConcelhos;
 
@@ -29,10 +29,32 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void SignIn_Load(object sender, EventArgs e)
         {
             SqlConnection connection = new SqlConnection(connstring);
+
+            // Ligação à base de dados para ligar com a comboBox Concelho (CBconcelho)
+            context.People.Load();
+            this.CBconcelho.DataSource = BListConcelhos = context.People.Local.ToBindingList();
+            this.CBconcelho.DisplayMember = "nome";
+
+
+
+
+
+            concelhos = new List<Concelhos>();
+            BListConcelhos = new BindingList<Concelhos>()
+            {
+                from Concelhos
+                select *
+            };
+            CBconcelho.DataSource = BListConcelhos;
             
 
 
+
+            // SELECT * TABELA_CONCELHOS
+            // FOR EACH ROW... READ
+
         }
+
 
 
     }
