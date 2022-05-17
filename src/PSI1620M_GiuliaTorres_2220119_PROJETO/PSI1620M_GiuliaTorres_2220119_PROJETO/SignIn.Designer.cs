@@ -37,14 +37,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lpassword = new System.Windows.Forms.Label();
             this.LvPassword = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.TBnome = new System.Windows.Forms.TextBox();
-            this.TBemail = new System.Windows.Forms.TextBox();
-            this.TButilizador = new System.Windows.Forms.TextBox();
-            this.TBtelemovel = new System.Windows.Forms.TextBox();
-            this.TBpassword = new System.Windows.Forms.TextBox();
-            this.TBvPassword = new System.Windows.Forms.TextBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.tbUtilizador = new System.Windows.Forms.TextBox();
+            this.tbTelemovel = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.tbVpassword = new System.Windows.Forms.TextBox();
             this.Ltelemovel = new System.Windows.Forms.Label();
-            this.CBconcelho = new System.Windows.Forms.ComboBox();
+            this.cbConcelhos = new System.Windows.Forms.ComboBox();
+            this.bSubmeter = new System.Windows.Forms.Button();
             LCriarConta = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -132,14 +133,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tableLayoutPanel1.Controls.Add(this.Lpassword, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.Lutilizador, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Lconcelho, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TBnome, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TBemail, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TButilizador, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.TBtelemovel, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.TBpassword, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TBvPassword, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbNome, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tbEmail, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbUtilizador, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbTelemovel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbPassword, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbVpassword, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.Ltelemovel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.CBconcelho, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cbConcelhos, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bSubmeter, 3, 3);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(72, 93);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -151,48 +153,48 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tableLayoutPanel1.Size = new System.Drawing.Size(743, 298);
             this.tableLayoutPanel1.TabIndex = 12;
             // 
-            // TBnome
+            // tbNome
             // 
-            this.TBnome.Location = new System.Drawing.Point(165, 3);
-            this.TBnome.Multiline = true;
-            this.TBnome.Name = "TBnome";
-            this.TBnome.Size = new System.Drawing.Size(178, 50);
-            this.TBnome.TabIndex = 12;
+            this.tbNome.Location = new System.Drawing.Point(165, 3);
+            this.tbNome.Multiline = true;
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(178, 50);
+            this.tbNome.TabIndex = 12;
             // 
-            // TBemail
+            // tbEmail
             // 
-            this.TBemail.Location = new System.Drawing.Point(165, 78);
-            this.TBemail.Name = "TBemail";
-            this.TBemail.Size = new System.Drawing.Size(100, 29);
-            this.TBemail.TabIndex = 13;
+            this.tbEmail.Location = new System.Drawing.Point(165, 78);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(100, 29);
+            this.tbEmail.TabIndex = 13;
             // 
-            // TButilizador
+            // tbUtilizador
             // 
-            this.TButilizador.Location = new System.Drawing.Point(165, 153);
-            this.TButilizador.Name = "TButilizador";
-            this.TButilizador.Size = new System.Drawing.Size(100, 29);
-            this.TButilizador.TabIndex = 14;
+            this.tbUtilizador.Location = new System.Drawing.Point(165, 153);
+            this.tbUtilizador.Name = "tbUtilizador";
+            this.tbUtilizador.Size = new System.Drawing.Size(100, 29);
+            this.tbUtilizador.TabIndex = 14;
             // 
-            // TBtelemovel
+            // tbTelemovel
             // 
-            this.TBtelemovel.Location = new System.Drawing.Point(165, 235);
-            this.TBtelemovel.Name = "TBtelemovel";
-            this.TBtelemovel.Size = new System.Drawing.Size(100, 29);
-            this.TBtelemovel.TabIndex = 15;
+            this.tbTelemovel.Location = new System.Drawing.Point(165, 235);
+            this.tbTelemovel.Name = "tbTelemovel";
+            this.tbTelemovel.Size = new System.Drawing.Size(100, 29);
+            this.tbTelemovel.TabIndex = 15;
             // 
-            // TBpassword
+            // tbPassword
             // 
-            this.TBpassword.Location = new System.Drawing.Point(536, 78);
-            this.TBpassword.Name = "TBpassword";
-            this.TBpassword.Size = new System.Drawing.Size(100, 29);
-            this.TBpassword.TabIndex = 16;
+            this.tbPassword.Location = new System.Drawing.Point(536, 78);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(100, 29);
+            this.tbPassword.TabIndex = 16;
             // 
-            // TBvPassword
+            // tbVpassword
             // 
-            this.TBvPassword.Location = new System.Drawing.Point(536, 153);
-            this.TBvPassword.Name = "TBvPassword";
-            this.TBvPassword.Size = new System.Drawing.Size(100, 29);
-            this.TBvPassword.TabIndex = 17;
+            this.tbVpassword.Location = new System.Drawing.Point(536, 153);
+            this.tbVpassword.Name = "tbVpassword";
+            this.tbVpassword.Size = new System.Drawing.Size(100, 29);
+            this.tbVpassword.TabIndex = 17;
             // 
             // Ltelemovel
             // 
@@ -204,13 +206,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Ltelemovel.TabIndex = 18;
             this.Ltelemovel.Text = "Telemovel";
             // 
-            // CBconcelho
+            // cbConcelhos
             // 
-            this.CBconcelho.FormattingEnabled = true;
-            this.CBconcelho.Location = new System.Drawing.Point(536, 3);
-            this.CBconcelho.Name = "CBconcelho";
-            this.CBconcelho.Size = new System.Drawing.Size(121, 31);
-            this.CBconcelho.TabIndex = 19;
+            this.cbConcelhos.FormattingEnabled = true;
+            this.cbConcelhos.Location = new System.Drawing.Point(536, 3);
+            this.cbConcelhos.Name = "cbConcelhos";
+            this.cbConcelhos.Size = new System.Drawing.Size(121, 31);
+            this.cbConcelhos.TabIndex = 19;
+            // 
+            // bSubmeter
+            // 
+            this.bSubmeter.Location = new System.Drawing.Point(536, 235);
+            this.bSubmeter.Name = "bSubmeter";
+            this.bSubmeter.Size = new System.Drawing.Size(121, 50);
+            this.bSubmeter.TabIndex = 20;
+            this.bSubmeter.Text = "Submeter";
+            this.bSubmeter.UseVisualStyleBackColor = true;
+            this.bSubmeter.Click += new System.EventHandler(this.bSubmeter_Click);
             // 
             // SignIn
             // 
@@ -218,6 +230,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(LCriarConta);
             this.Name = "SignIn";
+            this.Load += new System.EventHandler(this.SignIn_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,14 +248,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Label Lpassword;
         private System.Windows.Forms.Label LvPassword;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox TBnome;
-        private System.Windows.Forms.TextBox TBemail;
-        private System.Windows.Forms.TextBox TButilizador;
-        private System.Windows.Forms.TextBox TBtelemovel;
-        private System.Windows.Forms.TextBox TBpassword;
-        private System.Windows.Forms.TextBox TBvPassword;
+        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.TextBox tbUtilizador;
+        private System.Windows.Forms.TextBox tbTelemovel;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.TextBox tbVpassword;
         private System.Windows.Forms.Label Ltelemovel;
-        private System.Windows.Forms.ComboBox CBconcelho;
+        private System.Windows.Forms.ComboBox cbConcelhos;
+        private System.Windows.Forms.Button bSubmeter;
     }
 }
 
