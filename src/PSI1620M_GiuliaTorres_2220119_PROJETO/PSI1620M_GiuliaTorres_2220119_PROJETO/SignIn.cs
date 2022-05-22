@@ -20,13 +20,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         List<Concelhos> listConcelhos = new List<Concelhos>();
         BindingList<Concelhos> bListConcelhos = new BindingList<Concelhos>();
 
+        
 
 
         public SignIn()
         {
             InitializeComponent();
-
-
         }
 
 
@@ -144,6 +143,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         listConcelhos.Add(concelho);
                     }
                 }
+                
             }
             catch(Exception)
             {

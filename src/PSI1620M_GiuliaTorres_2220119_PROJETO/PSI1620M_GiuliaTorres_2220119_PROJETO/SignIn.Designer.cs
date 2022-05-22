@@ -58,7 +58,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             LCriarConta.Location = new System.Drawing.Point(0, 0);
             LCriarConta.Margin = new System.Windows.Forms.Padding(0);
             LCriarConta.Name = "LCriarConta";
-            LCriarConta.Size = new System.Drawing.Size(251, 49);
+            LCriarConta.Size = new System.Drawing.Size(170, 34);
             LCriarConta.TabIndex = 0;
             LCriarConta.Text = "Criar Conta";
             LCriarConta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -69,7 +69,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lnome.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnome.Location = new System.Drawing.Point(3, 0);
             this.Lnome.Name = "Lnome";
-            this.Lnome.Size = new System.Drawing.Size(94, 29);
+            this.Lnome.Size = new System.Drawing.Size(63, 20);
             this.Lnome.TabIndex = 1;
             this.Lnome.Text = "Nome:";
             // 
@@ -79,7 +79,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lemail.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lemail.Location = new System.Drawing.Point(3, 75);
             this.Lemail.Name = "Lemail";
-            this.Lemail.Size = new System.Drawing.Size(88, 29);
+            this.Lemail.Size = new System.Drawing.Size(61, 20);
             this.Lemail.TabIndex = 7;
             this.Lemail.Text = "Email:";
             // 
@@ -89,7 +89,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lutilizador.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lutilizador.Location = new System.Drawing.Point(3, 150);
             this.Lutilizador.Name = "Lutilizador";
-            this.Lutilizador.Size = new System.Drawing.Size(133, 58);
+            this.Lutilizador.Size = new System.Drawing.Size(93, 40);
             this.Lutilizador.TabIndex = 8;
             this.Lutilizador.Text = "Nome de utilizador:";
             // 
@@ -99,7 +99,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lconcelho.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lconcelho.Location = new System.Drawing.Point(388, 0);
             this.Lconcelho.Name = "Lconcelho";
-            this.Lconcelho.Size = new System.Drawing.Size(134, 29);
+            this.Lconcelho.Size = new System.Drawing.Size(90, 20);
             this.Lconcelho.TabIndex = 9;
             this.Lconcelho.Text = "Concelho:";
             // 
@@ -109,7 +109,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lpassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lpassword.Location = new System.Drawing.Point(388, 75);
             this.Lpassword.Name = "Lpassword";
-            this.Lpassword.Size = new System.Drawing.Size(138, 29);
+            this.Lpassword.Size = new System.Drawing.Size(93, 20);
             this.Lpassword.TabIndex = 10;
             this.Lpassword.Text = "Password:";
             // 
@@ -119,7 +119,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.LvPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LvPassword.Location = new System.Drawing.Point(388, 150);
             this.LvPassword.Name = "LvPassword";
-            this.LvPassword.Size = new System.Drawing.Size(138, 58);
+            this.LvPassword.Size = new System.Drawing.Size(93, 40);
             this.LvPassword.TabIndex = 11;
             this.LvPassword.Text = "Verificar Password:";
             // 
@@ -168,35 +168,37 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.tbEmail.Location = new System.Drawing.Point(164, 78);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 29);
+            this.tbEmail.Size = new System.Drawing.Size(100, 22);
             this.tbEmail.TabIndex = 13;
             // 
             // tbUtilizador
             // 
             this.tbUtilizador.Location = new System.Drawing.Point(164, 153);
             this.tbUtilizador.Name = "tbUtilizador";
-            this.tbUtilizador.Size = new System.Drawing.Size(100, 29);
+            this.tbUtilizador.Size = new System.Drawing.Size(100, 22);
             this.tbUtilizador.TabIndex = 14;
             // 
             // tbTelemovel
             // 
             this.tbTelemovel.Location = new System.Drawing.Point(164, 235);
             this.tbTelemovel.Name = "tbTelemovel";
-            this.tbTelemovel.Size = new System.Drawing.Size(100, 29);
+            this.tbTelemovel.Size = new System.Drawing.Size(100, 22);
             this.tbTelemovel.TabIndex = 15;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(535, 78);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 29);
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(100, 22);
             this.tbPassword.TabIndex = 16;
             // 
             // tbVpassword
             // 
             this.tbVpassword.Location = new System.Drawing.Point(535, 153);
             this.tbVpassword.Name = "tbVpassword";
-            this.tbVpassword.Size = new System.Drawing.Size(100, 29);
+            this.tbVpassword.PasswordChar = '*';
+            this.tbVpassword.Size = new System.Drawing.Size(100, 22);
             this.tbVpassword.TabIndex = 17;
             // 
             // Ltelemovel
@@ -205,7 +207,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Ltelemovel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltelemovel.Location = new System.Drawing.Point(3, 232);
             this.Ltelemovel.Name = "Ltelemovel";
-            this.Ltelemovel.Size = new System.Drawing.Size(134, 29);
+            this.Ltelemovel.Size = new System.Drawing.Size(93, 20);
             this.Ltelemovel.TabIndex = 18;
             this.Ltelemovel.Text = "Telemovel";
             // 
@@ -214,7 +216,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.cbConcelhos.FormattingEnabled = true;
             this.cbConcelhos.Location = new System.Drawing.Point(535, 3);
             this.cbConcelhos.Name = "cbConcelhos";
-            this.cbConcelhos.Size = new System.Drawing.Size(121, 31);
+            this.cbConcelhos.Size = new System.Drawing.Size(121, 24);
             this.cbConcelhos.TabIndex = 19;
             // 
             // bSubmeter
