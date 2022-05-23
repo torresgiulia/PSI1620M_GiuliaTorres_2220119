@@ -12,12 +12,15 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class Preferences : Form
+    public partial class Preferences : Form 
     {
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        List<Preferences> listPreferences = new List<Preferences>();
+        List<Categorias> listPreferences = new List<Categorias>();
+        List<Concelhos> listConcelhos = new List<Concelhos>();
 
 
+        
+        
         public Preferences()
         {
             InitializeComponent();
@@ -50,31 +53,33 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
                 connection.Open();
 
-                //Pesquisar o id do concelho selecionado
-                foreach (var pesquisa in listPreferences)
-                {
-                    if (pesquisa.ConcelhoNome == cbConcelhos.Text)
-                    {
-                        adicionarId = pesquisa.ConcelhoId;
-                        break;
-                    }
-                }
 
 
-                //Inserir a informação do utilizador a base de dados
-                SqlCommand utili = connection.CreateCommand();
-                utili.CommandType = CommandType.Text;
-                utili.CommandText = @"insert into Utilizadores 
-                                        (username, nome, id_concelho, telemovel, password, email)
-                                        values (@username,@nome,@id_concelho,@telemovel,@password, @email)";
-                utili.Parameters.Add("@username", SqlDbType.VarChar).Value = tbUtilizador.Text;
-                utili.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNome.Text;
-                utili.Parameters.Add("@id_concelho", SqlDbType.Int).Value = adicionarId;
-                utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
-                utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
-                utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
+                ////Pesquisar o id do concelho selecionado
+                //foreach (var pesquisa in listConcelhos)
+                //{
+                //    if (pesquisa. == cbConcelhos.Text)
+                //    {
+                //        adicionarId = pesquisa.ConcelhoId;
+                //        break;
+                //    }
+                //}
 
-                utili.ExecuteNonQuery();
+
+                ////Inserir a informação do utilizador a base de dados
+                //SqlCommand utili = connection.CreateCommand();
+                //utili.CommandType = CommandType.Text;
+                //utili.CommandText = @"insert into Utilizadores 
+                //                        (username, nome, id_concelho, telemovel, password, email)
+                //                        values (@username,@nome,@id_concelho,@telemovel,@password, @email)";
+                //utili.Parameters.Add("@username", SqlDbType.VarChar).Value = tbUtilizador.Text;
+                //utili.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNome.Text;
+                //utili.Parameters.Add("@id_concelho", SqlDbType.Int).Value = adicionarId;
+                //utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
+                //utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
+                //utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
+
+                //utili.ExecuteNonQuery();
 
                 //mudar a página
                 Preferences preferences = new Preferences();

@@ -13,14 +13,19 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class SignIn : Form
+    public partial class SignIn : Form 
     {
         //Instaciação e criação de ConnectionStrings, List e BindingList
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
         List<Concelhos> listConcelhos = new List<Concelhos>();
         BindingList<Concelhos> bListConcelhos = new BindingList<Concelhos>();
 
-        
+        //Instanciação Forms
+        Consultas consultas = new Consultas();
+
+
+
+        public string loggedUser { get; set; }
 
 
         public SignIn()
@@ -36,7 +41,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         private void bSubmeter_Click(object sender, EventArgs e)
         {
-
+            loggedUser = tbUtilizador.Text;
 
             //Adicionar a base de dados
             SqlConnection connection = new SqlConnection(connstring);
@@ -112,7 +117,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
-                                //FUNÇÕES DE LIGAÇÃO E CONSULTA:
+        //FUNÇÕES DE LIGAÇÃO E CONSULTA:
 
         /// <summary>
         /// Função para fazer a ligação com a base de dados e a Lista concelhos
@@ -143,15 +148,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         listConcelhos.Add(concelho);
                     }
                 }
-                
+
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
         }
 
-        
+
     }
 }
             
