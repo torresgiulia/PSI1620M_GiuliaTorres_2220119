@@ -51,8 +51,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bVegan = new System.Windows.Forms.Button();
             this.bBebidas = new System.Windows.Forms.Button();
             this.bAnime = new System.Windows.Forms.Button();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -324,32 +322,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bAnime.UseVisualStyleBackColor = true;
             this.bAnime.Click += new System.EventHandler(this.select_preferences);
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.AllowDrop = true;
-            this.vScrollBar1.Location = new System.Drawing.Point(877, 9);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 384);
-            this.vScrollBar1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(751, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 40);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Submeter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.bSubmit_Click);
-            // 
             // Preferences
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(895, 402);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F);
@@ -389,7 +366,5 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bBrinquedos;
         private System.Windows.Forms.Button bBebidas;
         private System.Windows.Forms.Button bAnime;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.Button button1;
     }
 }
