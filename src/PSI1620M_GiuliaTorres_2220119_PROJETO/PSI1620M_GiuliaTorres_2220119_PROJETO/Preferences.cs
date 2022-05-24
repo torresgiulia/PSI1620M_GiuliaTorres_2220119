@@ -14,88 +14,94 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
     public partial class Preferences : Form 
     {
+        //public new System.Windows.Forms.Control.ControlCollection Controls { get; }
+
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        List<Categorias> listPreferences = new List<Categorias>();
-        List<Concelhos> listConcelhos = new List<Concelhos>();
 
-
+        public int categoriaId { get; set; }
         
         
         public Preferences()
         {
             InitializeComponent();
+            
         }
 
-        private void bSubmit_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void select_preferences(object sender, EventArgs e)
+        private void select_preferences(object sender, EventArgs e) //selecionar preferencias (botões)
         {
-            for(int i = 0; i<20; i++)
+            //mudar a tag do botão
+            foreach (Control bt in this.Controls)
             {
-                
+                bt.Tag = 1;
+                bt.BackColor = Color.Beige;
             }
         }
-
-        private void Preferences_Load(object sender, EventArgs e)
+        private void Preferences_Load(object sender, EventArgs e) // load do forms
         {
-
-        }
-
-        public void testar_preferencias()
-        {
-            //adicionar na base de dados
-            //Adicionar a base de dados
             SqlConnection connection = new SqlConnection(connstring);
             try
             {
                 connection.Open();
 
+                foreach (Control bt in this.Controls)
+                {
+                    if (bt is Button && bt.Text.StartsWith("b"))
+                    {
+                        Consultar.consulta_categorias();
+                        foreach (var pesquisa in Consultar.listCategorias)
+                        {
+                            if (pesquisa.CategoriaNome == bt.Text)
+                            {
+                                categoriaId = pesquisa.CategoriaId;
+                                break;
+                            }
+                        }
+                        //if (/*utilizar a tag do botão*/(bt as Button).Ckicked == true)
+                        //{
+                        //    SqlCommand utiCat = connection.CreateCommand();
+                        //    utiCat.CommandText = @"insert into utilizadoresCategorias
+                        //                            (username, id_categoria)
+                        //                            values (@username, @id_categoria)";
+                        //    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Consultar.loggedUser;
+                        //    utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
+                        //}
 
-
-                ////Pesquisar o id do concelho selecionado
-                //foreach (var pesquisa in listConcelhos)
-                //{
-                //    if (pesquisa. == cbConcelhos.Text)
-                //    {
-                //        adicionarId = pesquisa.ConcelhoId;
-                //        break;
-                //    }
-                //}
-
-
-                ////Inserir a informação do utilizador a base de dados
-                //SqlCommand utili = connection.CreateCommand();
-                //utili.CommandType = CommandType.Text;
-                //utili.CommandText = @"insert into Utilizadores 
-                //                        (username, nome, id_concelho, telemovel, password, email)
-                //                        values (@username,@nome,@id_concelho,@telemovel,@password, @email)";
-                //utili.Parameters.Add("@username", SqlDbType.VarChar).Value = tbUtilizador.Text;
-                //utili.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNome.Text;
-                //utili.Parameters.Add("@id_concelho", SqlDbType.Int).Value = adicionarId;
-                //utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
-                //utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
-                //utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
-
-                //utili.ExecuteNonQuery();
-
-                //mudar a página
-                Preferences preferences = new Preferences();
-                preferences.Show();
-                this.Hide();
+                    }
+                }
             }
-            catch (Exception)
+            catch(Exception)
             {
                 throw;
             }
 
 
-            if (bAnime.Enabled)
-            {
+            
+            Consultar.consulta_utilizadores();
+            //adicionar o nome de utilizador e id_categoria de cada categoria
 
+
+
+
+
+            //foreach (var pesquisa in Consultar.listUtilizadores)
+            //{
+            //    if(pesquisa.UtilizadorUsername == Consultar.loggedUser)
+            //    {
+
+            //    }
+            //}
+        }
+        private void bSubmit_Click(object sender, EventArgs e) // submeter
+        {
+            for(int i=1; i<=20; i++)
+            {
+                //botao que inicia com b% 
+                //caso esteja selcionado adicionar id utilizador e button.text
+                //if()
             }
         }
+
+
     }
 }

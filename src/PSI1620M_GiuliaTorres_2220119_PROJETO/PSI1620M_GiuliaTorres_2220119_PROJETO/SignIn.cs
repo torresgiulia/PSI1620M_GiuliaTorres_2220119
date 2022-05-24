@@ -17,12 +17,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     {
         //Instaciação e criação de ConnectionStrings, List e BindingList
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        List<Concelhos> listConcelhos = new List<Concelhos>();
         BindingList<Concelhos> bListConcelhos = new BindingList<Concelhos>();
-
-        //Instanciação Forms
-        Consultas consultas = new Consultas();
-
 
 
         public string loggedUser { get; set; }
@@ -39,7 +34,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             LigacaoComboBox_Concelhos(); 
         }
 
-        private void bSubmeter_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// Adicionar valor à base de dados
+        /// </summary>
+        public void bSubmeter_Click(object sender, EventArgs e)
         {
             loggedUser = tbUtilizador.Text;
 
@@ -52,8 +51,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 connection.Open();
 
                 //Pesquisar o id do concelho selecionado
-                consulta_concelhos();
-                foreach(var pesquisa in listConcelhos)
+                Consultar.consulta_concelhos();
+                foreach(var pesquisa in Consultar.listConcelhos)
                 {
                     if(pesquisa.ConcelhoNome == cbConcelhos.Text)
                     {
@@ -78,6 +77,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
                 utili.ExecuteNonQuery();
 
+                Consultar.loggedUser = tbUtilizador.Text;
+
                 //mudar a página
                 Preferences preferences = new Preferences();
                 preferences.Show();
@@ -89,7 +90,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-
+        /// <summary>
+        /// Adicionar informação à comboBox (BindingList)
+        /// </summary>
         public void LigacaoComboBox_Concelhos()
         {
             SqlConnection connection = new SqlConnection(connstring);
@@ -97,8 +100,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
 
                 //Adicionar a comboBox
-                consulta_concelhos();
-                bListConcelhos = new BindingList<Concelhos>(listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());               
+                Consultar.consulta_concelhos();
+                bListConcelhos = new BindingList<Concelhos>(Consultar.listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());               
                 cbConcelhos.DataSource = bListConcelhos;               
                 cbConcelhos.DisplayMember = "ConcelhoNome";
                 cbConcelhos.ValueMember = "ConcelhoId";
@@ -113,46 +116,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     connection.Close();
                 }
-            }
-        }
-
-
-        //FUNÇÕES DE LIGAÇÃO E CONSULTA:
-
-        /// <summary>
-        /// Função para fazer a ligação com a base de dados e a Lista concelhos
-        /// </summary>
-        public void consulta_concelhos()
-        {
-            try
-            {
-                //Fazer a conexão
-                SqlConnection connection = new SqlConnection(connstring);
-                connection.Open();
-                SqlCommand conc = connection.CreateCommand();
-                conc.CommandText = "select * from Concelhos";
-
-                var ler = conc.ExecuteReader();
-
-                if (ler.HasRows)
-                {
-                    while (ler.Read())
-                    {
-                        Concelhos concelho = new Concelhos()
-                        {
-                            ConcelhoId = Convert.ToInt32(ler["id"].ToString()),
-                            ConcelhoNome = ler["nome"].ToString()
-                        };
-
-                        //adicionar a lista
-                        listConcelhos.Add(concelho);
-                    }
-                }
-
-            }
-            catch (Exception)
-            {
-                throw;
             }
         }
 

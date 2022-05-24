@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    internal class utilizadoresGrupos
+    public class utilizadoresGrupos
     {
         public int utilizadorGrupoId { get; set; }
         public int utilizadorGrupoIdGrupo { get; set; }

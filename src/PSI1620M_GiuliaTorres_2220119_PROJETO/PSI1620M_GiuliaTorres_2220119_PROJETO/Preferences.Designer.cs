@@ -359,7 +359,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preferences";
             this.Load += new System.EventHandler(this.Preferences_Load);
-            this.Click += new System.EventHandler(this.select_preferences);
+            this.Click += new System.EventHandler(this.Preferences_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

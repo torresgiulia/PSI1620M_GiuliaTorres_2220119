@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    internal class Grupos
+    public class Grupos
     {
         public int GrupoId { get; set; }
         public string  GrupoNome { get; set; }

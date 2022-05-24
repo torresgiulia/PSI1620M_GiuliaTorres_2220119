@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    internal class produtosCategorias
+    public class produtosCategorias
     {
         public int produtoCategoriaId { get; set; }
         public int produtoCategoriaIdCategoria { get; set; }
