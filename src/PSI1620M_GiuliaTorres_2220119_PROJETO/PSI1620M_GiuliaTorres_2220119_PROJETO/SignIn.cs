@@ -27,7 +27,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Chama a ligação com a base de dados
+        /// </summary>
         private void SignIn_Load(object sender, EventArgs e)
         {
             LigacaoComboBox_Concelhos(); 
@@ -79,6 +81,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 Consultar.loggedUser = tbUtilizador.Text;
 
                 //mudar a página
+
                 Preferences preferences = new Preferences();
                 preferences.Show();
                 this.Hide();
@@ -119,7 +122,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-
+        /// <summary>
+        /// mudar para LogIn
+        /// </summary>
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LogIn logIn = new LogIn();
+            logIn.Show();
+            this.Hide();
+        }
     }
 }
             

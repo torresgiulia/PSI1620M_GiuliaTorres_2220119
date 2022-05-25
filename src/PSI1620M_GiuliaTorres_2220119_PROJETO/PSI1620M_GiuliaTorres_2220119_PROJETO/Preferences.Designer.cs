@@ -40,7 +40,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bGames = new System.Windows.Forms.Button();
             this.bGadgets = new System.Windows.Forms.Button();
             this.bFilmes = new System.Windows.Forms.Button();
-            this.bColecionaveis = new System.Windows.Forms.Button();
             this.bDesporto = new System.Windows.Forms.Button();
             this.bConcertos = new System.Windows.Forms.Button();
             this.bCasa = new System.Windows.Forms.Button();
@@ -52,6 +51,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bBebidas = new System.Windows.Forms.Button();
             this.bAnime = new System.Windows.Forms.Button();
             this.bSubmit = new System.Windows.Forms.Button();
+            this.bColecionaveis = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +81,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tableLayoutPanel1.Controls.Add(this.bGames, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.bGadgets, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.bFilmes, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bColecionaveis, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.bDesporto, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.bConcertos, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.bCasa, 3, 0);
@@ -92,6 +91,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tableLayoutPanel1.Controls.Add(this.bVegan, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.bBebidas, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bAnime, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bColecionaveis, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(129, 61);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -110,7 +110,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bPerfumes.Name = "bPerfumes";
             this.bPerfumes.Size = new System.Drawing.Size(157, 60);
             this.bPerfumes.TabIndex = 18;
-            this.bPerfumes.Text = "Perfumes";
+            this.bPerfumes.Text = "Perfume";
             this.bPerfumes.UseVisualStyleBackColor = true;
             this.bPerfumes.Click += new System.EventHandler(this.select_preferences);
             // 
@@ -201,18 +201,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bFilmes.Text = "Filmes e séries";
             this.bFilmes.UseVisualStyleBackColor = true;
             this.bFilmes.Click += new System.EventHandler(this.select_preferences);
-            // 
-            // bColecionaveis
-            // 
-            this.bColecionaveis.BackColor = System.Drawing.SystemColors.Control;
-            this.bColecionaveis.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bColecionaveis.Location = new System.Drawing.Point(350, 70);
-            this.bColecionaveis.Name = "bColecionaveis";
-            this.bColecionaveis.Size = new System.Drawing.Size(157, 58);
-            this.bColecionaveis.TabIndex = 6;
-            this.bColecionaveis.Text = "Figuras Colecionáveis";
-            this.bColecionaveis.UseVisualStyleBackColor = false;
-            this.bColecionaveis.Click += new System.EventHandler(this.select_preferences);
             // 
             // bDesporto
             // 
@@ -309,7 +297,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bBebidas.Name = "bBebidas";
             this.bBebidas.Size = new System.Drawing.Size(154, 61);
             this.bBebidas.TabIndex = 1;
-            this.bBebidas.Text = "Bebidas";
+            this.bBebidas.Text = "Bebidas espirituosas";
             this.bBebidas.UseVisualStyleBackColor = true;
             this.bBebidas.Click += new System.EventHandler(this.select_preferences);
             // 
@@ -320,7 +308,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bAnime.Name = "bAnime";
             this.bAnime.Size = new System.Drawing.Size(152, 61);
             this.bAnime.TabIndex = 0;
-            this.bAnime.Text = "Animes";
+            this.bAnime.Text = "Anime";
             this.bAnime.UseVisualStyleBackColor = true;
             this.bAnime.Click += new System.EventHandler(this.select_preferences);
             // 
@@ -334,6 +322,17 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bSubmit.Text = "Submeter";
             this.bSubmit.UseVisualStyleBackColor = true;
             this.bSubmit.Click += new System.EventHandler(this.bSubmit_Click);
+            // 
+            // bColecionaveis
+            // 
+            this.bColecionaveis.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bColecionaveis.Location = new System.Drawing.Point(350, 70);
+            this.bColecionaveis.Name = "bColecionaveis";
+            this.bColecionaveis.Size = new System.Drawing.Size(157, 58);
+            this.bColecionaveis.TabIndex = 20;
+            this.bColecionaveis.Text = "Figuras Colecionáveis";
+            this.bColecionaveis.UseVisualStyleBackColor = true;
+            this.bColecionaveis.Click += new System.EventHandler(this.select_preferences);
             // 
             // Preferences
             // 
@@ -350,7 +349,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preferences";
             this.Load += new System.EventHandler(this.Preferences_Load);
-            this.Click += new System.EventHandler(this.Preferences_Load);
+            this.Click += new System.EventHandler(this.select_preferences);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -373,7 +372,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bGadgets;
         private System.Windows.Forms.Button bFlores;
         private System.Windows.Forms.Button bFilmes;
-        private System.Windows.Forms.Button bColecionaveis;
         private System.Windows.Forms.Button bDesporto;
         private System.Windows.Forms.Button bConcertos;
         private System.Windows.Forms.Button bCasa;
@@ -381,5 +379,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bBebidas;
         private System.Windows.Forms.Button bAnime;
         private System.Windows.Forms.Button bSubmit;
+        private System.Windows.Forms.Button bColecionaveis;
     }
 }

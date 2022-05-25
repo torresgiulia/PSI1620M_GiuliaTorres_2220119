@@ -169,6 +169,12 @@
     <Compile Include="Categorias.cs" />
     <Compile Include="Concelhos.cs" />
     <Compile Include="Consultar.cs" />
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     <Compile Include="utilizadoresCategorias.cs" />
     <Compile Include="utilizadoresGrupos.cs" />
     <Compile Include="Vendedores.cs" />
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Preferences.resx">
       <DependentUpon>Preferences.cs</DependentUpon>
     </EmbeddedResource>
