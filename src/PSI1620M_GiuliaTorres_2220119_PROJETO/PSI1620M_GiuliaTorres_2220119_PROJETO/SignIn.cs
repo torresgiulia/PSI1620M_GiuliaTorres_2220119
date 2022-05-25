@@ -20,7 +20,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         BindingList<Concelhos> bListConcelhos = new BindingList<Concelhos>();
 
 
-        public string loggedUser { get; set; }
 
 
         public SignIn()
@@ -40,7 +39,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void bSubmeter_Click(object sender, EventArgs e)
         {
-            loggedUser = tbUtilizador.Text;
+            Consultar.loggedUser = tbUtilizador.Text;
 
             //Adicionar a base de dados
             SqlConnection connection = new SqlConnection(connstring);

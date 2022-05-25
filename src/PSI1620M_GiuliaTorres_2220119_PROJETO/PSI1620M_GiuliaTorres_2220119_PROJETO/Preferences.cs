@@ -28,12 +28,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
+        /// <summary>
+        /// Função para adicionar cada botão a base de dados
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void select_preferences(object sender, EventArgs e) //selecionar preferencias (botões)
         {
             SqlConnection connection = new SqlConnection(connstring);
-
-            //string comp1 = ((Button)sender).Text;
-            //string comp1 = sender;
             
 
             connection.Open();
@@ -41,7 +43,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             Consultar.consulta_categorias();
             foreach (var pesquisa in Consultar.listCategorias)
             {
-                //string comp2 = pesquisa.CategoriaNome;
+                ((Button)sender).BackColor = Color.Pink;
                 if (pesquisa.CategoriaNome == ((Button)sender).Text)
                 {
                     categoriaId = pesquisa.CategoriaId;
@@ -49,67 +51,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     utiCat.CommandText = @"insert into utilizadoresCategorias
                                                         (username, id_categoria)
                                                         values (@username, @id_categoria)";
-                    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = "o";
-                    utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = 2;
+                    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Consultar.loggedUser;
+                    utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
+                    utiCat.ExecuteNonQuery();
                     break;
 
                 }
 
-            }
-
-
-
-
-            //foreach (Control bt in this.Controls)
-            //{
-            //    if(bt is Button)
-            //    {
-            //        Consultar.consulta_categorias();
-            //        foreach (var pesquisa in Consultar.listCategorias)
-            //        {
-            //            if (pesquisa.CategoriaNome == bt.Name)
-            //            {
-            //                categoriaId = pesquisa.CategoriaId;
-            //                SqlCommand utiCat = connection.CreateCommand();
-            //                utiCat.CommandText = @"insert into utilizadoresCategorias
-            //                                            (id_uc,username, id_categoria)
-            //                                            values (@id_uc,@username, @id_categoria)";
-            //                utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Consultar.loggedUser;
-            //                utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
-            //                utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = 1;
-
-            //            }
-
-            //        }
-            //    }
-            //}
-
-
-                //mudar a tag do botão
-                //foreach (Control bt in this.Controls.OfType<Button>())
-                //{
-                //if(bt is Button)
-                //{
-                //    bt.Tag = 1;
-                //    //bt.BackColor = Color.Blue;
-                //    Consultar.consulta_categorias();
-                //    foreach (var pesquisa in Consultar.listCategorias)
-                //    {
-                //        if (pesquisa.CategoriaNome == bt.Name)
-                //        {
-                //            categoriaId = pesquisa.CategoriaId;
-                //            SqlCommand utiCat = connection.CreateCommand();
-                //            utiCat.CommandText = @"insert into utilizadoresCategorias
-                //                                    (id_uc,username, id_categoria)
-                //                                    values (@id_uc,@username, @id_categoria)";
-                //            utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Consultar.loggedUser;
-                //            utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
-                //            utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = 1;
-                            
-                //        }
-
-                //    }
-                //}               
+            }             
             
         }
         private void Preferences_Load(object sender, EventArgs e) // load do forms
@@ -118,7 +67,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
         private void bSubmit_Click(object sender, EventArgs e) // submeter
         {
-            
+            LogIn logIn = new LogIn();
+            logIn.Show();
+            this.Hide();
         }
 
 

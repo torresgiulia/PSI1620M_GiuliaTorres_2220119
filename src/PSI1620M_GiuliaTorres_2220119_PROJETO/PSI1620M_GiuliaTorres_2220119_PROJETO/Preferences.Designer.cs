@@ -51,6 +51,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bVegan = new System.Windows.Forms.Button();
             this.bBebidas = new System.Windows.Forms.Button();
             this.bAnime = new System.Windows.Forms.Button();
+            this.bSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,13 +204,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // bColecionaveis
             // 
+            this.bColecionaveis.BackColor = System.Drawing.SystemColors.Control;
             this.bColecionaveis.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bColecionaveis.Location = new System.Drawing.Point(350, 70);
             this.bColecionaveis.Name = "bColecionaveis";
             this.bColecionaveis.Size = new System.Drawing.Size(157, 58);
             this.bColecionaveis.TabIndex = 6;
             this.bColecionaveis.Text = "Figuras Colecionáveis";
-            this.bColecionaveis.UseVisualStyleBackColor = true;
+            this.bColecionaveis.UseVisualStyleBackColor = false;
             this.bColecionaveis.Click += new System.EventHandler(this.select_preferences);
             // 
             // bDesporto
@@ -322,11 +324,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bAnime.UseVisualStyleBackColor = true;
             this.bAnime.Click += new System.EventHandler(this.select_preferences);
             // 
+            // bSubmit
+            // 
+            this.bSubmit.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSubmit.Location = new System.Drawing.Point(711, 9);
+            this.bSubmit.Name = "bSubmit";
+            this.bSubmit.Size = new System.Drawing.Size(141, 42);
+            this.bSubmit.TabIndex = 2;
+            this.bSubmit.Text = "Submeter";
+            this.bSubmit.UseVisualStyleBackColor = true;
+            this.bSubmit.Click += new System.EventHandler(this.bSubmit_Click);
+            // 
             // Preferences
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(895, 402);
+            this.Controls.Add(this.bSubmit);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F);
@@ -366,5 +380,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bBrinquedos;
         private System.Windows.Forms.Button bBebidas;
         private System.Windows.Forms.Button bAnime;
+        private System.Windows.Forms.Button bSubmit;
     }
 }
