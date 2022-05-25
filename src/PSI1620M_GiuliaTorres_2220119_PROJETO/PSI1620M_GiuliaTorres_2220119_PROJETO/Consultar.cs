@@ -19,6 +19,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         public static string loggedUser { get; set; }
         
+        //teste
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
