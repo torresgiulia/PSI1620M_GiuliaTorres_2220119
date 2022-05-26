@@ -32,7 +32,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// Função para adicionar cada botão a base de dados
         /// </summary>
         /// <param name="sender"> utilizado para comparar o texto do botão</param>
-        /// <param name="e"></param>
         private void select_preferences(object sender, EventArgs e) 
         {
             SqlConnection connection = new SqlConnection(connstring);
