@@ -8,25 +8,27 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public static class Consultar
+    public static class Cconsultar
     {
         public static string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
 
-        public static List<Concelhos> listConcelhos { get; set; }
-        public static List<Categorias> listCategorias { get; set; }
-        public static List<Utilizadores> listUtilizadores { get; set; }
+        public static List<Cconcelhos> listConcelhos { get; set; }
+        public static List<Ccategorias> listCategorias { get; set; }
+        public static List<Cutilizadores> listUtilizadores { get; set; }
+        public static List<Cgrupos> listGrupos { get; set; }
+
 
 
         public static string loggedUser { get; set; }
-        
-        //teste
+
+
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
         /// </summary>
         public static void consulta_concelhos()
         {
-            listConcelhos = new List<Concelhos>();
+            listConcelhos = new List<Cconcelhos>();
             SqlConnection connection = new SqlConnection(connstring);
             try
             {
@@ -41,7 +43,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     while (ler.Read())
                     {
-                        Concelhos concelho = new Concelhos()
+                        Cconcelhos concelho = new Cconcelhos()
                         {
                             ConcelhoId = Convert.ToInt32(ler["id"].ToString()),
                             ConcelhoNome = ler["nome"].ToString()
@@ -57,7 +59,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
                 throw;
             }
-            
+
         }
 
 
@@ -67,7 +69,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public static void consulta_categorias()
         {
-            listCategorias = new List<Categorias>();
+            listCategorias = new List<Ccategorias>();
             SqlConnection connection = new SqlConnection(connstring);
 
             try
@@ -82,7 +84,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     while (ler.Read())
                     {
-                        Categorias categoria = new Categorias()
+                        Ccategorias categoria = new Ccategorias()
                         {
                             CategoriaId = Convert.ToInt32(ler["id"].ToString()),
                             CategoriaNome = ler["nome"].ToString()
@@ -93,7 +95,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -105,7 +107,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public static void consulta_utilizadores()
         {
-            listUtilizadores = new List<Utilizadores>();
+            listUtilizadores = new List<Cutilizadores>();
             SqlConnection connection = new SqlConnection(connstring);
 
             try
@@ -115,11 +117,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 uti.CommandText = "select * from Utilizadores";
 
                 var ler = uti.ExecuteReader();
-                if(ler.HasRows)
+                if (ler.HasRows)
                 {
-                    while(ler.Read())
+                    while (ler.Read())
                     {
-                        Utilizadores utilizador = new Utilizadores()
+                        Cutilizadores utilizador = new Cutilizadores()
                         {
 
                             UtilizadorUsername = ler["username"].ToString(),
@@ -135,11 +137,46 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
 
+        }
+
+        public static void consulta_grupo()
+        {
+            listGrupos = new List<Cgrupos>();
+            SqlConnection connection = new SqlConnection(connstring);
+
+            try
+            {
+                connection.Open();
+                SqlCommand gru = connection.CreateCommand();
+                gru.CommandText = "select * from Grupos";
+
+                var ler = gru.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+                        Cgrupos grupo = new Cgrupos()
+                        {
+
+                            GrupoId = Convert.ToInt32(ler["id"].ToString()),
+                            GrupoNome = ler["nome"].ToString(),
+                            GrupoEstado = ler["estado"].ToString(),
+                            GrupoUtilizadorLider = ler["username_utilizador_lider"].ToString(),
+                            GrupoDescricao = ler["descricao"].ToString(),
+                        };
+                        listGrupos.Add(grupo);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

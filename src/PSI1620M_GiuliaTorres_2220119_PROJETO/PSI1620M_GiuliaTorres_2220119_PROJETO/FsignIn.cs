@@ -13,16 +13,16 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class SignIn : Form 
+    public partial class FsignIn : Form 
     {
         //Instaciação e criação de ConnectionStrings, List e BindingList
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        BindingList<Concelhos> bListConcelhos = new BindingList<Concelhos>();
+        BindingList<Cconcelhos> bListConcelhos = new BindingList<Cconcelhos>();
 
 
 
 
-        public SignIn()
+        public FsignIn()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void bSubmeter_Click(object sender, EventArgs e)
         {
-            Consultar.loggedUser = tbUtilizador.Text;
+            Cconsultar.loggedUser = tbUtilizador.Text;
 
             //Adicionar a base de dados
             SqlConnection connection = new SqlConnection(connstring);
@@ -52,8 +52,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 connection.Open();
 
                 //Pesquisar o id do concelho selecionado
-                Consultar.consulta_concelhos();
-                foreach(var pesquisa in Consultar.listConcelhos)
+                Cconsultar.consulta_concelhos();
+                foreach(var pesquisa in Cconsultar.listConcelhos)
                 {
                     if(pesquisa.ConcelhoNome == cbConcelhos.Text)
                     {
@@ -78,7 +78,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
                 utili.ExecuteNonQuery();
 
-                Consultar.loggedUser = tbUtilizador.Text;
+                Cconsultar.loggedUser = tbUtilizador.Text;
 
                 //mudar a página
 
@@ -103,8 +103,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
 
                 //Adicionar a comboBox
-                Consultar.consulta_concelhos();
-                bListConcelhos = new BindingList<Concelhos>(Consultar.listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());               
+                Cconsultar.consulta_concelhos();
+                bListConcelhos = new BindingList<Cconcelhos>(Cconsultar.listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());               
                 cbConcelhos.DataSource = bListConcelhos;               
                 cbConcelhos.DisplayMember = "ConcelhoNome";
                 cbConcelhos.ValueMember = "ConcelhoId";
@@ -128,7 +128,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LogIn logIn = new LogIn();
+            FlogIn logIn = new FlogIn();
             logIn.Show();
             this.Hide();
         }

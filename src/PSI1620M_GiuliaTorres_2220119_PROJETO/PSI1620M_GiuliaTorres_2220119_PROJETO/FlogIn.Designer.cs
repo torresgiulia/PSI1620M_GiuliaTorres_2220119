@@ -1,7 +1,7 @@
 ﻿
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    partial class LogIn
+    partial class FlogIn
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(406, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 47);
+            this.label1.Size = new System.Drawing.Size(71, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gifty";
             // 
@@ -54,7 +54,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(301, 129);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 29);
+            this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email/Utilizador";
             // 
@@ -64,7 +64,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(341, 210);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 29);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
@@ -72,14 +72,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.tbUtilizador.Location = new System.Drawing.Point(437, 129);
             this.tbUtilizador.Name = "tbUtilizador";
-            this.tbUtilizador.Size = new System.Drawing.Size(100, 26);
+            this.tbUtilizador.Size = new System.Drawing.Size(100, 20);
             this.tbUtilizador.TabIndex = 3;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(437, 210);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 26);
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 4;
             // 
             // linkSignIn
@@ -87,7 +88,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.linkSignIn.AutoSize = true;
             this.linkSignIn.Location = new System.Drawing.Point(379, 294);
             this.linkSignIn.Name = "linkSignIn";
-            this.linkSignIn.Size = new System.Drawing.Size(198, 20);
+            this.linkSignIn.Size = new System.Drawing.Size(133, 13);
             this.linkSignIn.TabIndex = 5;
             this.linkSignIn.TabStop = true;
             this.linkSignIn.Text = "Não tem conta? Criar uma!";

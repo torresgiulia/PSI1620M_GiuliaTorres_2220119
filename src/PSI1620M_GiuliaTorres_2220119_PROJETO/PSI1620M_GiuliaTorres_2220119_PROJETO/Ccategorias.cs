@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public class Concelhos
+    public  class Ccategorias
     {
-        public int ConcelhoId { get; set; }
-        public string ConcelhoNome { get; set; }
+        public int CategoriaId { get; set; }
+        public string CategoriaNome { get; set; }
     }
 }

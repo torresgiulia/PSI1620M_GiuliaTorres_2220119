@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public class Vendedores
+    public class Cvendedores
     {
         public int VendedorId { get; set; }
         public string  VendedorNome { get; set; }

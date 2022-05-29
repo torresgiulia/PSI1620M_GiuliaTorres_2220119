@@ -10,19 +10,16 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class LogIn : Form
+    public partial class FlogIn : Form
     {
-        public LogIn()
+        public FlogIn()
         {
             InitializeComponent();
         }
 
-
-
-
         private void LinkSignIn(object sender, EventArgs e)
         {
-            SignIn signIn = new SignIn();
+            FsignIn signIn = new FsignIn();
             signIn.Show();
             this.Hide();
         }
@@ -35,15 +32,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         {
             string passe = "";
 
-            Consultar.consulta_utilizadores();
+            Cconsultar.consulta_utilizadores();
             
 
             //Guardar os valores inseridos
-            foreach(var pesquisa in Consultar.listUtilizadores)
+            foreach(var pesquisa in Cconsultar.listUtilizadores)
             {
                 if ((pesquisa.UtilizadorEmail == tbUtilizador.Text && pesquisa.UtilizadorPassword == tbPassword.Text) || (pesquisa.UtilizadorUsername == tbUtilizador.Text && pesquisa.UtilizadorPassword == tbPassword.Text))
                 {
-                    Consultar.loggedUser = pesquisa.UtilizadorUsername;
+                    Cconsultar.loggedUser = pesquisa.UtilizadorUsername;
                     passe = pesquisa.UtilizadorPassword;
                 }
             }
@@ -52,7 +49,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             //Comparar os valores guardados
             if (passe!="")
             {
-                Home home = new Home();
+                Fhome home = new Fhome();
                 home.Show();
                 this.Hide();
 

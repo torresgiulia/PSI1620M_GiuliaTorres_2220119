@@ -40,8 +40,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
             connection.Open();
 
-            Consultar.consulta_categorias();
-            foreach (var pesquisa in Consultar.listCategorias)
+            Cconsultar.consulta_categorias();
+            foreach (var pesquisa in Cconsultar.listCategorias)
             {
                 ((Button)sender).BackColor = Color.Pink;
                 if (pesquisa.CategoriaNome == ((Button)sender).Text)
@@ -51,7 +51,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     utiCat.CommandText = @"insert into utilizadoresCategorias
                                                         (username, id_categoria)
                                                         values (@username, @id_categoria)";
-                    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Consultar.loggedUser;
+                    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
                     utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
                     utiCat.ExecuteNonQuery();
                     break;
@@ -72,7 +72,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void bSubmit_Click(object sender, EventArgs e) // submeter
         {
-            Home home = new Home();
+            Fhome home = new Fhome();
             home.Show();
             this.Hide();
         }
