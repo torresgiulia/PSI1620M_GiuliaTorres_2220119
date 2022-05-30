@@ -76,13 +76,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand criar = connection.CreateCommand();
                 criar.CommandType = CommandType.Text;
                 criar.CommandText = @"insert into utilizadoresGrupos 
-                                        (id_grupo, username_utilizador, username_utilizadorSorteado)
-                                        values (@id_grupo, @username_utilizador, @username_utilizadorSorteado)";
+                                        (id_grupo, username_utilizador)
+                                        values (@id_grupo, @username_utilizador)";
                 criar.Parameters.Add("@id_grupo", SqlDbType.Int).Value = adicionarId;
                 criar.Parameters.Add("@username_utilizador", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
-
-                //COMO ADICIONAR UM VALOR NULO?
-                criar.Parameters.Add("@username_utilizadorSorteado", SqlDbType.VarChar).Value = "NULL"; 
                 criar.ExecuteReader();
             }
             catch (Exception)

@@ -226,6 +226,9 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
+    <EmbeddedResource Include="Fcarrinho.resx">
+      <DependentUpon>Fcarrinho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fhome.resx">
       <DependentUpon>Fhome.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +237,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FnovoGrupo.resx">
       <DependentUpon>FnovoGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fperfil.resx">
+      <DependentUpon>Fperfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fpesquisar.resx">
+      <DependentUpon>Fpesquisar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Preferences.resx">
       <DependentUpon>Preferences.cs</DependentUpon>

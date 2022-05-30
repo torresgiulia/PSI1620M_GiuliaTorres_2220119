@@ -62,8 +62,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
-
-
         /// <summary>
         /// Ligação com a base de dados e a Lista categorias
         /// </summary>
@@ -100,7 +98,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
         }
-
 
         /// <summary>
         /// Ligação com a base de dados e a Lista utilizadores
@@ -144,6 +141,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+        /// <summary>
+        /// Ligação com a base de dados e a Lista grupos
+        /// </summary>
         public static void consulta_grupo()
         {
             listGrupos = new List<Cgrupos>();
@@ -178,5 +178,50 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
         }
+
+
+        //Funções para os botões do rodapé
+
+
+        ///// <summary>
+        ///// Mudar para a página Home
+        ///// </summary>
+        //public static void bHome_Click(object sender, EventArgs e)
+        //{
+        //    Fhome home = new Fhome();
+        //    home.Show();
+        //    this.Hide();
+        //}
+
+        ///// <summary>
+        ///// Mudar para a página Produtos
+        ///// </summary>
+        //public static void bProdutos_Click(object sender, EventArgs e)
+        //{
+        //    Fcarrinho carrinho = new Fcarrinho();
+        //    carrinho.Show();
+        //    this.Hide();
+        //}
+
+        ///// <summary>
+        ///// Mudar para a página Pesquisar
+        ///// </summary>
+        //public static void bPesquisar_Click(object sender, EventArgs e)
+        //{
+        //    Fpesquisar pesquisar = new Fpesquisar();
+        //    pesquisar.Show();
+        //    this.Hide();
+        //}
+
+        ///// <summary>
+        ///// Mudar para a página Perfil
+        ///// </summary>
+        //public static void bPerfil_Click(object sender, EventArgs e)
+        //{
+        //    Fperfil perfil = new Fperfil();
+        //    perfil.Show();
+        //    this.Hide();
+        //}
+
     }
 }

@@ -58,6 +58,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Hide();
         }
 
+
         private void bNovoGrupo_Click(object sender, EventArgs e)
         {
             FnovoGrupo novoGrupo = new FnovoGrupo();
