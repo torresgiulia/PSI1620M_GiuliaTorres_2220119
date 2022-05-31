@@ -1,7 +1,7 @@
 ﻿
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    partial class Preferences
+    partial class Fpreferences
     {
         /// <summary>
         /// Required designer variable.
@@ -50,18 +50,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bVegan = new System.Windows.Forms.Button();
             this.bBebidas = new System.Windows.Forms.Button();
             this.bAnime = new System.Windows.Forms.Button();
-            this.bSubmit = new System.Windows.Forms.Button();
             this.bColecionaveis = new System.Windows.Forms.Button();
+            this.bSubmit = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(279, 9);
+            this.label1.Location = new System.Drawing.Point(146, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(353, 52);
+            this.label1.Size = new System.Drawing.Size(581, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Adicionar Preferencias...";
             // 
@@ -312,17 +312,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bAnime.UseVisualStyleBackColor = true;
             this.bAnime.Click += new System.EventHandler(this.select_preferences);
             // 
-            // bSubmit
-            // 
-            this.bSubmit.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSubmit.Location = new System.Drawing.Point(711, 9);
-            this.bSubmit.Name = "bSubmit";
-            this.bSubmit.Size = new System.Drawing.Size(141, 42);
-            this.bSubmit.TabIndex = 2;
-            this.bSubmit.Text = "Submeter";
-            this.bSubmit.UseVisualStyleBackColor = true;
-            this.bSubmit.Click += new System.EventHandler(this.bSubmit_Click);
-            // 
             // bColecionaveis
             // 
             this.bColecionaveis.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -334,7 +323,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bColecionaveis.UseVisualStyleBackColor = true;
             this.bColecionaveis.Click += new System.EventHandler(this.select_preferences);
             // 
-            // Preferences
+            // bSubmit
+            // 
+            this.bSubmit.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bSubmit.Location = new System.Drawing.Point(711, 9);
+            this.bSubmit.Name = "bSubmit";
+            this.bSubmit.Size = new System.Drawing.Size(141, 42);
+            this.bSubmit.TabIndex = 2;
+            this.bSubmit.Text = "Submeter";
+            this.bSubmit.UseVisualStyleBackColor = true;
+            this.bSubmit.Click += new System.EventHandler(this.bSubmit_Click);
+            // 
+            // Fpreferences
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
@@ -345,11 +345,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F);
             this.Location = new System.Drawing.Point(383, 9);
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.Name = "Preferences";
+            this.Name = "Fpreferences";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preferences";
             this.Load += new System.EventHandler(this.Preferences_Load);
-            this.Click += new System.EventHandler(this.select_preferences);
+            this.Click += new System.EventHandler(this.Preferences_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

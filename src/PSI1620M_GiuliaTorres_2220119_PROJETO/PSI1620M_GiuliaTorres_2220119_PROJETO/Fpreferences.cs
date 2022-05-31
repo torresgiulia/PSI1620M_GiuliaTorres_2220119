@@ -12,16 +12,15 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class Preferences : Form 
+    public partial class Fpreferences : Form 
     {
-        //public new System.Windows.Forms.Control.ControlCollection Controls { get; }
 
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
 
         public int categoriaId { get; set; }
         
         
-        public Preferences()
+        public Fpreferences()
         {
             InitializeComponent();
             
@@ -35,8 +34,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void select_preferences(object sender, EventArgs e) 
         {
             SqlConnection connection = new SqlConnection(connstring);
-
-            
 
             connection.Open();
 
@@ -62,10 +59,31 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             
         }
         
+
+        /// <summary>
+        /// Deleta qualquer preferencia que possa já lá estar
+        /// </summary>
         private void Preferences_Load(object sender, EventArgs e) // load do forms
         {
-            
+            SqlConnection connection = new SqlConnection(connstring);
+
+            connection.Open();
+
+
+            Cconsultar.consulta_utilizadoresCategorias();
+            foreach (var pesquisa in Cconsultar.listUtilizadoresCategorias)
+            {
+                if (pesquisa.utilizadorCategoriaUsername == Cconsultar.loggedUser)
+                {
+                    SqlCommand deletuticat = connection.CreateCommand();
+                    deletuticat.CommandText = @"delete utilizadoresCategorias where username = @user";
+                    deletuticat.Parameters.Add("@user", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
+                    deletuticat.ExecuteNonQuery();
+                    break;
+                }
+            }
         }
+
 
         /// <summary>
         /// Botão de submeter (vai para o menu)

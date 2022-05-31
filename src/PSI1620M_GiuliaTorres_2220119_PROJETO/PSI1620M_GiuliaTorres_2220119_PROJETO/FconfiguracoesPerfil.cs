@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class Fhome : Form
+    public partial class FconfiguracoesPerfil : Form
     {
-        public Fhome()
+        public FconfiguracoesPerfil()
         {
             InitializeComponent();
-            lnome.Text = Cconsultar.loggedUser;
-        }
-
-        
-
-        private void bNovoGrupo_Click(object sender, EventArgs e)
-        {
-            FnovoGrupo novoGrupo = new FnovoGrupo();
-            novoGrupo.Show();
         }
     }
 }

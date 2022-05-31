@@ -16,7 +16,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<Ccategorias> listCategorias { get; set; }
         public static List<Cutilizadores> listUtilizadores { get; set; }
         public static List<Cgrupos> listGrupos { get; set; }
-
+        public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
 
 
         public static string loggedUser { get; set; }
@@ -141,6 +141,44 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+
+        /// <summary>
+        /// Ligação com a base de dados e a Lista utilizadoresCategorias
+        /// </summary>
+        public static void consulta_utilizadoresCategorias()
+        {
+            listUtilizadoresCategorias = new List<CutilizadoresCategorias>();
+            SqlConnection connection = new SqlConnection(connstring);
+
+            try
+            {
+                connection.Open();
+                SqlCommand uticat = connection.CreateCommand();
+                uticat.CommandText = "select * from utilizadoresCategorias";
+
+                var ler = uticat.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+                        CutilizadoresCategorias utilizadorCategoria = new CutilizadoresCategorias()
+                        {
+                            utilizadorCategoriaId = Convert.ToInt32(ler["id_uc"].ToString()),
+                            utilizadorCategoriaUsername = ler["username"].ToString(),
+                            utilizadorCategoriaIdCategoria = Convert.ToInt32(ler["id_categoria"].ToString()),
+                        };
+                        listUtilizadoresCategorias.Add(utilizadorCategoria);
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
         /// <summary>
         /// Ligação com a base de dados e a Lista grupos
         /// </summary>
@@ -180,48 +218,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
-        //Funções para os botões do rodapé
-
-
-        ///// <summary>
-        ///// Mudar para a página Home
-        ///// </summary>
-        //public static void bHome_Click(object sender, EventArgs e)
-        //{
-        //    Fhome home = new Fhome();
-        //    home.Show();
-        //    this.Hide();
-        //}
-
-        ///// <summary>
-        ///// Mudar para a página Produtos
-        ///// </summary>
-        //public static void bProdutos_Click(object sender, EventArgs e)
-        //{
-        //    Fcarrinho carrinho = new Fcarrinho();
-        //    carrinho.Show();
-        //    this.Hide();
-        //}
-
-        ///// <summary>
-        ///// Mudar para a página Pesquisar
-        ///// </summary>
-        //public static void bPesquisar_Click(object sender, EventArgs e)
-        //{
-        //    Fpesquisar pesquisar = new Fpesquisar();
-        //    pesquisar.Show();
-        //    this.Hide();
-        //}
-
-        ///// <summary>
-        ///// Mudar para a página Perfil
-        ///// </summary>
-        //public static void bPerfil_Click(object sender, EventArgs e)
-        //{
-        //    Fperfil perfil = new Fperfil();
-        //    perfil.Show();
-        //    this.Hide();
-        //}
 
     }
 }

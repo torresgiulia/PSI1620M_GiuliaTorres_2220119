@@ -166,6 +166,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BotoesRodape.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BotoesRodape.Designer.cs">
+      <DependentUpon>BotoesRodape.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fcarrinho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     <Compile Include="Ccategorias.cs" />
     <Compile Include="Cconcelhos.cs" />
     <Compile Include="Cconsultar.cs" />
+    <Compile Include="FconfiguracoesPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FconfiguracoesPerfil.Designer.cs">
+      <DependentUpon>FconfiguracoesPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fhome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,11 +217,11 @@
     <Compile Include="Fpesquisar.Designer.cs">
       <DependentUpon>Fpesquisar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Preferences.cs">
+    <Compile Include="Fpreferences.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Preferences.Designer.cs">
-      <DependentUpon>Preferences.cs</DependentUpon>
+    <Compile Include="Fpreferences.Designer.cs">
+      <DependentUpon>Fpreferences.cs</DependentUpon>
     </Compile>
     <Compile Include="FsignIn.cs">
       <SubType>Form</SubType>
@@ -226,6 +238,15 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
+    <Compile Include="Sair.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sair.Designer.cs">
+      <DependentUpon>Sair.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BotoesRodape.resx">
+      <DependentUpon>BotoesRodape.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fcarrinho.resx">
       <DependentUpon>Fcarrinho.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,8 +265,8 @@
     <EmbeddedResource Include="Fpesquisar.resx">
       <DependentUpon>Fpesquisar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Preferences.resx">
-      <DependentUpon>Preferences.cs</DependentUpon>
+    <EmbeddedResource Include="Fpreferences.resx">
+      <DependentUpon>Fpreferences.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FsignIn.resx">
       <DependentUpon>FsignIn.cs</DependentUpon>
@@ -259,6 +280,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sair.resx">
+      <DependentUpon>Sair.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,21 +10,16 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class Fperfil : Form
+    public partial class Sair : UserControl
     {
-        public Fperfil()
+        public Sair()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Redireciona para a Página de preferencias
-        /// </summary>
-        private void bPreferencias_Click(object sender, EventArgs e)
+        private void bSair_Click(object sender, EventArgs e)
         {
-            Fpreferences preferencias = new Fpreferences();
-            preferencias.Show();
-            this.Hide();
+            Application.Exit();
         }
     }
 }

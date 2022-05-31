@@ -82,7 +82,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
                 //mudar a página
 
-                Preferences preferences = new Preferences();
+                Fpreferences preferences = new Fpreferences();
                 preferences.Show();
                 this.Hide();
             }
