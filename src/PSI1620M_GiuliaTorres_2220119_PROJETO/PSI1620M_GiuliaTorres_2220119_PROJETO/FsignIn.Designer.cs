@@ -241,14 +241,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.linkLabel1.Text = "Já tem conta? Entrar!";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // SignIn
+            // FsignIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(932, 460);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(LCriarConta);
-            this.Name = "SignIn";
+            this.Name = "FsignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.SignIn_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -250,6 +250,9 @@
     <EmbeddedResource Include="Fcarrinho.resx">
       <DependentUpon>Fcarrinho.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FconfiguracoesPerfil.resx">
+      <DependentUpon>FconfiguracoesPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Fhome.resx">
       <DependentUpon>Fhome.cs</DependentUpon>
     </EmbeddedResource>

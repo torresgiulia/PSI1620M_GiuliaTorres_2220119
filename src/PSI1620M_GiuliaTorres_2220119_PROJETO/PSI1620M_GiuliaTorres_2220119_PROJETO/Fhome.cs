@@ -17,9 +17,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
             lnome.Text = Cconsultar.loggedUser;
         }
-
-        
-
+    
+        /// <summary>
+        /// Guiar para o Novo Grupo
+        /// </summary>
         private void bNovoGrupo_Click(object sender, EventArgs e)
         {
             FnovoGrupo novoGrupo = new FnovoGrupo();

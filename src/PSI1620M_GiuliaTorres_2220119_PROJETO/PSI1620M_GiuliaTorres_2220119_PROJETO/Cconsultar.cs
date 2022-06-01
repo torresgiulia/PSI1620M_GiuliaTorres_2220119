@@ -17,10 +17,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<Cutilizadores> listUtilizadores { get; set; }
         public static List<Cgrupos> listGrupos { get; set; }
         public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
+        public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
 
 
         public static string loggedUser { get; set; }
-
 
 
         /// <summary>
@@ -60,7 +60,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
 
+
         }
+
 
         /// <summary>
         /// Ligação com a base de dados e a Lista categorias
@@ -98,6 +100,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
         }
+
 
         /// <summary>
         /// Ligação com a base de dados e a Lista utilizadores
@@ -218,6 +221,41 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
+        /// <summary>
+        /// Ligação com a base de dados e a Lista utilizadoresGrupos
+        /// </summary>
+        public static void consulta_utilizadoresGrupos()
+        {
+            listUtilizadoresGrupos = new List<CutilizadoresGrupos>();
+            SqlConnection connection = new SqlConnection(connstring);
+            try
+            {
+                connection.Open();
+                SqlCommand utigru = connection.CreateCommand();
+                utigru.CommandText = "select * from utilizadoresGrupos";
+
+                var ler = utigru.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+                        CutilizadoresGrupos utilizadoresgrupos = new CutilizadoresGrupos()
+                        {
+
+                            utilizadorGrupoId = Convert.ToInt32(ler["id_ug"].ToString()),
+                            utilizadorGrupoIdGrupo = Convert.ToInt32(ler["id_grupo"].ToString()),
+                            utilizadorGrupoUsername = ler["username_utilizador"].ToString(),
+                            utilizadorGrupoUsernameSorteado = ler["username_utilizadorSorteado"].ToString()
+                        };
+                        listUtilizadoresGrupos.Add(utilizadoresgrupos);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }
