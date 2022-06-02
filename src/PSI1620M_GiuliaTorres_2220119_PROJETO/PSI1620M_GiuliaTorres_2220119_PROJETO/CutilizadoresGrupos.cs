@@ -10,7 +10,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     {
         public int utilizadorGrupoId { get; set; }
         public int utilizadorGrupoIdGrupo { get; set; }
-        public string utilizadorGrupoUsername { get; set; }
-        public string utilizadorGrupoUsernameSorteado { get; set; }
+        public int utilizadorGrupoIdUtilizador { get; set; }
+        public int utilizadorGrupoIdUtilizadorSorteado { get; set; }
     }
 }

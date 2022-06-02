@@ -46,9 +46,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     categoriaId = pesquisa.CategoriaId;
                     SqlCommand utiCat = connection.CreateCommand();
                     utiCat.CommandText = @"insert into utilizadoresCategorias
-                                                        (username, id_categoria)
-                                                        values (@username, @id_categoria)";
-                    utiCat.Parameters.Add("@username", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
+                                                        (id_utilizador, id_categoria)
+                                                        values (@id_utilizador, @id_categoria)";
+                    utiCat.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
                     utiCat.Parameters.Add("@id_categoria", SqlDbType.Int).Value = categoriaId;
                     utiCat.ExecuteNonQuery();
                     break;
@@ -73,7 +73,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             Cconsultar.consulta_utilizadoresCategorias();
             foreach (var pesquisa in Cconsultar.listUtilizadoresCategorias)
             {
-                if (pesquisa.utilizadorCategoriaUsername == Cconsultar.loggedUser)
+                if (pesquisa.utilizadorCategoriaIdUtilizador == Cconsultar.idLoggedUser)
                 {
                     SqlCommand deletuticat = connection.CreateCommand();
                     deletuticat.CommandText = @"delete utilizadoresCategorias where username = @user";

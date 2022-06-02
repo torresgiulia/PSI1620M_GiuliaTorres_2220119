@@ -11,7 +11,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public int GrupoId { get; set; }
         public string  GrupoNome { get; set; }
         public string GrupoEstado { get; set; }
-        public string GrupoUtilizadorLider { get; set; }
+        public int GrupoUtilizadorLider { get; set; }
         public string GrupoDescricao { get; set; }
 
 

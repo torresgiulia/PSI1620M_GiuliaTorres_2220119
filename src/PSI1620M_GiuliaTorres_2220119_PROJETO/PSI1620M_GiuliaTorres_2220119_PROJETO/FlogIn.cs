@@ -17,6 +17,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Ir para SignIn
+        /// </summary>
         private void LinkSignIn(object sender, EventArgs e)
         {
             FsignIn signIn = new FsignIn();

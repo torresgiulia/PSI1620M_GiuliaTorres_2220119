@@ -28,6 +28,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void bCriarGrupo_Click(object sender, EventArgs e)
         {
+            
+
 
             //adicionar ao grupo
             try
@@ -39,11 +41,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand criar = connection.CreateCommand();
                 criar.CommandType = CommandType.Text;
                 criar.CommandText = @"insert into Grupos 
-                                        (nome, estado, username_utilizador_lider, descricao)
-                                        values (@nome, @estado, @username, @descricao)";
+                                        (nome, estado, id_utilizador_lider, descricao)
+                                        values (@nome, @estado, @id_utilizador, @descricao)";
                 criar.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNomeGrupo.Text;
                 criar.Parameters.Add("@estado", SqlDbType.VarChar).Value = "aberto";
-                criar.Parameters.Add("@username", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
+                criar.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
                 criar.Parameters.Add("@descricao", SqlDbType.VarChar).Value = tbDescricao.Text;
                 criar.ExecuteReader();
             }
@@ -76,10 +78,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand criar = connection.CreateCommand();
                 criar.CommandType = CommandType.Text;
                 criar.CommandText = @"insert into utilizadoresGrupos 
-                                        (id_grupo, username_utilizador)
-                                        values (@id_grupo, @username_utilizador)";
+                                        (id_grupo, id_utilizador)
+                                        values (@id_grupo, @id_utilizador)";
                 criar.Parameters.Add("@id_grupo", SqlDbType.Int).Value = adicionarId;
-                criar.Parameters.Add("@username_utilizador", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
+                criar.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
                 criar.ExecuteReader();
             }
             catch (Exception)
@@ -87,11 +89,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
 
-
-
-
-
-            this.Close();
+            this.Hide();
+           
 
         }
     }

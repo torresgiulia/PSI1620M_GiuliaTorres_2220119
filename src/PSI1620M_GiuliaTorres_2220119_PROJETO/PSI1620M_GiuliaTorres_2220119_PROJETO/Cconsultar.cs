@@ -21,6 +21,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
         public static string loggedUser { get; set; }
+        public static int idLoggedUser { get; set; }
+
+        private static int idUtilizadorSorteado { get; set; }
 
 
         /// <summary>
@@ -123,7 +126,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     {
                         Cutilizadores utilizador = new Cutilizadores()
                         {
-
+                            UtilizadorId = Convert.ToInt32(ler["id"].ToString()),
                             UtilizadorUsername = ler["username"].ToString(),
                             UtilizadorNome = ler["nome"].ToString(),
                             UtilizadorTelemovel = ler["telemovel"].ToString(),
@@ -167,7 +170,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         CutilizadoresCategorias utilizadorCategoria = new CutilizadoresCategorias()
                         {
                             utilizadorCategoriaId = Convert.ToInt32(ler["id_uc"].ToString()),
-                            utilizadorCategoriaUsername = ler["username"].ToString(),
+                            utilizadorCategoriaIdUtilizador = Convert.ToInt32(ler["id_utilizador"].ToString()),
                             utilizadorCategoriaIdCategoria = Convert.ToInt32(ler["id_categoria"].ToString()),
                         };
                         listUtilizadoresCategorias.Add(utilizadorCategoria);
@@ -207,7 +210,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                             GrupoId = Convert.ToInt32(ler["id"].ToString()),
                             GrupoNome = ler["nome"].ToString(),
                             GrupoEstado = ler["estado"].ToString(),
-                            GrupoUtilizadorLider = ler["username_utilizador_lider"].ToString(),
+                            GrupoUtilizadorLider = Convert.ToInt32(ler["id_utilizador_lider"].ToString()),
                             GrupoDescricao = ler["descricao"].ToString(),
                         };
                         listGrupos.Add(grupo);
@@ -226,6 +229,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public static void consulta_utilizadoresGrupos()
         {
+
             listUtilizadoresGrupos = new List<CutilizadoresGrupos>();
             SqlConnection connection = new SqlConnection(connstring);
             try
@@ -239,13 +243,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     while (ler.Read())
                     {
+                        // Checar se o utilizador sorteado é nulo
+                        if(String.IsNullOrEmpty(ler["id_utilizadorSorteado"].ToString())) //String.IsNullOrEmpty(idr["ColumnNameFromDB"].ToString()
+                        {
+                            idUtilizadorSorteado = 0;
+                        }
+                        else
+                        {
+                            idUtilizadorSorteado = Convert.ToInt32(ler["id_utilizadorSorteado"].ToString());
+                        }
+                        //
+
                         CutilizadoresGrupos utilizadoresgrupos = new CutilizadoresGrupos()
                         {
-
                             utilizadorGrupoId = Convert.ToInt32(ler["id_ug"].ToString()),
                             utilizadorGrupoIdGrupo = Convert.ToInt32(ler["id_grupo"].ToString()),
-                            utilizadorGrupoUsername = ler["username_utilizador"].ToString(),
-                            utilizadorGrupoUsernameSorteado = ler["username_utilizadorSorteado"].ToString()
+                            utilizadorGrupoIdUtilizador = Convert.ToInt32(ler["id_utilizador"].ToString()),
+                            utilizadorGrupoIdUtilizadorSorteado = idUtilizadorSorteado,
                         };
                         listUtilizadoresGrupos.Add(utilizadoresgrupos);
                     }

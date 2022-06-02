@@ -32,8 +32,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1 = new System.Windows.Forms.Label();
             this.bPreferencias = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.BotoesRodape();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.Sair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.SuspendLayout();
             // 
             // label1
@@ -109,7 +109,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bPreferencias;
         private System.Windows.Forms.Button bPerfil;
-        private BotoesRodape botoesRodape1;
-        private Sair sair1;
+        private UcBotoesRodape botoesRodape1;
+        private UcSair sair1;
     }
 }

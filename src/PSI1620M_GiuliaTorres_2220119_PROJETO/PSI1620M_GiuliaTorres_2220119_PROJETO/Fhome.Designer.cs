@@ -33,8 +33,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bNovoGrupo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lnome = new System.Windows.Forms.Label();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.Sair();
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.BotoesRodape();
+            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.SuspendLayout();
             // 
             // bNovoGrupo
@@ -105,7 +105,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bNovoGrupo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lnome;
-        private BotoesRodape botoesRodape1;
-        private Sair sair1;
+        private UcBotoesRodape botoesRodape1;
+        private UcSair sair1;
     }
 }

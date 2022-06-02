@@ -29,8 +29,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.BotoesRodape();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.Sair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.SuspendLayout();
             // 
             // botoesRodape1
@@ -64,7 +64,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         #endregion
 
-        private BotoesRodape botoesRodape1;
-        private Sair sair1;
+        private UcBotoesRodape botoesRodape1;
+        private UcSair sair1;
     }
 }

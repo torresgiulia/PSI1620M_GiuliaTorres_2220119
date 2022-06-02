@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class Sair : UserControl
+    public partial class UcEditarPerfil : UserControl
     {
-        public Sair()
+        public UcEditarPerfil()
         {
             InitializeComponent();
-        }
-
-        private void bSair_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

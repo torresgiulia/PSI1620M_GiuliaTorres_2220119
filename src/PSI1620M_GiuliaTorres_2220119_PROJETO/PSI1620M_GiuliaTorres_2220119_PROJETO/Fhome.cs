@@ -16,6 +16,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         {
             InitializeComponent();
             lnome.Text = Cconsultar.loggedUser;
+            //Descobrir Id
+            Cconsultar.consulta_utilizadores();
+            foreach (var pesquisa in Cconsultar.listUtilizadores)
+            {
+                if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
+                {
+                    Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
+                }
+            }
         }
     
         /// <summary>

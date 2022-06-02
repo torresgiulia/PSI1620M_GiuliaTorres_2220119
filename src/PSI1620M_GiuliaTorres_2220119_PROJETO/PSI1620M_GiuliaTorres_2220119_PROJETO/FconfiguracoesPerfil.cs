@@ -50,7 +50,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 Cconsultar.consulta_utilizadoresGrupos();
                 foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
                 {
-                    if (pesquisa.utilizadorGrupoUsername == Cconsultar.loggedUser)
+                    if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
                     {
                         Cconsultar.consulta_grupo();
                         foreach(var grupo in Cconsultar.listGrupos)
@@ -80,9 +80,46 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-        public void updatedados(object sender, EventArgs e)
+        private void llNome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            campoDeUpdate = ((LinkLabel)sender).Text;
+            
+            SqlConnection connection = new SqlConnection(connstring);
+
+            try
+            {
+                connection.Open();
+                SqlCommand uputilizador = new SqlCommand();
+                uputilizador.CommandType = CommandType.Text;
+                uputilizador.CommandText = @"update Utilizadores set username = @username";
+                
+                //user control para update
+                //uputilizador.Parameters.Add("@username").Value = 
+
+                uputilizador.ExecuteNonQuery();
+
+
+
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+
+        }
+
+        private void llUsername_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void llEmail_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void llTelemovel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 }
