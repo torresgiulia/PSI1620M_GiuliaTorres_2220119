@@ -76,8 +76,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 if (pesquisa.utilizadorCategoriaIdUtilizador == Cconsultar.idLoggedUser)
                 {
                     SqlCommand deletuticat = connection.CreateCommand();
-                    deletuticat.CommandText = @"delete utilizadoresCategorias where username = @user";
-                    deletuticat.Parameters.Add("@user", SqlDbType.VarChar).Value = Cconsultar.loggedUser;
+                    deletuticat.CommandText = @"delete utilizadoresCategorias where id_utilizador = @user";
+                    deletuticat.Parameters.Add("@user", SqlDbType.VarChar).Value = Cconsultar.idLoggedUser;
                     deletuticat.ExecuteNonQuery();
                     break;
                 }

@@ -18,6 +18,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         List<string> listGrupos = new List<string>();
         public string campoDeUpdate { get; set; }
 
+        public string valorUpdateString { get; set; }
+                
+
         public FconfiguracoesPerfil()
         {
             InitializeComponent();
@@ -28,6 +31,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void FconfiguracoesPerfil_Load(object sender, EventArgs e)
         {
+            
+
             SqlConnection connection = new SqlConnection(connstring);
 
             //Adicionar as Labels
@@ -80,29 +85,36 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-        private void llNome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel()
         {
             
+
+            
+        }
+
+        private void llNome_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
             SqlConnection connection = new SqlConnection(connstring);
+            Cconsultar.labelText = "Nome";
+            //linkLabel();
+            FalterarPerfil alterarPerfil = new FalterarPerfil();
+            alterarPerfil.Show();
 
             try
             {
                 connection.Open();
-                SqlCommand uputilizador = new SqlCommand();
-                uputilizador.CommandType = CommandType.Text;
-                uputilizador.CommandText = @"update Utilizadores set username = @username";
-                
-                //user control para update
-                //uputilizador.Parameters.Add("@username").Value = 
-
-                uputilizador.ExecuteNonQuery();
-
-
+                SqlCommand update = connection.CreateCommand();
+                update.CommandType = CommandType.Text;
+                update.CommandText = @"update Utilizadores set nome = @nome 
+                                        where id = @valorid";
+                update.Parameters.Add("@nome", SqlDbType.VarChar).Value = Cconsultar.textBoxText;
+                update.Parameters.Add("@valorid", SqlDbType.VarChar).Value = Cconsultar.idLoggedUser;
+                update.ExecuteNonQuery();
 
             }
             catch(Exception)
             {
-                throw;
+                //throw;
             }
 
         }

@@ -22,9 +22,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         public static string loggedUser { get; set; }
         public static int idLoggedUser { get; set; }
-
         private static int idUtilizadorSorteado { get; set; }
 
+        //Para as configurações de perfil
+        public static string labelText { get; set; }
+        public static string textBoxText { get; set; }
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos

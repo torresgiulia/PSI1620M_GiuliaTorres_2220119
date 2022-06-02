@@ -166,6 +166,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FalterarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FalterarPerfil.Designer.cs">
+      <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcBotoesRodape.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,12 +250,9 @@
     <Compile Include="UcSair.Designer.cs">
       <DependentUpon>UcSair.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcEditarPerfil.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UcEditarPerfil.Designer.cs">
-      <DependentUpon>UcEditarPerfil.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="FalterarPerfil.resx">
+      <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcBotoesRodape.resx">
       <DependentUpon>UcBotoesRodape.cs</DependentUpon>
     </EmbeddedResource>
