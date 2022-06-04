@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
@@ -16,6 +18,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<Ccategorias> listCategorias { get; set; }
         public static List<Cutilizadores> listUtilizadores { get; set; }
         public static List<Cgrupos> listGrupos { get; set; }
+        public static List<CgruposPesquisar> listGruposPesquisa { get; set; } 
         public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
         public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
 
@@ -27,6 +30,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         //Para as configurações de perfil
         public static string labelText { get; set; }
         public static string textBoxText { get; set; }
+
+        //Para as Pesquisas
+        public static string textoPesquisa { get; set; }
+        public static string nomeGrupo { get; set; }
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
@@ -222,6 +229,45 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        /// <summary>
+        /// Query de consulta para o Forms de pesquisa
+        /// </summary>
+        public static void consulta_grupopesquisa()
+        {
+            listGruposPesquisa = new List<CgruposPesquisar>();
+            SqlConnection connection = new SqlConnection(connstring);
+
+            try
+            {
+                connection.Open();
+                SqlCommand pesquisar = connection.CreateCommand();
+                pesquisar.CommandText = @"SELECT * 
+                                        FROM Grupos
+                                        WHERE nome =  @pesquisa ";
+                pesquisar.Parameters.Add("@pesquisa", SqlDbType.VarChar).Value = Cconsultar.textoPesquisa;
+                var ler = pesquisar.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+                        CgruposPesquisar gruposPesquisa = new CgruposPesquisar()
+                        {
+                            GrupoPesquisaId = Convert.ToInt32(ler["id"].ToString()),
+                            GrupoPesquisaNome = ler["nome"].ToString(),
+                            GrupoPesquisaEstado = ler["estado"].ToString(),
+                            GrupoPesquisaUtilizadorLider = Convert.ToInt32(ler["id_utilizador_lider"].ToString()),
+                            GrupoPesquisaDescricao = ler["descricao"].ToString(),
+                        };
+                        listGruposPesquisa.Add(gruposPesquisa);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

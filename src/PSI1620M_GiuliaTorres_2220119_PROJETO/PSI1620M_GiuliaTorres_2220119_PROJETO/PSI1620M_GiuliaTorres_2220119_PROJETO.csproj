@@ -166,11 +166,18 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CgruposPesquisar.cs" />
     <Compile Include="FalterarPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FalterarPerfil.Designer.cs">
       <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FpesquisarGrupoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FpesquisarGrupoInfo.Designer.cs">
+      <DependentUpon>FpesquisarGrupoInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UcBotoesRodape.cs">
       <SubType>UserControl</SubType>
@@ -252,6 +259,9 @@
     </Compile>
     <EmbeddedResource Include="FalterarPerfil.resx">
       <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FpesquisarGrupoInfo.resx">
+      <DependentUpon>FpesquisarGrupoInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcBotoesRodape.resx">
       <DependentUpon>UcBotoesRodape.cs</DependentUpon>
