@@ -26,6 +26,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Mostrar detalhes do grupo
+        /// </summary>
         private void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
         {
             lnomeGrupo.Text = Cconsultar.nomeGrupo;
@@ -57,6 +61,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
+
+        /// <summary>
+        /// Adicionar participante ao grupo
+        /// </summary>
         private void bParticipar_Click(object sender, EventArgs e)
         {
             bool podeEntrar = true;
