@@ -23,17 +23,19 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
-
+        /// <summary>
+        /// Binding List a listBox
+        /// </summary>
         private void Fpesquisar_Load(object sender, EventArgs e)
         {
-            
+           
             SqlConnection connection = new SqlConnection(connstring);
             
             //Adicionar a ListBox
             try
             {
                 Cconsultar.consulta_grupo();
-                bListGrupos = new BindingList<Cgrupos>(Cconsultar.listGrupos.OrderBy(x => x.GrupoNome).ToList());
+                bListGrupos = new BindingList<Cgrupos>(Cconsultar.listGrupos.OrderBy(x => x.GrupoId).ToList());
                 lbGrupos.DataSource = bListGrupos;
                 lbGrupos.DisplayMember = "GrupoNome";
                 lbGrupos.ValueMember = "GrupoId";
@@ -50,13 +52,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 }
             }
 
-            Cconsultar.nomeGrupo = sender.ToString();
-
-            FpesquisarGrupoInfo infoGrupo = new FpesquisarGrupoInfo();
-            infoGrupo.Show();
-
         }
 
+
+        /// <summary>
+        /// Binding List a listBox depois da pesquisa
+        /// </summary>
         private void button1_Click(object sender, EventArgs e)
         {
             Cconsultar.textoPesquisa = tbPesquisa.Text;
@@ -65,7 +66,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             try
             {
                 Cconsultar.consulta_grupopesquisa();
-                bListGruposPesquisa = new BindingList<CgruposPesquisar>(Cconsultar.listGruposPesquisa.OrderBy(x => x.GrupoPesquisaNome).ToList());
+                bListGruposPesquisa = new BindingList<CgruposPesquisar>(Cconsultar.listGruposPesquisa.OrderBy(x => x.GrupoPesquisaId).ToList());
                 lbGrupos.DataSource = bListGruposPesquisa;
                 lbGrupos.DisplayMember = "GrupoPesquisaNome";
                 lbGrupos.ValueMember = "GrupoPesquisaId";
@@ -78,12 +79,27 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
-        //private void lbGrupos_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Cconsultar.nomeGrupo =  sender.ToString();
 
-        //    FpesquisarGrupoInfo infoGrupo = new FpesquisarGrupoInfo();
-        //    infoGrupo.Show();
-        //}
+        /// <summary>
+        /// Mudar para a página de especificação do grupo
+        /// </summary>
+        private void lbGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cconsultar.consulta_grupo();
+
+            string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);              
+
+            foreach (var pesquisa in Cconsultar.listGrupos)
+            {
+                if(pesquisa.GrupoNome == teste)
+                {
+                    Cconsultar.nomeGrupo = pesquisa.GrupoNome;
+                    break;
+                }
+            }
+
+            FpesquisarGrupoInfo infoGrupo = new FpesquisarGrupoInfo();
+            infoGrupo.Show();
+        }
     }
 }

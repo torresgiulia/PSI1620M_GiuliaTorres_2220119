@@ -41,7 +41,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void bSubmeter_Click(object sender, EventArgs e)
         {
-            Cconsultar.loggedUser = tbUtilizador.Text;
 
             //Adicionar a base de dados
             SqlConnection connection = new SqlConnection(connstring);
@@ -79,6 +78,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 utili.ExecuteNonQuery();
 
                 Cconsultar.loggedUser = tbUtilizador.Text;
+                // Adicionar id a uma variável
+                Cconsultar.consulta_utilizadores();
+                foreach(var pesquisa in Cconsultar.listUtilizadores)
+                {
+                    if(pesquisa.UtilizadorUsername == tbUtilizador.Text)
+                    {
+                        Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
+                    }
+                }
 
                 //mudar a página
 

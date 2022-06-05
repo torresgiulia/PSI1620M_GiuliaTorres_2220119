@@ -72,10 +72,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // lbGrupos
             // 
             this.lbGrupos.FormattingEnabled = true;
-            this.lbGrupos.Location = new System.Drawing.Point(50, 110);
+            this.lbGrupos.Location = new System.Drawing.Point(306, 103);
             this.lbGrupos.Name = "lbGrupos";
-            this.lbGrupos.Size = new System.Drawing.Size(287, 134);
+            this.lbGrupos.Size = new System.Drawing.Size(287, 173);
             this.lbGrupos.TabIndex = 4;
+            this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
             // Fpesquisar
             // 
