@@ -1,7 +1,7 @@
 ﻿
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    partial class FconfiguracoesPerfil
+    partial class FperfilConfiguracoes
     {
         /// <summary>
         /// Required designer variable.

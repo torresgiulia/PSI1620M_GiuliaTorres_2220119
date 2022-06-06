@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class FconfiguracoesPerfil : Form
+    public partial class FperfilConfiguracoes : Form
     {
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
         List<string> listGrupos = new List<string>();
         
 
-        public FconfiguracoesPerfil()
+        public FperfilConfiguracoes()
         {
             InitializeComponent();
         }
@@ -89,7 +89,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void abrirPagina()
         {
-            FalterarPerfil alterarPerfil = new FalterarPerfil();
+            FperfilAlterarCampo alterarPerfil = new FperfilAlterarCampo();
             alterarPerfil.ShowDialog();
         }
 

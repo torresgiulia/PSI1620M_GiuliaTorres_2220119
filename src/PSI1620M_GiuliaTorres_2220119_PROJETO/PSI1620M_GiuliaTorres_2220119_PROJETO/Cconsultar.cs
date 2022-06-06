@@ -21,6 +21,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CgruposPesquisar> listGruposPesquisa { get; set; } 
         public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
         public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
+        public static List<Cprodutos> listProdutos { get; set; }
 
 
         public static string loggedUser { get; set; }
@@ -246,8 +247,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand pesquisar = connection.CreateCommand();
                 pesquisar.CommandText = @"SELECT * 
                                         FROM Grupos
-                                        WHERE nome =  @pesquisa ";
-                pesquisar.Parameters.Add("@pesquisa", SqlDbType.VarChar).Value = Cconsultar.textoPesquisa;
+                                        WHERE nome like  @pesquisa ";
+                pesquisar.Parameters.Add("@pesquisa", SqlDbType.VarChar).Value = $"%{Cconsultar.textoPesquisa}%";
                 var ler = pesquisar.ExecuteReader();
                 if (ler.HasRows)
                 {
@@ -319,5 +320,42 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
+
+        /// <summary>
+        /// Ligação com a base de dados e a Lista Produtos
+        /// </summary>
+        public static void consulta_produtos()
+        {
+            listProdutos = new List<Cprodutos>();
+            SqlConnection connection = new SqlConnection(connstring);
+            try
+            {
+                connection.Open();
+                SqlCommand prod = connection.CreateCommand();
+                prod.CommandText = "select * from Produtos";
+
+                var ler = prod.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+
+                        Cprodutos produtos = new Cprodutos()
+                        {
+                            ProdutoId = Convert.ToInt32(ler["id"].ToString()),
+                            ProdutoIdVendedor = Convert.ToInt32(ler["id_vendedor"].ToString()),
+                            ProdutoValor = Convert.ToInt32(ler["valor"].ToString()),
+                            ProdutoDescricao = ler["descricao"].ToString(),
+                            ProdutoNome = ler["nome"].ToString(),
+                        };
+                        listProdutos.Add(produtos);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

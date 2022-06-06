@@ -167,11 +167,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CgruposPesquisar.cs" />
-    <Compile Include="FalterarPerfil.cs">
+    <Compile Include="FcarrinhoDetalhe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FalterarPerfil.Designer.cs">
-      <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    <Compile Include="FcarrinhoDetalhe.Designer.cs">
+      <DependentUpon>FcarrinhoDetalhe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FperfilAlterarCampo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FperfilAlterarCampo.Designer.cs">
+      <DependentUpon>FperfilAlterarCampo.cs</DependentUpon>
     </Compile>
     <Compile Include="FpesquisarGrupoInfo.cs">
       <SubType>Form</SubType>
@@ -194,11 +200,11 @@
     <Compile Include="Ccategorias.cs" />
     <Compile Include="Cconcelhos.cs" />
     <Compile Include="Cconsultar.cs" />
-    <Compile Include="FconfiguracoesPerfil.cs">
+    <Compile Include="FperfilConfiguracoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FconfiguracoesPerfil.Designer.cs">
-      <DependentUpon>FconfiguracoesPerfil.cs</DependentUpon>
+    <Compile Include="FperfilConfiguracoes.Designer.cs">
+      <DependentUpon>FperfilConfiguracoes.cs</DependentUpon>
     </Compile>
     <Compile Include="Fhome.cs">
       <SubType>Form</SubType>
@@ -251,14 +257,20 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
+    <Compile Include="UcFiltrosProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcFiltrosProdutos.Designer.cs">
+      <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcSair.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UcSair.Designer.cs">
       <DependentUpon>UcSair.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FalterarPerfil.resx">
-      <DependentUpon>FalterarPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="FperfilAlterarCampo.resx">
+      <DependentUpon>FperfilAlterarCampo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FpesquisarGrupoInfo.resx">
       <DependentUpon>FpesquisarGrupoInfo.cs</DependentUpon>
@@ -269,8 +281,8 @@
     <EmbeddedResource Include="Fcarrinho.resx">
       <DependentUpon>Fcarrinho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FconfiguracoesPerfil.resx">
-      <DependentUpon>FconfiguracoesPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="FperfilConfiguracoes.resx">
+      <DependentUpon>FperfilConfiguracoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fhome.resx">
       <DependentUpon>Fhome.cs</DependentUpon>
@@ -302,6 +314,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UcFiltrosProdutos.resx">
+      <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UcSair.resx">
       <DependentUpon>UcSair.cs</DependentUpon>
     </EmbeddedResource>

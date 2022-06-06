@@ -97,6 +97,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     utigru.Parameters.Add("@id_grupo", SqlDbType.Int).Value = idGrupo;
                     utigru.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
                     utigru.ExecuteReader();
+                    MessageBox.Show("Adicionado ao grupo com sucesso!!");
                 }
                 
             }

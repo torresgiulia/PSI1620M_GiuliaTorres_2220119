@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class FalterarPerfil : Form
+    public partial class FperfilAlterarCampo : Form
     {
-        public FalterarPerfil()
+        public FperfilAlterarCampo()
         {
             InitializeComponent();
         }

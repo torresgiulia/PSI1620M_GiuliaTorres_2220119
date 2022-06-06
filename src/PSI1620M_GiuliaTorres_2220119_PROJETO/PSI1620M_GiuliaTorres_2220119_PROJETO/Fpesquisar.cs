@@ -79,27 +79,5 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
-
-        /// <summary>
-        /// Mudar para a página de especificação do grupo
-        /// </summary>
-        private void lbGrupos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Cconsultar.consulta_grupo();
-
-            string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);              
-
-            foreach (var pesquisa in Cconsultar.listGrupos)
-            {
-                if(pesquisa.GrupoNome == teste)
-                {
-                    Cconsultar.nomeGrupo = pesquisa.GrupoNome;
-                    break;
-                }
-            }
-
-            FpesquisarGrupoInfo infoGrupo = new FpesquisarGrupoInfo();
-            infoGrupo.Show();
-        }
     }
 }
