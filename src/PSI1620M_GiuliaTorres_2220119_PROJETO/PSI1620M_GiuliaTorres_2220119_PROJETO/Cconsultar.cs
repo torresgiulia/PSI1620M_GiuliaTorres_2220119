@@ -23,6 +23,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
         public static List<Cprodutos> listProdutos { get; set; }
 
+        public static List<string> listPerfilGrupos = new List<string>();
 
         public static string loggedUser { get; set; }
         public static int idLoggedUser { get; set; }

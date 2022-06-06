@@ -15,7 +15,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     public partial class FperfilConfiguracoes : Form
     {
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        List<string> listGrupos = new List<string>();
+        
         
 
         public FperfilConfiguracoes()
@@ -60,14 +60,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         {
                             if(grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
                             {
-                                listGrupos.Add(grupo.GrupoNome);
+                                Cconsultar.listPerfilGrupos.Add(grupo.GrupoNome);
                                 break;
                             }
                         }                        
                     }
                 }
                 // Adicionar na lista
-                lbGrupos.DataSource = listGrupos;
+                lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
 
             }
             catch (Exception)

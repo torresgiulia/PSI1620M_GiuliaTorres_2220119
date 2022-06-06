@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -12,6 +14,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
     public partial class Fhome : Form
     {
+        string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
+
+
         public Fhome()
         {
             InitializeComponent();
@@ -34,6 +39,46 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         {
             FnovoGrupo novoGrupo = new FnovoGrupo();
             novoGrupo.Show();
+        }
+
+        private void Fhome_Load(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(connstring);
+
+            //Adicionar grupos a ListBox
+            try
+            {
+                Cconsultar.consulta_utilizadoresGrupos();
+                foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
+                {
+                    if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
+                    {
+                        Cconsultar.consulta_grupo();
+                        foreach (var grupo in Cconsultar.listGrupos)
+                        {
+                            if (grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
+                            {
+                                Cconsultar.listPerfilGrupos.Add(grupo.GrupoNome);
+                                break;
+                            }
+                        }
+                    }
+                }
+                // Adicionar na lista
+                lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
     }
 }

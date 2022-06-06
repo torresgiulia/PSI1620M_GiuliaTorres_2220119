@@ -263,6 +263,12 @@
     <Compile Include="UcFiltrosProdutos.Designer.cs">
       <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcProdutosCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcProdutosCategorias.Designer.cs">
+      <DependentUpon>UcProdutosCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="UcSair.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </Compile>
     <EmbeddedResource Include="UcFiltrosProdutos.resx">
       <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcProdutosCategorias.resx">
+      <DependentUpon>UcProdutosCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcSair.resx">
       <DependentUpon>UcSair.cs</DependentUpon>

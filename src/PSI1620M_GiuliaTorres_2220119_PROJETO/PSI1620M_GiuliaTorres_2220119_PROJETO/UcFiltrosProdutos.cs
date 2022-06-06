@@ -12,6 +12,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
     public partial class UcFiltrosProdutos : UserControl
     {
+        public bool userControl { get; set; }
+
         public UcFiltrosProdutos()
         {
             InitializeComponent();
@@ -19,30 +21,35 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         private void UcFiltrosProdutos_Load(object sender, EventArgs e)
         {
+            userControl = true;
 
-            
+
 
         }
 
         private void llCategorias_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            int x = 41;
-            int y = 115;
-            Cconsultar.consulta_categorias();
-            foreach (var pesquisa in Cconsultar.listCategorias)
+            if(userControl == true)
             {
-                LinkLabel llFiltos = new LinkLabel();
-                llFiltos.Name = "ll" + pesquisa.CategoriaNome;
-                llFiltos.Text = pesquisa.CategoriaNome;
-                llFiltos.Visible = true;
-                llFiltos.Location = new Point(x, y);
+                userControl = false;
+                UcProdutosCategorias labels = new UcProdutosCategorias();
+                labels.Dock = DockStyle.Fill;
+                this.Controls.Add(labels);
 
-                this.Controls.Add(llFiltos);
-                llFiltos.BringToFront();
-                Controls.Add(llFiltos);
-
-                y += 30;
             }
+            else
+            {
+                UcProdutosCategorias labels = new UcProdutosCategorias();
+                labels.Dock = DockStyle.Fill;
+                this.Controls.Clear();
+
+                UcFiltrosProdutos sideBar = new UcFiltrosProdutos();
+                sideBar.Dock = DockStyle.Fill;
+                this.Controls.Add(sideBar);
+                userControl = true;
+            }
+
+            
         }
     }
 }
