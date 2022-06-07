@@ -32,6 +32,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.llPreferencias = new System.Windows.Forms.LinkLabel();
             this.llGrupos = new System.Windows.Forms.LinkLabel();
             this.llCategorias = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // llPreferencias
@@ -66,15 +67,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.llCategorias.Text = "Categorias";
             this.llCategorias.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llCategorias_LinkClicked);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(3, 189);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(386, 287);
+            this.panel1.TabIndex = 3;
+            // 
             // UcFiltrosProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.llCategorias);
             this.Controls.Add(this.llGrupos);
             this.Controls.Add(this.llPreferencias);
             this.Name = "UcFiltrosProdutos";
-            this.Size = new System.Drawing.Size(163, 612);
+            this.Size = new System.Drawing.Size(582, 612);
             this.Load += new System.EventHandler(this.UcFiltrosProdutos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -86,5 +95,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.LinkLabel llPreferencias;
         private System.Windows.Forms.LinkLabel llGrupos;
         private System.Windows.Forms.LinkLabel llCategorias;
+        private System.Windows.Forms.Panel panel1;
     }
 }

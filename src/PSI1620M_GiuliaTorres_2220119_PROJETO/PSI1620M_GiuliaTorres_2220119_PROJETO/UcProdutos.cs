@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class FcarrinhoDetalhe : Form
+    public partial class UcProdutos : UserControl
     {
-        public FcarrinhoDetalhe()
+
+        public string Label {
+            get { return lNomeProduto.Text; }
+            set { lNomeProduto.Text = value; } 
+       }
+        public UcProdutos()
         {
             InitializeComponent();
+        }
+
+        private void UcProdutos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -29,25 +29,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.SuspendLayout();
-            // 
-            // botoesRodape1
-            // 
-            this.botoesRodape1.Location = new System.Drawing.Point(75, 500);
-            this.botoesRodape1.Name = "botoesRodape1";
-            this.botoesRodape1.Size = new System.Drawing.Size(1175, 112);
-            this.botoesRodape1.TabIndex = 0;
-            // 
-            // sair1
-            // 
-            this.sair1.Location = new System.Drawing.Point(1165, 12);
-            this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(85, 34);
-            this.sair1.TabIndex = 1;
             // 
             // label1
             // 
@@ -69,11 +56,34 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 72);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1090, 422);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // sair1
+            // 
+            this.sair1.Location = new System.Drawing.Point(1165, 12);
+            this.sair1.Name = "sair1";
+            this.sair1.Size = new System.Drawing.Size(85, 34);
+            this.sair1.TabIndex = 1;
+            // 
+            // botoesRodape1
+            // 
+            this.botoesRodape1.Location = new System.Drawing.Point(75, 500);
+            this.botoesRodape1.Name = "botoesRodape1";
+            this.botoesRodape1.Size = new System.Drawing.Size(1175, 112);
+            this.botoesRodape1.TabIndex = 0;
+            // 
             // Fcarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 618);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sair1);
@@ -94,5 +104,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private UcSair sair1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

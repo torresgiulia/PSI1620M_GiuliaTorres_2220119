@@ -345,7 +345,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         {
                             ProdutoId = Convert.ToInt32(ler["id"].ToString()),
                             ProdutoIdVendedor = Convert.ToInt32(ler["id_vendedor"].ToString()),
-                            ProdutoValor = Convert.ToInt32(ler["valor"].ToString()),
+                            ProdutoValor = Convert.ToDecimal(ler["valor"].ToString()),
                             ProdutoDescricao = ler["descricao"].ToString(),
                             ProdutoNome = ler["nome"].ToString(),
                         };
