@@ -22,6 +22,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
         public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
         public static List<Cprodutos> listProdutos { get; set; }
+        public static List<Cvendedores> listVendedores { get; set; }
 
         public static List<string> listPerfilGrupos = new List<string>();
 
@@ -36,6 +37,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         //Para as Pesquisas
         public static string textoPesquisa { get; set; }
         public static string nomeGrupo { get; set; }
+
+        //Para Produtos
+        public static string produtoNome { get; set; }
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
@@ -359,6 +363,43 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-        public static void conssulta_produtosPertodeMim()
+        //public static void conssulta_produtosPertodeMim()
+
+        /// <summary>
+        /// Ligação com a base de dados e a Lista Vendedores
+        /// </summary>
+        public static void consulta_vendedores()
+        {
+            listVendedores = new List<Cvendedores>();
+            SqlConnection connection = new SqlConnection(connstring);
+            try
+            {
+                connection.Open();
+                SqlCommand vend = connection.CreateCommand();
+                vend.CommandText = "select * from Vendedores";
+
+                var ler = vend.ExecuteReader();
+                if (ler.HasRows)
+                {
+                    while (ler.Read())
+                    {
+
+                        Cvendedores vendedores = new Cvendedores()
+                        {
+                            VendedorId = Convert.ToInt32(ler["id"].ToString()),
+                            VendedorNome = ler["nome"].ToString(),
+                            VendedorIdCodigoPostal = Convert.ToInt32(ler["codigopostal"].ToString()),
+                            VendedorIdConcelho = Convert.ToInt32(ler["id_concelho"].ToString()),
+                            VendedorMorada = ler["morada"].ToString(),
+                        };
+                        listVendedores.Add(vendedores);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.lnomeGrupo.AutoSize = true;
             this.lnomeGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnomeGrupo.Location = new System.Drawing.Point(296, 22);
+            this.lnomeGrupo.Location = new System.Drawing.Point(235, 18);
             this.lnomeGrupo.Name = "lnomeGrupo";
             this.lnomeGrupo.Size = new System.Drawing.Size(86, 31);
             this.lnomeGrupo.TabIndex = 0;

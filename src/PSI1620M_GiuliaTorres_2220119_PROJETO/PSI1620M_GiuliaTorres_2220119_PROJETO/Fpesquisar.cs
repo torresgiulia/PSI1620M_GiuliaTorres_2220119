@@ -79,5 +79,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+
+        /// <summary>
+        /// Adiciona informação à label e direciona para os detalhes do grupo
+        /// </summary>
+        public void lbGrupos_DoubleClick(object sender, EventArgs e)
+        {
+            FpesquisarGrupoInfo grupoInfo = new FpesquisarGrupoInfo();
+            
+            string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.Label = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.Show();
+
+        }
     }
 }

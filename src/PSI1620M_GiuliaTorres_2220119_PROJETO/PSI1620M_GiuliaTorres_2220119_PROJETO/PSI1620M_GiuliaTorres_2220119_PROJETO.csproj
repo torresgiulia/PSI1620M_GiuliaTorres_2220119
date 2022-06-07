@@ -251,11 +251,17 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
-    <Compile Include="UcFiltrosProdutos.cs">
+    <Compile Include="UcProdutosDetalhes.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcFiltrosProdutos.Designer.cs">
-      <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
+    <Compile Include="UcProdutosDetalhes.Designer.cs">
+      <DependentUpon>UcProdutosDetalhes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcProdutosFiltros.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcProdutosFiltros.Designer.cs">
+      <DependentUpon>UcProdutosFiltros.cs</DependentUpon>
     </Compile>
     <Compile Include="UcProdutos.cs">
       <SubType>UserControl</SubType>
@@ -314,8 +320,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UcFiltrosProdutos.resx">
-      <DependentUpon>UcFiltrosProdutos.cs</DependentUpon>
+    <EmbeddedResource Include="UcProdutosDetalhes.resx">
+      <DependentUpon>UcProdutosDetalhes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcProdutosFiltros.resx">
+      <DependentUpon>UcProdutosFiltros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UcProdutos.resx">
       <DependentUpon>UcProdutos.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    partial class UcFiltrosProdutos
+    partial class UcProdutosFiltros
     {
         /// <summary> 
         /// Required designer variable.

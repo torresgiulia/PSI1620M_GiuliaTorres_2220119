@@ -16,7 +16,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public string Label {
             get { return lNomeProduto.Text; }
             set { lNomeProduto.Text = value; } 
-       }
+        }
         public UcProdutos()
         {
             InitializeComponent();
@@ -25,6 +25,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void UcProdutos_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bdetalhes_Click(object sender, EventArgs e)
+        {
+            Cconsultar.produtoNome = lNomeProduto.Text;
+            UcProdutosDetalhes detalhesProdutos = new UcProdutosDetalhes();
+            this.Controls.Add(detalhesProdutos);
         }
     }
 }

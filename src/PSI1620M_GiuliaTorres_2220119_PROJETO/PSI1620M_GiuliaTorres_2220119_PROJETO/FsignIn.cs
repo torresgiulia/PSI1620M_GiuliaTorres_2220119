@@ -20,8 +20,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         BindingList<Cconcelhos> bListConcelhos = new BindingList<Cconcelhos>();
 
 
-
-
         public FsignIn()
         {
             InitializeComponent();

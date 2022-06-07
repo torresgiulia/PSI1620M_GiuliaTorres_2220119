@@ -19,7 +19,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
-        private void Fcarrinho_Load(object sender, EventArgs e)
+        public void Fcarrinho_Load(object sender, EventArgs e)
         {
             sideUserControl = false;
             Cconsultar.consulta_produtos();
@@ -30,17 +30,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 flowLayoutPanel1.Controls.Add(prdItem);
             }
 
+            cbGrupos.DataSource = Cconsultar.listPerfilGrupos;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UcFiltrosProdutos sideBar = new UcFiltrosProdutos();
-            
-            
+            UcProdutosFiltros sideBar = new UcProdutosFiltros();
+           
             this.Controls.Add(sideBar);
-
-            
-
         }
     }
 }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class UcFiltrosProdutos : UserControl
+    public partial class UcProdutosFiltros : UserControl
     {
         public bool userControl { get; set; }
 
-        public UcFiltrosProdutos()
+        public UcProdutosFiltros()
         {
             InitializeComponent();
         }
@@ -53,12 +53,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     contar++;
                     y += 23;
                     panel1.AutoScroll = true;
-                    //if (contar == 7)
-                    //{
-                    //    contar = 0;
-                    //    x = 10;
-                    //    y = 30;
-                    //}
+
                 }
                 userControl = false;
                 

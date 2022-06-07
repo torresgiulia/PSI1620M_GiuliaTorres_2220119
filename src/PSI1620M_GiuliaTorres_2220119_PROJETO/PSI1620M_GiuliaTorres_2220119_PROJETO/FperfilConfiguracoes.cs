@@ -48,39 +48,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
 
             //Adicionar grupos a ListBox
-            try
-            {
-                Cconsultar.consulta_utilizadoresGrupos();
-                foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
-                {
-                    if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
-                    {
-                        Cconsultar.consulta_grupo();
-                        foreach(var grupo in Cconsultar.listGrupos)
-                        {
-                            if(grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
-                            {
-                                Cconsultar.listPerfilGrupos.Add(grupo.GrupoNome);
-                                break;
-                            }
-                        }                        
-                    }
-                }
-                // Adicionar na lista
-                lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
+            lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
 
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-            }
         }
 
 

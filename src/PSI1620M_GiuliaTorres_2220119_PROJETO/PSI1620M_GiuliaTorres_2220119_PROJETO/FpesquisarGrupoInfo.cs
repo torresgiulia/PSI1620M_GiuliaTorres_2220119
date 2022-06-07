@@ -21,6 +21,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         List<int> listUtilizadoresGrupos = new List<int>();
 
+        public string Label
+        {
+            get { return lnomeGrupo.Text; }
+            set { lnomeGrupo.Text = value; }
+        }
+
+
         public FpesquisarGrupoInfo()
         {
             InitializeComponent();
@@ -32,13 +39,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
         {
-            lnomeGrupo.Text = Cconsultar.nomeGrupo;
+
             Cconsultar.consulta_grupo();
 
             //Adicionar valor ás labels
             foreach(var pesquisa in Cconsultar.listGrupos)
             {
-                if(pesquisa.GrupoNome == Cconsultar.nomeGrupo)
+                if(pesquisa.GrupoNome == lnomeGrupo.Text)
                 {
                     ldescricao.Text = pesquisa.GrupoDescricao;
                     lstatus.Text = pesquisa.GrupoEstado;
@@ -92,7 +99,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     SqlCommand utigru = connection.CreateCommand();
                     utigru.CommandType = CommandType.Text;
                     utigru.CommandText = @"insert into utilizadoresGrupos
-                                    (id_grupo, id_utilizador)
+                                        (id_grupo, id_utilizador)
                                         values (@id_grupo, @id_utilizador)";
                     utigru.Parameters.Add("@id_grupo", SqlDbType.Int).Value = idGrupo;
                     utigru.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
@@ -105,8 +112,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
                 string texto = "Este grupo já foi sorteado, por favor selecione outro para participar";
                 MessageBox.Show(texto);
-            }
-            
+            }           
             this.Close();
 
         }
