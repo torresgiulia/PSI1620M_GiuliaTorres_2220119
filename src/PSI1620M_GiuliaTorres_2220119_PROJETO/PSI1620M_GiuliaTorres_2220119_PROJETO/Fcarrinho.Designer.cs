@@ -34,6 +34,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lRecomendaGrupo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -59,9 +62,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 72);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 118);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1090, 422);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1090, 376);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // sair1
@@ -78,11 +81,40 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.botoesRodape1.Size = new System.Drawing.Size(1175, 112);
             this.botoesRodape1.TabIndex = 0;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(160, 78);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(157, 34);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Perto do mim";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1129, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // lRecomendaGrupo
+            // 
+            this.lRecomendaGrupo.AutoSize = true;
+            this.lRecomendaGrupo.Location = new System.Drawing.Point(870, 92);
+            this.lRecomendaGrupo.Name = "lRecomendaGrupo";
+            this.lRecomendaGrupo.Size = new System.Drawing.Size(243, 20);
+            this.lRecomendaGrupo.TabIndex = 7;
+            this.lRecomendaGrupo.Text = "Recomendado para o meu grupo";
+            // 
             // Fcarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1342, 618);
+            this.Controls.Add(this.lRecomendaGrupo);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -105,5 +137,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lRecomendaGrupo;
     }
 }

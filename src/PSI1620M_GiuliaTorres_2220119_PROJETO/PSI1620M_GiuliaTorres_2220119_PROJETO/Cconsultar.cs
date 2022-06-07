@@ -358,5 +358,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 throw;
             }
         }
+
+        public static void conssulta_produtosPertodeMim()
     }
 }

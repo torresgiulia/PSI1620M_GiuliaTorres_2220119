@@ -35,7 +35,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void button1_Click(object sender, EventArgs e)
         {
             UcFiltrosProdutos sideBar = new UcFiltrosProdutos();
-            sideBar.AutoScroll = true;
+            
+            
             this.Controls.Add(sideBar);
 
             

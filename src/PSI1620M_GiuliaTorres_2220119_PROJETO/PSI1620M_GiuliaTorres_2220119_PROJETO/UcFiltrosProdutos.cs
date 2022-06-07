@@ -52,6 +52,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     panel1.Visible = true;
                     contar++;
                     y += 23;
+                    panel1.AutoScroll = true;
                     //if (contar == 7)
                     //{
                     //    contar = 0;
