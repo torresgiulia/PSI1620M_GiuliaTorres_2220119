@@ -30,8 +30,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void bdetalhes_Click(object sender, EventArgs e)
         {
             Cconsultar.produtoNome = lNomeProduto.Text;
-            UcProdutosDetalhes detalhesProdutos = new UcProdutosDetalhes();
-            this.Controls.Add(detalhesProdutos);
+            FcarrinhoProdutoDetalhe detalhesProdutos = new FcarrinhoProdutoDetalhe();
+            detalhesProdutos.Show();
+            
         }
     }
 }

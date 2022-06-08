@@ -12,6 +12,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public string  VendedorNome { get; set; }
         public int VendedorIdConcelho { get; set; }
         public string VendedorMorada { get; set; }
-        public int VendedorIdCodigoPostal { get; set; }
+        public string VendedorIdCodigoPostal { get; set; }
     }
 }

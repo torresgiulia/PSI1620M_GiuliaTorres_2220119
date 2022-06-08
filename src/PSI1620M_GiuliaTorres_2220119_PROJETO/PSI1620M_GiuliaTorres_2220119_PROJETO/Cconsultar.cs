@@ -388,7 +388,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         {
                             VendedorId = Convert.ToInt32(ler["id"].ToString()),
                             VendedorNome = ler["nome"].ToString(),
-                            VendedorIdCodigoPostal = Convert.ToInt32(ler["codigopostal"].ToString()),
+                            VendedorIdCodigoPostal = ler["codigopostal"].ToString(),
                             VendedorIdConcelho = Convert.ToInt32(ler["id_concelho"].ToString()),
                             VendedorMorada = ler["morada"].ToString(),
                         };

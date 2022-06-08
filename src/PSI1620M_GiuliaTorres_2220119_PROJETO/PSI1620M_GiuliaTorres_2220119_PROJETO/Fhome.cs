@@ -46,39 +46,51 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             SqlConnection connection = new SqlConnection(connstring);
 
             //Adicionar grupos a ListBox
-            try
+            //foreach(var pesquisa in Cconsultar.listUtilizadoresGrupos)
+            //{
+
+            //}
+            if (Cconsultar.listPerfilGrupos.Count == 0)
             {
-                Cconsultar.consulta_utilizadoresGrupos();
-                foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
+                try
                 {
-                    if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
+                    Cconsultar.consulta_utilizadoresGrupos();
+                    foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
                     {
-                        Cconsultar.consulta_grupo();
-                        foreach (var grupo in Cconsultar.listGrupos)
+
+
+                        if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
                         {
-                            if (grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
+                            Cconsultar.consulta_grupo();
+                            foreach (var grupo in Cconsultar.listGrupos)
                             {
-                                Cconsultar.listPerfilGrupos.Add(grupo.GrupoNome);
-                                break;
+                                if (grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
+                                {
+                                    Cconsultar.listPerfilGrupos.Add(grupo.GrupoNome);
+                                    break;
+                                }
                             }
                         }
                     }
+                    
                 }
-                // Adicionar na lista
-                lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (connection.State == ConnectionState.Open)
+                catch (Exception)
                 {
-                    connection.Close();
+                    throw;
+                }
+                finally
+                {
+                    if (connection.State == ConnectionState.Open)
+                    {
+                        connection.Close();
+                    }
                 }
             }
+            // Adicionar na lista
+            lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
+            
+
+                
         }
     }
 }

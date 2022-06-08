@@ -167,6 +167,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CgruposPesquisar.cs" />
+    <Compile Include="FcarrinhoProdutoDetalhe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FcarrinhoProdutoDetalhe.Designer.cs">
+      <DependentUpon>FcarrinhoProdutoDetalhe.cs</DependentUpon>
+    </Compile>
     <Compile Include="FperfilAlterarCampo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,12 +257,6 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
-    <Compile Include="UcProdutosDetalhes.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UcProdutosDetalhes.Designer.cs">
-      <DependentUpon>UcProdutosDetalhes.cs</DependentUpon>
-    </Compile>
     <Compile Include="UcProdutosFiltros.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -275,6 +275,9 @@
     <Compile Include="UcSair.Designer.cs">
       <DependentUpon>UcSair.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FcarrinhoProdutoDetalhe.resx">
+      <DependentUpon>FcarrinhoProdutoDetalhe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FperfilAlterarCampo.resx">
       <DependentUpon>FperfilAlterarCampo.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,9 +323,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UcProdutosDetalhes.resx">
-      <DependentUpon>UcProdutosDetalhes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UcProdutosFiltros.resx">
       <DependentUpon>UcProdutosFiltros.cs</DependentUpon>
     </EmbeddedResource>
