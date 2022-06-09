@@ -22,6 +22,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CutilizadoresCategorias> listUtilizadoresCategorias { get; set; }
         public static List<CutilizadoresGrupos> listUtilizadoresGrupos{ get; set; }
         public static List<Cprodutos> listProdutos { get; set; }
+        public static List<CprodutosCategorias> listprodutosCategorias { get; set; }
         public static List<Cvendedores> listVendedores { get; set; }
 
         public static List<string> listPerfilGrupos = new List<string>();
@@ -193,9 +194,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -363,7 +364,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-        //public static void conssulta_produtosPertodeMim()
 
         /// <summary>
         /// Ligação com a base de dados e a Lista Vendedores
@@ -395,6 +395,40 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         listVendedores.Add(vendedores);
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public static void consulta_produtosCategorias()
+        {
+            listprodutosCategorias = new List<CprodutosCategorias>();
+            SqlConnection connection = new SqlConnection(connstring);
+
+            try
+            {
+                connection.Open();
+                SqlCommand prodcat = connection.CreateCommand();
+                prodcat.CommandType = CommandType.Text;
+                prodcat.CommandText = "select * from produtosCategorias";
+
+                var ler = prodcat.ExecuteReader();
+                if(ler.HasRows)
+                {
+                    while(ler.Read())
+                    {
+                        CprodutosCategorias produtoscategorias = new CprodutosCategorias()
+                        {
+                            produtoCategoriaId = Convert.ToInt32(ler["id_pc"].ToString()),
+                            produtoCategoriaIdCategoria = Convert.ToInt32(ler["id_categoria"].ToString()),
+                            produtoCategoriaIdProduto = Convert.ToInt32(ler["id_produto"].ToString()),
+                        };
+                        listprodutosCategorias.Add(produtoscategorias);
+                    }
+                }
+                
             }
             catch (Exception ex)
             {

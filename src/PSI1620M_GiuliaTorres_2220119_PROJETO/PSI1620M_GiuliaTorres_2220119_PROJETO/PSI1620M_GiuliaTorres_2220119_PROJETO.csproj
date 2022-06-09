@@ -257,12 +257,6 @@
     <Compile Include="CutilizadoresCategorias.cs" />
     <Compile Include="CutilizadoresGrupos.cs" />
     <Compile Include="Cvendedores.cs" />
-    <Compile Include="UcProdutosFiltros.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UcProdutosFiltros.Designer.cs">
-      <DependentUpon>UcProdutosFiltros.cs</DependentUpon>
-    </Compile>
     <Compile Include="UcProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -323,9 +317,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UcProdutosFiltros.resx">
-      <DependentUpon>UcProdutosFiltros.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UcProdutos.resx">
       <DependentUpon>UcProdutos.cs</DependentUpon>
     </EmbeddedResource>

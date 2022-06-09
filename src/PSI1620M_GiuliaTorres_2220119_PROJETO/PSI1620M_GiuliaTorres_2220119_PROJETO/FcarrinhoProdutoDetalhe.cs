@@ -26,7 +26,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 if(pesquisa.ProdutoNome == lNome.Text)
                 {
                     lDescricao.Text = pesquisa.ProdutoDescricao;
-                    lValor.Text = pesquisa.ProdutoValor.ToString();
+                    lValor.Text = pesquisa.ProdutoValor.ToString() + "€";
                     foreach (var vendedor in Cconsultar.listVendedores)
                     {
                         if (pesquisa.ProdutoIdVendedor == vendedor.VendedorId)
