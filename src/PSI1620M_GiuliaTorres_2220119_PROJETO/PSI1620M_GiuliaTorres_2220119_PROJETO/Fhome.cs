@@ -92,5 +92,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
                 
         }
+
+        private void lbGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FpesquisarGrupoInfo grupoInfo = new FpesquisarGrupoInfo();
+
+            string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.Label = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.Show();
+        }
     }
 }

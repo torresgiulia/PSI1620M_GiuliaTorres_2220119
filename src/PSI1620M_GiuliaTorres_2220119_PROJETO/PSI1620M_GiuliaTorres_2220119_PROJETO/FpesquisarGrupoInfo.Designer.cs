@@ -63,7 +63,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(192, 170);
+            this.label2.Location = new System.Drawing.Point(193, 154);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 24);
             this.label2.TabIndex = 2;
@@ -73,7 +73,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(116, 249);
+            this.label3.Location = new System.Drawing.Point(126, 203);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(127, 24);
             this.label3.TabIndex = 3;
@@ -101,7 +101,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // lstatus
             // 
             this.lstatus.AutoSize = true;
-            this.lstatus.Location = new System.Drawing.Point(299, 179);
+            this.lstatus.Location = new System.Drawing.Point(299, 165);
             this.lstatus.Name = "lstatus";
             this.lstatus.Size = new System.Drawing.Size(35, 13);
             this.lstatus.TabIndex = 6;
@@ -110,7 +110,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // lLider
             // 
             this.lLider.AutoSize = true;
-            this.lLider.Location = new System.Drawing.Point(299, 261);
+            this.lLider.Location = new System.Drawing.Point(299, 214);
             this.lLider.Name = "lLider";
             this.lLider.Size = new System.Drawing.Size(35, 13);
             this.lLider.TabIndex = 7;

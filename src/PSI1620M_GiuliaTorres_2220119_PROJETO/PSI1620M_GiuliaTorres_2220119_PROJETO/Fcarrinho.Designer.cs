@@ -45,9 +45,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(85, 9);
+            this.label1.Location = new System.Drawing.Point(57, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1076, 46);
+            this.label1.Size = new System.Drawing.Size(776, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Todos os produtos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -55,16 +56,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(160, 118);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(149, 77);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1090, 375);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(685, 244);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // bPerto
             // 
-            this.bPerto.Location = new System.Drawing.Point(376, 83);
+            this.bPerto.Location = new System.Drawing.Point(251, 54);
+            this.bPerto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bPerto.Name = "bPerto";
-            this.bPerto.Size = new System.Drawing.Size(158, 34);
+            this.bPerto.Size = new System.Drawing.Size(105, 22);
             this.bPerto.TabIndex = 5;
             this.bPerto.Text = "Perto do mim";
             this.bPerto.UseVisualStyleBackColor = true;
@@ -73,26 +76,27 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // cbGrupos
             // 
             this.cbGrupos.FormattingEnabled = true;
-            this.cbGrupos.Location = new System.Drawing.Point(1130, 85);
+            this.cbGrupos.Location = new System.Drawing.Point(753, 55);
+            this.cbGrupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbGrupos.Name = "cbGrupos";
-            this.cbGrupos.Size = new System.Drawing.Size(121, 28);
+            this.cbGrupos.Size = new System.Drawing.Size(82, 21);
             this.cbGrupos.TabIndex = 6;
             // 
             // lRecomendaGrupo
             // 
             this.lRecomendaGrupo.AutoSize = true;
-            this.lRecomendaGrupo.Location = new System.Drawing.Point(870, 92);
+            this.lRecomendaGrupo.Location = new System.Drawing.Point(580, 60);
+            this.lRecomendaGrupo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lRecomendaGrupo.Name = "lRecomendaGrupo";
-            this.lRecomendaGrupo.Size = new System.Drawing.Size(243, 20);
+            this.lRecomendaGrupo.Size = new System.Drawing.Size(163, 13);
             this.lRecomendaGrupo.TabIndex = 7;
             this.lRecomendaGrupo.Text = "Recomendado para o meu grupo";
             // 
             // bProdutos
             // 
-            this.bProdutos.Location = new System.Drawing.Point(160, 82);
-            this.bProdutos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bProdutos.Location = new System.Drawing.Point(107, 53);
             this.bProdutos.Name = "bProdutos";
-            this.bProdutos.Size = new System.Drawing.Size(182, 35);
+            this.bProdutos.Size = new System.Drawing.Size(121, 23);
             this.bProdutos.TabIndex = 8;
             this.bProdutos.Text = "Todos os Produtos";
             this.bProdutos.UseVisualStyleBackColor = true;
@@ -101,9 +105,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // llMinhasCategorias
             // 
             this.llMinhasCategorias.AutoSize = true;
-            this.llMinhasCategorias.Location = new System.Drawing.Point(4, 118);
+            this.llMinhasCategorias.Location = new System.Drawing.Point(3, 77);
+            this.llMinhasCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llMinhasCategorias.Name = "llMinhasCategorias";
-            this.llMinhasCategorias.Size = new System.Drawing.Size(153, 20);
+            this.llMinhasCategorias.Size = new System.Drawing.Size(103, 13);
             this.llMinhasCategorias.TabIndex = 9;
             this.llMinhasCategorias.TabStop = true;
             this.llMinhasCategorias.Text = "Minhas Preferências";
@@ -112,9 +117,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // llCategorias
             // 
             this.llCategorias.AutoSize = true;
-            this.llCategorias.Location = new System.Drawing.Point(4, 159);
+            this.llCategorias.Location = new System.Drawing.Point(3, 103);
+            this.llCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.llCategorias.Name = "llCategorias";
-            this.llCategorias.Size = new System.Drawing.Size(86, 20);
+            this.llCategorias.Size = new System.Drawing.Size(57, 13);
             this.llCategorias.TabIndex = 10;
             this.llCategorias.TabStop = true;
             this.llCategorias.Text = "Categorias";
@@ -122,32 +128,33 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(8, 182);
+            this.panel1.Location = new System.Drawing.Point(5, 118);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(149, 285);
+            this.panel1.Size = new System.Drawing.Size(140, 185);
             this.panel1.TabIndex = 11;
             // 
             // sair1
             // 
-            this.sair1.Location = new System.Drawing.Point(1166, 12);
-            this.sair1.Margin = new System.Windows.Forms.Padding(2);
+            this.sair1.Location = new System.Drawing.Point(777, 8);
+            this.sair1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(86, 34);
+            this.sair1.Size = new System.Drawing.Size(57, 22);
             this.sair1.TabIndex = 1;
             // 
             // botoesRodape1
             // 
-            this.botoesRodape1.Location = new System.Drawing.Point(75, 500);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(2);
+            this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.botoesRodape1.Name = "botoesRodape1";
-            this.botoesRodape1.Size = new System.Drawing.Size(1174, 112);
+            this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
             this.botoesRodape1.TabIndex = 0;
             // 
             // Fcarrinho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1342, 618);
+            this.ClientSize = new System.Drawing.Size(895, 402);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.llCategorias);
             this.Controls.Add(this.llMinhasCategorias);
@@ -159,7 +166,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sair1);
             this.Controls.Add(this.botoesRodape1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Fcarrinho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carrinho";

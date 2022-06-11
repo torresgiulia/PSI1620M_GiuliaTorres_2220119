@@ -65,7 +65,37 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                     break;
                 }
+                if(pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser)
+                {
+                    Button sortear = new Button();
+
+                    sortear.Name = "llSortear";
+                    sortear.Text = "Sortear";
+                    sortear.Click += Sortear_Click;
+                    sortear.Visible = true;
+                    sortear.Location = new Point(302, 269);
+
+                    this.Controls.Add(sortear);
+                    sortear.BringToFront();
+                }
             }
+        }
+
+        private void Sortear_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+
+            foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
+            {
+                if (utigru.utilizadorGrupoIdGrupo == idGrupo)
+                {
+                    if (utigru.utilizadorGrupoIdUtilizadorSorteado < 1)
+                    {
+                        fazer o sorteio para os participantes
+                    }
+                }
+            }
+
         }
 
 

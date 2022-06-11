@@ -12,8 +12,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
     public partial class Fcarrinho : Form
     {
-        public bool sideUserControl { get; set; }
         public bool userControl { get; set; }
+        public int categoriaPesquisa { get; set; }
+
 
         public Fcarrinho()
         {
@@ -29,8 +30,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         {
             userControl = true;
             flowLayoutPanel1.Controls.Clear();
-            sideUserControl = false;
+
+            Cconsultar.consulta_utilizadoresCategorias();
+            Cconsultar.consulta_produtosCategorias();
             Cconsultar.consulta_produtos();
+
             foreach (var item in Cconsultar.listProdutos)
             {
                 UcProdutos prdItem = new UcProdutos();
@@ -42,10 +46,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
-        /// <summary>
-        /// abre a sidebar de categorias
-        /// </summary>
-        
 
         /// <summary>
         /// Adicionar os produtos que estão perto do utilizador
@@ -65,20 +65,20 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                             if (pesquisa.UtilizadorIdConcelho == concelho_vendedor.VendedorIdConcelho)
                             {
                                 if (concelho_vendedor.VendedorId == item.ProdutoIdVendedor)
-                                {                                
+                                {
                                     UcProdutos prdItem = new UcProdutos();
                                     prdItem.Label = item.ProdutoNome;
                                     flowLayoutPanel1.Controls.Add(prdItem);
                                 }
                             }
-                            
+
                         }
 
                     }
                 }
             }
 
-                
+
         }
 
         /// <summary>
@@ -87,16 +87,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public void llMinhasCategorias_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            Cconsultar.consulta_utilizadoresCategorias();
-            Cconsultar.consulta_produtosCategorias();
+            
 
             foreach (var categoriasUtilizador in Cconsultar.listUtilizadoresCategorias)
             {
                 if (categoriasUtilizador.utilizadorCategoriaIdUtilizador == Cconsultar.idLoggedUser)
                 {
-                    foreach(var produtocat in Cconsultar.listprodutosCategorias)
+                    foreach (var produtocat in Cconsultar.listprodutosCategorias)
                     {
-                        if(produtocat.produtoCategoriaIdCategoria == categoriasUtilizador.utilizadorCategoriaIdCategoria)
+                        if (produtocat.produtoCategoriaIdCategoria == categoriasUtilizador.utilizadorCategoriaIdCategoria)
                         {
                             foreach (var produto in Cconsultar.listProdutos)
                             {
@@ -109,10 +108,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                                 }
                             }
                         }
-                        
+
                     }
-                    
-                                           
+
+
                 }
             }
         }
@@ -165,8 +164,32 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         private void LlFiltos_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-            continuar aqui //filtros de cada categoria
+            flowLayoutPanel1.Controls.Clear();
+            
+            foreach(var cat in Cconsultar.listCategorias)
+            {
+                if(cat.CategoriaNome == ((LinkLabel)sender).Text)
+                {
+                    categoriaPesquisa = cat.CategoriaId;
+                }
+            }
+
+
+            foreach (var prodcat in Cconsultar.listprodutosCategorias )
+            {
+                foreach (var produ in Cconsultar.listProdutos)
+                {
+                    if (prodcat.produtoCategoriaIdProduto == produ.ProdutoId && prodcat.produtoCategoriaIdCategoria == categoriaPesquisa)//Controls[sender].Text)
+                    {
+                        UcProdutos prdItem = new UcProdutos();
+                        prdItem.Label = produ.ProdutoNome;
+                        flowLayoutPanel1.Controls.Add(prdItem);
+                    }
+                }
+            }
+
+
+
         }
     }
 }

@@ -70,7 +70,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // sair1
             // 
             this.sair1.Location = new System.Drawing.Point(776, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.sair1.Margin = new System.Windows.Forms.Padding(1);
             this.sair1.Name = "sair1";
             this.sair1.Size = new System.Drawing.Size(57, 23);
             this.sair1.TabIndex = 5;
@@ -78,7 +78,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(783, 77);
             this.botoesRodape1.TabIndex = 4;
@@ -90,6 +90,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lbGrupos.Name = "lbGrupos";
             this.lbGrupos.Size = new System.Drawing.Size(351, 160);
             this.lbGrupos.TabIndex = 6;
+            this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
             // Fhome
             // 
