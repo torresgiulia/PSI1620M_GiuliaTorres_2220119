@@ -33,9 +33,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bNovoGrupo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lnome = new System.Windows.Forms.Label();
+            this.lbGrupos = new System.Windows.Forms.ListBox();
             this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
-            this.lbGrupos = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // bNovoGrupo
@@ -67,6 +67,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lnome.Size = new System.Drawing.Size(0, 31);
             this.lnome.TabIndex = 3;
             // 
+            // lbGrupos
+            // 
+            this.lbGrupos.FormattingEnabled = true;
+            this.lbGrupos.Location = new System.Drawing.Point(133, 113);
+            this.lbGrupos.Name = "lbGrupos";
+            this.lbGrupos.Size = new System.Drawing.Size(351, 160);
+            this.lbGrupos.TabIndex = 6;
+            this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
+            // 
             // sair1
             // 
             this.sair1.Location = new System.Drawing.Point(776, 8);
@@ -82,15 +91,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(783, 77);
             this.botoesRodape1.TabIndex = 4;
-            // 
-            // lbGrupos
-            // 
-            this.lbGrupos.FormattingEnabled = true;
-            this.lbGrupos.Location = new System.Drawing.Point(133, 113);
-            this.lbGrupos.Name = "lbGrupos";
-            this.lbGrupos.Size = new System.Drawing.Size(351, 160);
-            this.lbGrupos.TabIndex = 6;
-            this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
             // Fhome
             // 

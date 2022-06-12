@@ -19,7 +19,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public int idGrupo { get; set; }
         public string statusGrupo { get; set; }
 
-        List<int> listUtilizadoresGrupos = new List<int>();
+        public List<int> listUtilizadoresGrupo { get; set; }
+        static Random rnd = new Random();
 
         public string Label
         {
@@ -83,18 +84,59 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         private void Sortear_Click(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            listUtilizadoresGrupo = new List<int>();
 
             foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
             {
                 if (utigru.utilizadorGrupoIdGrupo == idGrupo)
                 {
-                    if (utigru.utilizadorGrupoIdUtilizadorSorteado < 1)
+                    foreach(var utilizador in Cconsultar.listUtilizadores)
                     {
-                        fazer o sorteio para os participantes
+                        if (utigru.utilizadorGrupoIdUtilizador == utilizador.UtilizadorId)
+                        {
+                            listUtilizadoresGrupo.Add(utilizador.UtilizadorId);
+                        }
                     }
                 }
             }
+            foreach(var utilizadorGrupo in listUtilizadoresGrupo)
+            {
+                int idSorteado;
+                int idfinal;
+                do{
+                    idSorteado = rnd.Next(listUtilizadoresGrupo.Count);
+                    idfinal = listUtilizadoresGrupo[idSorteado];
+
+                } while (idSorteado == utilizadorGrupo);
+                try
+                {
+
+                    SqlConnection connection = new SqlConnection(connstring);
+                    connection.Open();
+                    SqlCommand update = connection.CreateCommand();
+                    update.CommandType = CommandType.Text;
+                    update.CommandText = @"update utilizadoresGrupos set id_utilizadorSorteado = @sorteado 
+                                        where id_utilizador = @valorid";
+                    update.Parameters.Add("@sorteado", SqlDbType.Int).Value = utilizadorGrupo;
+                    update.Parameters.Add("@valorid", SqlDbType.Int).Value = idfinal;
+                    update.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+
+
+
+            }
+
+
+
+
+
+            // insert into      int r = rnd.Next(list.Count);
 
         }
 
