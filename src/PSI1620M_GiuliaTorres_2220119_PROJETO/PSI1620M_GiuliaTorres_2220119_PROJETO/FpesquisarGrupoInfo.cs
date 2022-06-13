@@ -22,10 +22,22 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public List<int> listUtilizadoresGrupo { get; set; }
         static Random rnd = new Random();
 
-        public string Label
+        public string LnomeGrupo
         {
             get { return lnomeGrupo.Text; }
             set { lnomeGrupo.Text = value; }
+        }
+
+        public string LutilizadorSorteado
+        {
+            get { return lUtilizadorSorteado.Text; }
+            set { lUtilizadorSorteado.Text = value; }
+        }
+
+        public string LutilizadorSorteadoTexto
+        {
+            get { return lUtilizadorSorteadoTexto.Text; }
+            set { lUtilizadorSorteadoTexto.Text = value; }
         }
 
 
@@ -40,13 +52,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
         {
-
+            bParticipar.Show();
             Cconsultar.consulta_grupo();
 
+
             //Adicionar valor ás labels
-            foreach(var pesquisa in Cconsultar.listGrupos)
+            foreach (var pesquisa in Cconsultar.listGrupos)
             {
-                if(pesquisa.GrupoNome == lnomeGrupo.Text)
+                if (pesquisa.GrupoNome == lnomeGrupo.Text)
                 {
                     ldescricao.Text = pesquisa.GrupoDescricao;
                     lstatus.Text = pesquisa.GrupoEstado;
@@ -57,16 +70,16 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
                     //Buscar username utilizador lider
                     Cconsultar.consulta_utilizadores();
-                    foreach(var pesquisaUserLider in Cconsultar.listUtilizadores)
+                    foreach (var pesquisaUserLider in Cconsultar.listUtilizadores)
                     {
-                        if(pesquisa.GrupoUtilizadorLider == pesquisaUserLider.UtilizadorId)
+                        if (pesquisa.GrupoUtilizadorLider == pesquisaUserLider.UtilizadorId)
                         {
                             lLider.Text = pesquisaUserLider.UtilizadorUsername;
                         }
                     }
-                    break;
+
                 }
-                if(pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser)
+                if (pesquisa.GrupoId == idGrupo && pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser && pesquisa.GrupoEstado != "sorteado")
                 {
                     Button sortear = new Button();
 
@@ -74,69 +87,117 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     sortear.Text = "Sortear";
                     sortear.Click += Sortear_Click;
                     sortear.Visible = true;
-                    sortear.Location = new Point(302, 269);
+                    sortear.Location = new Point(302, 280);
 
                     this.Controls.Add(sortear);
                     sortear.BringToFront();
                 }
             }
+
+            //botão de participar
+            foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
+            {
+                if(utigru.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser && utigru.utilizadorGrupoIdGrupo == idGrupo)
+                {
+                    bParticipar.Hide();
+                }
+            }
         }
 
-        private void Sortear_Click(object sender, EventArgs e)
-        {
-            listUtilizadoresGrupo = new List<int>();
 
+        /// <summary>
+        /// Botão para sortear
+        /// </summary>
+        public void Sortear_Click(object sender, EventArgs e)
+        {
+
+
+            listUtilizadoresGrupo = new List<int>();
+            int idSorteado;
+            bool status = true;
+
+            //Adicionar os utilizadores do grupo selecionado a uma lista
             foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
             {
                 if (utigru.utilizadorGrupoIdGrupo == idGrupo)
                 {
-                    foreach(var utilizador in Cconsultar.listUtilizadores)
-                    {
-                        if (utigru.utilizadorGrupoIdUtilizador == utilizador.UtilizadorId)
-                        {
-                            listUtilizadoresGrupo.Add(utilizador.UtilizadorId);
-                        }
-                    }
+                    listUtilizadoresGrupo.Add(utigru.utilizadorGrupoIdUtilizador);
+                    
                 }
-            }
-            foreach(var utilizadorGrupo in listUtilizadoresGrupo)
-            {
-                int idSorteado;
-                int idfinal;
-                do{
-                    idSorteado = rnd.Next(listUtilizadoresGrupo.Count);
-                    idfinal = listUtilizadoresGrupo[idSorteado];
+                if (utigru.utilizadorGrupoIdUtilizadorSorteado < 0)
+                {
+                    status = false;
+                }
 
-                } while (idSorteado == utilizadorGrupo);
+            }
+
+            if (status == true)
+            {
+                var shuffled = listUtilizadoresGrupo.OrderBy(_ => rnd.Next()).ToList();
+
+                for (int i = 0; i < shuffled.Count(); i++)
+                {
+                    if (i == shuffled.Count() - 1)
+                    {
+                        idSorteado = shuffled[0];
+                    }
+                    else
+                    {
+                        idSorteado = shuffled[i + 1];
+                    }
+
+                    try
+                    {
+
+                        SqlConnection connection = new SqlConnection(connstring);
+                        connection.Open();
+
+                        //Update no utilizador sorteado
+                        SqlCommand update = connection.CreateCommand();
+                        update.CommandType = CommandType.Text;
+                        update.CommandText = @"update utilizadoresGrupos set id_utilizadorSorteado = @sorteado 
+                                        where id_utilizador = @user and id_grupo = @grupo";
+                        update.Parameters.Add("@sorteado", SqlDbType.Int).Value = idSorteado;
+                        update.Parameters.Add("@user", SqlDbType.Int).Value = shuffled[i];
+                        update.Parameters.Add("@grupo", SqlDbType.Int).Value = idGrupo;
+                        update.ExecuteNonQuery();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+
+                }
+
+
+                //Update no estado do grupo
                 try
                 {
 
                     SqlConnection connection = new SqlConnection(connstring);
                     connection.Open();
+
+                    //Update no utilizador sorteado
                     SqlCommand update = connection.CreateCommand();
                     update.CommandType = CommandType.Text;
-                    update.CommandText = @"update utilizadoresGrupos set id_utilizadorSorteado = @sorteado 
-                                        where id_utilizador = @valorid";
-                    update.Parameters.Add("@sorteado", SqlDbType.Int).Value = utilizadorGrupo;
-                    update.Parameters.Add("@valorid", SqlDbType.Int).Value = idfinal;
+                    update.CommandText = @"update Grupos set estado = @estado 
+                                        where id = @grupo ";
+                    update.Parameters.Add("@estado", SqlDbType.VarChar).Value = "sorteado";
+                    update.Parameters.Add("@grupo", SqlDbType.Int).Value = idGrupo;
                     update.ExecuteNonQuery();
+
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
-
-
-
+                MessageBox.Show("Grupo sorteado!! recarregue a página ver quem deverá sortear :)");
+                this.Close();
             }
-
-
-
-
-
-            // insert into      int r = rnd.Next(list.Count);
 
         }
 
@@ -144,20 +205,21 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar participante ao grupo
         /// </summary>
-        private void bParticipar_Click(object sender, EventArgs e)
+        public void bParticipar_Click(object sender, EventArgs e)
         {
             bool podeEntrar = true;
             SqlConnection connection = new SqlConnection(connstring);
 
             //Verificar se está aberto
-            if(statusGrupo == "aberto")
+            if (statusGrupo == "aberto")
             {
                 Cconsultar.consulta_utilizadoresGrupos();
-                foreach(var pesquisa in Cconsultar.listUtilizadoresGrupos)
+                foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
                 {
-                    
+
                     if (pesquisa.utilizadorGrupoIdGrupo == idGrupo && pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
                     {
+
                         podeEntrar = false;
                         string texto = "Já se encontra neste grupo, por favor selecione outro para participar";
                         MessageBox.Show(texto);
@@ -178,13 +240,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     utigru.ExecuteReader();
                     MessageBox.Show("Adicionado ao grupo com sucesso!!");
                 }
-                
+
             }
             else
             {
                 string texto = "Este grupo já foi sorteado, por favor selecione outro para participar";
                 MessageBox.Show(texto);
-            }           
+            }
             this.Close();
 
         }

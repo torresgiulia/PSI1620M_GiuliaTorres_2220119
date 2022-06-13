@@ -28,6 +28,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void Fcarrinho_Load(object sender, EventArgs e)
         {
+
+            label1.Text = "Produtos";
             userControl = true;
             flowLayoutPanel1.Controls.Clear();
 
@@ -52,6 +54,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void bPerto_Click(object sender, EventArgs e)
         {
+            label1.Text = "Perto de mim";
             flowLayoutPanel1.Controls.Clear();
             Cconsultar.consulta_vendedores();
             foreach (var pesquisa in Cconsultar.listUtilizadores)
@@ -81,11 +84,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+
         /// <summary>
         /// Adicionar os produtos das preferencias do utilizador
         /// </summary>
         public void llMinhasCategorias_Click(object sender, EventArgs e)
         {
+            label1.Text = "Minhas Categorias";
             flowLayoutPanel1.Controls.Clear();
             
 
@@ -115,7 +120,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 }
             }
         }
-
 
 
         /// <summary>
@@ -162,6 +166,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
+
+        /// <summary>
+        /// Pesquisar produtos por categoria
+        /// </summary>
         private void LlFiltos_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
@@ -171,6 +179,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 if(cat.CategoriaNome == ((LinkLabel)sender).Text)
                 {
                     categoriaPesquisa = cat.CategoriaId;
+                    label1.Text = cat.CategoriaNome;
                 }
             }
 
@@ -190,6 +199,76 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
 
+        }
+
+        /// <summary>
+        /// Pesquisar categorias preferidas do utilizador sorteado
+        /// </summary>
+        private void cbGrupos_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            label1.Text = "Produtos";
+            int idGrupo = 0;
+            int idSorteado = 0;
+
+            flowLayoutPanel1.Controls.Clear();
+            
+            foreach(var grupo in Cconsultar.listGrupos)
+            {
+                if(grupo.GrupoNome == cbGrupos.Text)
+                {
+                    idGrupo = grupo.GrupoId;
+                }
+            }
+            foreach(var utigru in Cconsultar.listUtilizadoresGrupos)
+            {
+                if(utigru.utilizadorGrupoIdGrupo == idGrupo && utigru.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
+                {
+                    if(utigru.utilizadorGrupoIdUtilizadorSorteado > 0)
+                    {
+                        idSorteado = utigru.utilizadorGrupoIdUtilizadorSorteado;
+                        break;
+                    }
+                    else
+                    {
+                        idSorteado = 0;
+                    }
+                }
+            }
+            foreach(var uticat in Cconsultar.listUtilizadoresCategorias)
+            {
+                if(uticat.utilizadorCategoriaIdUtilizador == idSorteado)
+                {
+                    foreach (var prodcat in Cconsultar.listprodutosCategorias)
+                    {
+                        if (prodcat.produtoCategoriaIdCategoria == uticat.utilizadorCategoriaIdCategoria)
+                        {
+                            foreach (var produto in Cconsultar.listProdutos)
+                            {
+                                if (prodcat.produtoCategoriaIdProduto == produto.ProdutoId)
+                                {
+                                    UcProdutos prdItem = new UcProdutos();
+                                    prdItem.Label = produto.ProdutoNome;
+                                    flowLayoutPanel1.Controls.Add(prdItem);
+
+                                }
+                            }
+                        }
+
+                    }
+                    
+                }
+            }
+            foreach (var nome in Cconsultar.listUtilizadores)
+            {
+                if (nome.UtilizadorId == idSorteado)
+                {
+                    label1.Text = $"Preferências de: {nome.UtilizadorUsername}";
+                }
+            }
+            if (idSorteado == 0)
+            {
+                MessageBox.Show("O grupo selecionado ainda não foi sorteado :(");
+            }
         }
     }
 }

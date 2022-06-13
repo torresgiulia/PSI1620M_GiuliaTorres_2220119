@@ -40,6 +40,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.panel1 = new System.Windows.Forms.Panel();
             this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.bPesquisar = new System.Windows.Forms.Button();
+            this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.SuspendLayout();
             // 
             // label1
@@ -48,7 +50,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1.Location = new System.Drawing.Point(57, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(776, 30);
+            this.label1.Size = new System.Drawing.Size(776, 44);
             this.label1.TabIndex = 2;
             this.label1.Text = "Todos os produtos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -57,7 +59,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(149, 77);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(685, 244);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -65,7 +67,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // bPerto
             // 
             this.bPerto.Location = new System.Drawing.Point(251, 54);
-            this.bPerto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPerto.Margin = new System.Windows.Forms.Padding(2);
             this.bPerto.Name = "bPerto";
             this.bPerto.Size = new System.Drawing.Size(105, 22);
             this.bPerto.TabIndex = 5;
@@ -76,8 +78,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // cbGrupos
             // 
             this.cbGrupos.FormattingEnabled = true;
-            this.cbGrupos.Location = new System.Drawing.Point(753, 55);
-            this.cbGrupos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbGrupos.Location = new System.Drawing.Point(660, 55);
+            this.cbGrupos.Margin = new System.Windows.Forms.Padding(2);
             this.cbGrupos.Name = "cbGrupos";
             this.cbGrupos.Size = new System.Drawing.Size(82, 21);
             this.cbGrupos.TabIndex = 6;
@@ -85,7 +87,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // lRecomendaGrupo
             // 
             this.lRecomendaGrupo.AutoSize = true;
-            this.lRecomendaGrupo.Location = new System.Drawing.Point(580, 60);
+            this.lRecomendaGrupo.Location = new System.Drawing.Point(493, 62);
             this.lRecomendaGrupo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lRecomendaGrupo.Name = "lRecomendaGrupo";
             this.lRecomendaGrupo.Size = new System.Drawing.Size(163, 13);
@@ -129,7 +131,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(5, 118);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(140, 185);
             this.panel1.TabIndex = 11;
@@ -137,7 +139,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // sair1
             // 
             this.sair1.Location = new System.Drawing.Point(777, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.sair1.Margin = new System.Windows.Forms.Padding(1);
             this.sair1.Name = "sair1";
             this.sair1.Size = new System.Drawing.Size(57, 22);
             this.sair1.TabIndex = 1;
@@ -145,16 +147,36 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
             this.botoesRodape1.TabIndex = 0;
+            // 
+            // bPesquisar
+            // 
+            this.bPesquisar.Location = new System.Drawing.Point(747, 53);
+            this.bPesquisar.Name = "bPesquisar";
+            this.bPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.bPesquisar.TabIndex = 12;
+            this.bPesquisar.Text = "Pesquisar";
+            this.bPesquisar.UseVisualStyleBackColor = true;
+            this.bPesquisar.Click += new System.EventHandler(this.cbGrupos_SelectionChangeCommitted);
+            // 
+            // ucSair1
+            // 
+            this.ucSair1.Location = new System.Drawing.Point(776, 6);
+            this.ucSair1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucSair1.Name = "ucSair1";
+            this.ucSair1.Size = new System.Drawing.Size(57, 22);
+            this.ucSair1.TabIndex = 13;
             // 
             // Fcarrinho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 402);
+            this.Controls.Add(this.ucSair1);
+            this.Controls.Add(this.bPesquisar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.llCategorias);
             this.Controls.Add(this.llMinhasCategorias);
@@ -188,5 +210,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.LinkLabel llMinhasCategorias;
         private System.Windows.Forms.LinkLabel llCategorias;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button bPesquisar;
+        private UcSair ucSair1;
     }
 }

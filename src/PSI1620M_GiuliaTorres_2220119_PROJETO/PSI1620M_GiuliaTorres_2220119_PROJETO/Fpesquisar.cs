@@ -88,7 +88,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             FpesquisarGrupoInfo grupoInfo = new FpesquisarGrupoInfo();
             
             string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);
-            grupoInfo.Label = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.LnomeGrupo = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            grupoInfo.LutilizadorSorteado = "";
+            grupoInfo.LutilizadorSorteadoTexto = "";
             grupoInfo.Show();
 
         }

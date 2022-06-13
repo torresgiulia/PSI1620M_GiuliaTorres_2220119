@@ -27,6 +27,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+
+        /// <summary>
+        /// Chama o forms de detalhes do produto
+        /// </summary>
         private void bdetalhes_Click(object sender, EventArgs e)
         {
             Cconsultar.produtoNome = lNomeProduto.Text;

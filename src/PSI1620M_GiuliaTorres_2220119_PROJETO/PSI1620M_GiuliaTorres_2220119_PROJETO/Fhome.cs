@@ -46,10 +46,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             SqlConnection connection = new SqlConnection(connstring);
 
             //Adicionar grupos a ListBox
-            //foreach(var pesquisa in Cconsultar.listUtilizadoresGrupos)
-            //{
+            Cconsultar.listPerfilGrupos = new List<string>();
 
-            //}
             if (Cconsultar.listPerfilGrupos.Count == 0)
             {
                 try
@@ -93,12 +91,46 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 
         }
 
+
+        /// <summary>
+        /// Chamar FpesquisarGrupoInfo
+        /// </summary>
         private void lbGrupos_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string nomeSorteado = "";
+            string texto = "";
+            int idGrupo = 0;
+
             FpesquisarGrupoInfo grupoInfo = new FpesquisarGrupoInfo();
 
-            string teste = lbGrupos.GetItemText(lbGrupos.SelectedItem);
-            grupoInfo.Label = lbGrupos.GetItemText(lbGrupos.SelectedItem);
+            //Encontrar id do grupo
+            foreach(var grupo in Cconsultar.listGrupos)
+            {
+                if(grupo.GrupoNome == lbGrupos.GetItemText(lbGrupos.SelectedItem))
+                {
+                    idGrupo = grupo.GrupoId;
+                }
+            }
+
+            //mostrar se existe algum utilizador sorteado
+            foreach(var utigru in Cconsultar.listUtilizadoresGrupos)
+            {
+                if(utigru.utilizadorGrupoIdGrupo == idGrupo && utigru.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
+                {
+                    foreach(var nome in Cconsultar.listUtilizadores)
+                    {
+                        if(nome.UtilizadorId == utigru.utilizadorGrupoIdUtilizadorSorteado)
+                        {
+                            nomeSorteado = nome.UtilizadorUsername;
+                            texto = "Deverá presentear: ";
+                        }
+                    }
+                }
+            }
+
+            grupoInfo.LnomeGrupo = lbGrupos.GetItemText(lbGrupos.SelectedItem);           
+            grupoInfo.LutilizadorSorteado = nomeSorteado;
+            grupoInfo.LutilizadorSorteadoTexto = texto;
             grupoInfo.Show();
         }
     }

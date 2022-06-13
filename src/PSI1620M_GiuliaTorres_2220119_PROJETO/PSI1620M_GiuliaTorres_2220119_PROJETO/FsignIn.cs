@@ -69,9 +69,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 utili.Parameters.Add("@username", SqlDbType.VarChar).Value = tbUtilizador.Text;
                 utili.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNome.Text;
                 utili.Parameters.Add("@id_concelho", SqlDbType.Int).Value = adicionarId;
-                utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
+                if(tbTelemovel.Text != "")
+                {
+                    utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
+                }
+                else
+                {
+                    utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = 0;
+                }
                 utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
-                utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
+                if(tbEmail.Text != "")
+                {
+                    utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
+                }
+                else
+                {
+                    utili.Parameters.Add("@email", SqlDbType.VarChar).Value = "";
+                }
 
                 utili.ExecuteNonQuery();
 
