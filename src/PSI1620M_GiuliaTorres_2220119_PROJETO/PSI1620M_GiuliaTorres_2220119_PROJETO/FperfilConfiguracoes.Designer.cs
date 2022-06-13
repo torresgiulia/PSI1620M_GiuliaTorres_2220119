@@ -41,8 +41,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.llTelemovel = new System.Windows.Forms.LinkLabel();
             this.lbGrupos = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -184,14 +184,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label2.TabIndex = 0;
             this.label2.Text = "Nome:";
             // 
-            // sair1
-            // 
-            this.sair1.Location = new System.Drawing.Point(775, 9);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1);
-            this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(57, 22);
-            this.sair1.TabIndex = 2;
-            // 
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
@@ -200,16 +192,24 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
             this.botoesRodape1.TabIndex = 1;
             // 
-            // FconfiguracoesPerfil
+            // ucSair1
+            // 
+            this.ucSair1.Location = new System.Drawing.Point(782, 9);
+            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucSair1.Name = "ucSair1";
+            this.ucSair1.Size = new System.Drawing.Size(50, 33);
+            this.ucSair1.TabIndex = 4;
+            // 
+            // FperfilConfiguracoes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 402);
-            this.Controls.Add(this.sair1);
+            this.Controls.Add(this.ucSair1);
             this.Controls.Add(this.botoesRodape1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FconfiguracoesPerfil";
+            this.Name = "FperfilConfiguracoes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FconfiguracoesPerfil";
             this.Load += new System.EventHandler(this.FconfiguracoesPerfil_Load);
@@ -224,7 +224,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         private System.Windows.Forms.Label label1;
         private UcBotoesRodape botoesRodape1;
-        private UcSair sair1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -236,5 +235,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.LinkLabel llEmail;
         private System.Windows.Forms.LinkLabel llTelemovel;
         private System.Windows.Forms.ListBox lbGrupos;
+        private UcSair ucSair1;
     }
 }

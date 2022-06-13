@@ -30,27 +30,19 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private void InitializeComponent()
         {
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.tbPesquisa = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lbGrupos = new System.Windows.Forms.ListBox();
+            this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.SuspendLayout();
             // 
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
             this.botoesRodape1.TabIndex = 0;
-            // 
-            // sair1
-            // 
-            this.sair1.Location = new System.Drawing.Point(777, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
-            this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(57, 22);
-            this.sair1.TabIndex = 1;
             // 
             // tbPesquisa
             // 
@@ -78,15 +70,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lbGrupos.TabIndex = 4;
             this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_DoubleClick);
             // 
+            // ucSair1
+            // 
+            this.ucSair1.Location = new System.Drawing.Point(783, 11);
+            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucSair1.Name = "ucSair1";
+            this.ucSair1.Size = new System.Drawing.Size(50, 33);
+            this.ucSair1.TabIndex = 5;
+            // 
             // Fpesquisar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 402);
+            this.Controls.Add(this.ucSair1);
             this.Controls.Add(this.lbGrupos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tbPesquisa);
-            this.Controls.Add(this.sair1);
             this.Controls.Add(this.botoesRodape1);
             this.Name = "Fpesquisar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -100,9 +100,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         #endregion
 
         private UcBotoesRodape botoesRodape1;
-        private UcSair sair1;
         private System.Windows.Forms.TextBox tbPesquisa;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox lbGrupos;
+        private UcSair ucSair1;
     }
 }

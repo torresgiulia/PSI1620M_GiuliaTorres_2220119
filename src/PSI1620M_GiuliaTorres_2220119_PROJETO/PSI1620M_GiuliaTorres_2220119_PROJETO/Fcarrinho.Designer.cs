@@ -164,10 +164,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // ucSair1
             // 
-            this.ucSair1.Location = new System.Drawing.Point(776, 6);
-            this.ucSair1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucSair1.Location = new System.Drawing.Point(783, 13);
+            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
             this.ucSair1.Name = "ucSair1";
-            this.ucSair1.Size = new System.Drawing.Size(57, 22);
+            this.ucSair1.Size = new System.Drawing.Size(50, 33);
             this.ucSair1.TabIndex = 13;
             // 
             // Fcarrinho

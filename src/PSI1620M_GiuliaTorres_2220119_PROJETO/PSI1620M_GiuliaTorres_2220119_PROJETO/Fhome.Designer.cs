@@ -34,8 +34,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1 = new System.Windows.Forms.Label();
             this.lnome = new System.Windows.Forms.Label();
             this.lbGrupos = new System.Windows.Forms.ListBox();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
+            this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
             this.SuspendLayout();
             // 
             // bNovoGrupo
@@ -79,14 +79,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lbGrupos.TabIndex = 6;
             this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
-            // sair1
-            // 
-            this.sair1.Location = new System.Drawing.Point(776, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1);
-            this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(57, 23);
-            this.sair1.TabIndex = 5;
-            // 
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
@@ -95,13 +87,21 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.botoesRodape1.Size = new System.Drawing.Size(783, 77);
             this.botoesRodape1.TabIndex = 4;
             // 
+            // ucSair1
+            // 
+            this.ucSair1.Location = new System.Drawing.Point(783, 11);
+            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucSair1.Name = "ucSair1";
+            this.ucSair1.Size = new System.Drawing.Size(50, 33);
+            this.ucSair1.TabIndex = 7;
+            // 
             // Fhome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 402);
+            this.Controls.Add(this.ucSair1);
             this.Controls.Add(this.lbGrupos);
-            this.Controls.Add(this.sair1);
             this.Controls.Add(this.botoesRodape1);
             this.Controls.Add(this.lnome);
             this.Controls.Add(this.label1);
@@ -121,7 +121,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lnome;
         private UcBotoesRodape botoesRodape1;
-        private UcSair sair1;
         private System.Windows.Forms.ListBox lbGrupos;
+        private UcSair ucSair1;
     }
 }
