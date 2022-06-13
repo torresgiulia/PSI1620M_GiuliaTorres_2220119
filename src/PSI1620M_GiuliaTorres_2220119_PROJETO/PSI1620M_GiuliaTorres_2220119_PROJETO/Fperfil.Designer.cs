@@ -29,6 +29,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fperfil));
             this.label1 = new System.Windows.Forms.Label();
             this.bPreferencias = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
@@ -50,31 +51,31 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // bPreferencias
             // 
             this.bPreferencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPreferencias.Image = ((System.Drawing.Image)(resources.GetObject("bPreferencias.Image")));
             this.bPreferencias.Location = new System.Drawing.Point(283, 127);
-            this.bPreferencias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPreferencias.Margin = new System.Windows.Forms.Padding(2);
             this.bPreferencias.Name = "bPreferencias";
             this.bPreferencias.Size = new System.Drawing.Size(119, 78);
             this.bPreferencias.TabIndex = 2;
-            this.bPreferencias.Text = "Alterar Peferencias";
             this.bPreferencias.UseVisualStyleBackColor = true;
             this.bPreferencias.Click += new System.EventHandler(this.bPreferencias_Click);
             // 
             // bPerfil
             // 
             this.bPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bPerfil.Image = ((System.Drawing.Image)(resources.GetObject("bPerfil.Image")));
             this.bPerfil.Location = new System.Drawing.Point(488, 127);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(119, 78);
             this.bPerfil.TabIndex = 3;
-            this.bPerfil.Text = "Perfil";
             this.bPerfil.UseVisualStyleBackColor = true;
             this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
             // 
             // botoesRodape1
             // 
             this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
             this.botoesRodape1.TabIndex = 4;
@@ -82,7 +83,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // sair1
             // 
             this.sair1.Location = new System.Drawing.Point(777, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.sair1.Margin = new System.Windows.Forms.Padding(1);
             this.sair1.Name = "sair1";
             this.sair1.Size = new System.Drawing.Size(57, 22);
             this.sair1.TabIndex = 5;

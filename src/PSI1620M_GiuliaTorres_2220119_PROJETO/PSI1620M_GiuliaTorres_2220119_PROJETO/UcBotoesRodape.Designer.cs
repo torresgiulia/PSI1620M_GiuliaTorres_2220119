@@ -44,7 +44,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.47917F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.52083F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 189F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 193F));
             this.tableLayoutPanel1.Controls.Add(this.bHome, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.bPesquisar, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.bPrdutos, 1, 0);
@@ -62,7 +62,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bHome.Image = ((System.Drawing.Image)(resources.GetObject("bHome.Image")));
             this.bHome.Location = new System.Drawing.Point(2, 2);
-            this.bHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bHome.Margin = new System.Windows.Forms.Padding(2);
             this.bHome.Name = "bHome";
             this.bHome.Size = new System.Drawing.Size(185, 68);
             this.bHome.TabIndex = 0;
@@ -73,8 +73,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.bPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPesquisar.Image = ((System.Drawing.Image)(resources.GetObject("bPesquisar.Image")));
-            this.bPesquisar.Location = new System.Drawing.Point(401, 2);
-            this.bPesquisar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPesquisar.Location = new System.Drawing.Point(397, 2);
+            this.bPesquisar.Margin = new System.Windows.Forms.Padding(2);
             this.bPesquisar.Name = "bPesquisar";
             this.bPesquisar.Size = new System.Drawing.Size(187, 68);
             this.bPesquisar.TabIndex = 2;
@@ -85,8 +85,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.bPrdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPrdutos.Image = ((System.Drawing.Image)(resources.GetObject("bPrdutos.Image")));
-            this.bPrdutos.Location = new System.Drawing.Point(199, 2);
-            this.bPrdutos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPrdutos.Location = new System.Drawing.Point(197, 2);
+            this.bPrdutos.Margin = new System.Windows.Forms.Padding(2);
             this.bPrdutos.Name = "bPrdutos";
             this.bPrdutos.Size = new System.Drawing.Size(187, 68);
             this.bPrdutos.TabIndex = 1;
@@ -97,8 +97,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.bPerfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bPerfil.Image = ((System.Drawing.Image)(resources.GetObject("bPerfil.Image")));
-            this.bPerfil.Location = new System.Drawing.Point(593, 2);
-            this.bPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bPerfil.Location = new System.Drawing.Point(589, 2);
+            this.bPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.bPerfil.Name = "bPerfil";
             this.bPerfil.Size = new System.Drawing.Size(186, 68);
             this.bPerfil.TabIndex = 3;

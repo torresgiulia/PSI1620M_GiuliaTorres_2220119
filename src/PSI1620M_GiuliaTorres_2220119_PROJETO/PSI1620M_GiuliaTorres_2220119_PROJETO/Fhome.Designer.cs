@@ -40,12 +40,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // bNovoGrupo
             // 
-            this.bNovoGrupo.Location = new System.Drawing.Point(675, 254);
+            this.bNovoGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.bNovoGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bNovoGrupo.FlatAppearance.BorderSize = 0;
+            this.bNovoGrupo.Image = ((System.Drawing.Image)(resources.GetObject("bNovoGrupo.Image")));
+            this.bNovoGrupo.Location = new System.Drawing.Point(763, 253);
             this.bNovoGrupo.Name = "bNovoGrupo";
-            this.bNovoGrupo.Size = new System.Drawing.Size(158, 48);
+            this.bNovoGrupo.Size = new System.Drawing.Size(57, 48);
             this.bNovoGrupo.TabIndex = 1;
-            this.bNovoGrupo.Text = "Novo Grupo";
-            this.bNovoGrupo.UseVisualStyleBackColor = true;
+            this.bNovoGrupo.UseVisualStyleBackColor = false;
             this.bNovoGrupo.Click += new System.EventHandler(this.bNovoGrupo_Click);
             // 
             // label1
