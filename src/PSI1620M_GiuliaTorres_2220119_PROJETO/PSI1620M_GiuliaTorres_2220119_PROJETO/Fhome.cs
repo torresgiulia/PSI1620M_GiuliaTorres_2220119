@@ -20,16 +20,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public Fhome()
         {
             InitializeComponent();
-            lnome.Text = Cconsultar.loggedUser;
-            //Descobrir Id
-            Cconsultar.consulta_utilizadores();
-            foreach (var pesquisa in Cconsultar.listUtilizadores)
-            {
-                if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
-                {
-                    Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
-                }
-            }
+            
         }
     
         /// <summary>
@@ -37,12 +28,29 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void bNovoGrupo_Click(object sender, EventArgs e)
         {
+            this.Hide();
             FnovoGrupo novoGrupo = new FnovoGrupo();
             novoGrupo.Show();
         }
 
-        private void Fhome_Load(object sender, EventArgs e)
+
+
+        /// <summary>
+        /// Adiciona os grupos do utilizador à listBox
+        /// </summary>
+        private async void Fhome_Load(object sender, EventArgs e)
         {
+            lnome.Text = Cconsultar.loggedUser;
+            //Descobrir Id
+            await Cconsultar.consulta_utilizadores();
+            foreach (var pesquisa in Cconsultar.listUtilizadores)
+            {
+                if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
+                {
+                    Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
+                }
+            }
+
             SqlConnection connection = new SqlConnection(connstring);
 
             //Adicionar grupos a ListBox
@@ -52,14 +60,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             {
                 try
                 {
-                    Cconsultar.consulta_utilizadoresGrupos();
+                    await Cconsultar.consulta_utilizadoresGrupos();
                     foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
                     {
 
 
                         if (pesquisa.utilizadorGrupoIdUtilizador == Cconsultar.idLoggedUser)
                         {
-                            Cconsultar.consulta_grupo();
+                            await Cconsultar.consulta_grupo();
                             foreach (var grupo in Cconsultar.listGrupos)
                             {
                                 if (grupo.GrupoId == pesquisa.utilizadorGrupoIdGrupo)
@@ -70,7 +78,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                             }
                         }
                     }
-                    
+
                 }
                 catch (Exception)
                 {

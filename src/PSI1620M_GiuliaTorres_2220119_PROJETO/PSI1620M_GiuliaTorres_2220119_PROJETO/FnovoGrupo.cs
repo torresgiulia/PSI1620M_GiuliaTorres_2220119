@@ -24,9 +24,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
         /// <summary>
-        /// Adicionar um Grupo a abse de dados
+        /// Adicionar um Grupo a base de dados
         /// </summary>
-        public void bCriarGrupo_Click(object sender, EventArgs e)
+        public async void bCriarGrupo_Click(object sender, EventArgs e)
         {
             
 
@@ -56,7 +56,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
             // Procurar id do grupo
-            Cconsultar.consulta_grupo();
+             await Cconsultar.consulta_grupo();
             foreach (var pesquisa in Cconsultar.listGrupos)
             {
                 if (pesquisa.GrupoNome == tbNomeGrupo.Text)
@@ -84,13 +84,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 criar.Parameters.Add("@id_utilizador", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
                 criar.ExecuteReader();
             }
-            catch (Exception)
+            catch (Exception )
             {
                 throw;
             }
 
+            
+            Fhome home = new Fhome();
+            home.Show();
             this.Hide();
-           
+
+
+
 
         }
     }

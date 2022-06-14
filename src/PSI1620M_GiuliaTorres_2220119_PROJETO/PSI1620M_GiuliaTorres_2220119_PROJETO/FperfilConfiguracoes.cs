@@ -27,14 +27,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar nas labels e listbox as informações do utilizador
         /// </summary>
-        private void FconfiguracoesPerfil_Load(object sender, EventArgs e)
+        private async void FconfiguracoesPerfil_Load(object sender, EventArgs e)
         {
             
 
             SqlConnection connection = new SqlConnection(connstring);
 
             //Adicionar as Labels
-            Cconsultar.consulta_utilizadores();
+            await Cconsultar.consulta_utilizadores();
             foreach (var pesquisa in Cconsultar.listUtilizadores)
             {
                 if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
@@ -61,6 +61,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             FperfilAlterarCampo alterarPerfil = new FperfilAlterarCampo();
             alterarPerfil.ShowDialog();
         }
+
 
         /// <summary>
         /// Mudar o nome (update)
@@ -92,6 +93,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         }
 
+
         /// <summary>
         /// Mudar o username (update)
         /// </summary>
@@ -122,6 +124,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
               
         }
 
+
         /// <summary>
         /// Mudar o email (update)
         /// </summary>
@@ -150,6 +153,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             
         }
+
 
         /// <summary>
         /// Mudar o telemovel (update)

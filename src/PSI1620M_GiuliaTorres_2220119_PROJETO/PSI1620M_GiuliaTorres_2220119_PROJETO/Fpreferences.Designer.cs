@@ -29,6 +29,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fpreferences));
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bPerfumes = new System.Windows.Forms.Button();
@@ -57,16 +58,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(146, 6);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(581, 52);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Adicionar Preferencias...";
+            this.label1.Text = "Adicionar Preferências...";
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.15254F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.84746F));
@@ -303,13 +306,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // bAnime
             // 
+            this.bAnime.BackColor = System.Drawing.Color.Transparent;
             this.bAnime.Font = new System.Drawing.Font("MS Reference Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bAnime.Location = new System.Drawing.Point(3, 3);
             this.bAnime.Name = "bAnime";
             this.bAnime.Size = new System.Drawing.Size(152, 61);
             this.bAnime.TabIndex = 0;
             this.bAnime.Text = "Anime";
-            this.bAnime.UseVisualStyleBackColor = true;
+            this.bAnime.UseVisualStyleBackColor = false;
             this.bAnime.Click += new System.EventHandler(this.select_preferences);
             // 
             // bColecionaveis
@@ -338,11 +342,13 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(895, 402);
             this.Controls.Add(this.bSubmit);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 20F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(383, 9);
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Fpreferences";
@@ -377,8 +383,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bCasa;
         private System.Windows.Forms.Button bBrinquedos;
         private System.Windows.Forms.Button bBebidas;
-        private System.Windows.Forms.Button bAnime;
         private System.Windows.Forms.Button bSubmit;
         private System.Windows.Forms.Button bColecionaveis;
+        private System.Windows.Forms.Button bAnime;
     }
 }

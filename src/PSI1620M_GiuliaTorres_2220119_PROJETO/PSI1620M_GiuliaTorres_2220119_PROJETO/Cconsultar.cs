@@ -45,7 +45,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
         /// </summary>
-        public static void consulta_concelhos()
+        public static async Task consulta_concelhos()
         {
             listConcelhos = new List<Cconcelhos>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -56,7 +56,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand conc = connection.CreateCommand();
                 conc.CommandText = "select * from Concelhos";
 
-                var ler = conc.ExecuteReader();
+                var ler = await conc.ExecuteReaderAsync();
 
                 if (ler.HasRows)
                 {
@@ -86,7 +86,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista categorias
         /// </summary>
-        public static void consulta_categorias()
+        public static async Task consulta_categorias()
         {
             listCategorias = new List<Ccategorias>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -97,7 +97,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand cat = connection.CreateCommand();
                 cat.CommandText = "select * from Categorias";
 
-                var ler = cat.ExecuteReader();
+                var ler = await cat.ExecuteReaderAsync();
 
                 if (ler.HasRows)
                 {
@@ -124,7 +124,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista utilizadores
         /// </summary>
-        public static void consulta_utilizadores()
+        public static async Task consulta_utilizadores()
         {
             listUtilizadores = new List<Cutilizadores>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -135,7 +135,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand uti = connection.CreateCommand();
                 uti.CommandText = "select * from Utilizadores";
 
-                var ler = uti.ExecuteReader();
+                var ler = await uti.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -167,7 +167,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista utilizadoresCategorias
         /// </summary>
-        public static void consulta_utilizadoresCategorias()
+        public static async Task consulta_utilizadoresCategorias()
         {
             listUtilizadoresCategorias = new List<CutilizadoresCategorias>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -178,7 +178,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand uticat = connection.CreateCommand();
                 uticat.CommandText = "select * from utilizadoresCategorias";
 
-                var ler = uticat.ExecuteReader();
+                var ler = await uticat.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -204,7 +204,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista grupos
         /// </summary>
-        public static void consulta_grupo()
+        public static async Task consulta_grupo()
         {
             listGrupos = new List<Cgrupos>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -215,7 +215,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand gru = connection.CreateCommand();
                 gru.CommandText = "select * from Grupos";
 
-                var ler = gru.ExecuteReader();
+                var ler = await gru.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -242,7 +242,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Query de consulta para o Forms de pesquisa
         /// </summary>
-        public static void consulta_grupopesquisa()
+        public static async Task consulta_grupopesquisa()
         {
             listGruposPesquisa = new List<CgruposPesquisar>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -255,7 +255,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                                         FROM Grupos
                                         WHERE nome like  @pesquisa ";
                 pesquisar.Parameters.Add("@pesquisa", SqlDbType.VarChar).Value = $"%{Cconsultar.textoPesquisa}%";
-                var ler = pesquisar.ExecuteReader();
+                var ler = await pesquisar.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -282,7 +282,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista utilizadoresGrupos
         /// </summary>
-        public static void consulta_utilizadoresGrupos()
+        public static async Task consulta_utilizadoresGrupos()
         {
 
             listUtilizadoresGrupos = new List<CutilizadoresGrupos>();
@@ -293,7 +293,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand utigru = connection.CreateCommand();
                 utigru.CommandText = "select * from utilizadoresGrupos";
 
-                var ler = utigru.ExecuteReader();
+                var ler = await utigru.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -330,7 +330,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista Produtos
         /// </summary>
-        public static void consulta_produtos()
+        public static async Task consulta_produtos()
         {
             listProdutos = new List<Cprodutos>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -340,7 +340,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand prod = connection.CreateCommand();
                 prod.CommandText = "select * from Produtos";
 
-                var ler = prod.ExecuteReader();
+                var ler = await prod.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
                     while (ler.Read())
@@ -368,7 +368,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Ligação com a base de dados e a Lista Vendedores
         /// </summary>
-        public static void consulta_vendedores()
+        public static async Task consulta_vendedores()
         {
             listVendedores = new List<Cvendedores>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -378,10 +378,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 SqlCommand vend = connection.CreateCommand();
                 vend.CommandText = "select * from Vendedores";
 
-                var ler = vend.ExecuteReader();
+                var ler = await vend.ExecuteReaderAsync();
                 if (ler.HasRows)
                 {
-                    while (ler.Read())
+                    while (ler.Read()) 
                     {
 
                         Cvendedores vendedores = new Cvendedores()
@@ -402,7 +402,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
-        public static void consulta_produtosCategorias()
+
+        /// <summary>
+        /// Ligação com a base de dados e a Lista produtoCategoria
+        /// </summary>
+        public static async Task consulta_produtosCategorias()
         {
             listprodutosCategorias = new List<CprodutosCategorias>();
             SqlConnection connection = new SqlConnection(connstring);
@@ -414,7 +418,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 prodcat.CommandType = CommandType.Text;
                 prodcat.CommandText = "select * from produtosCategorias";
 
-                var ler = prodcat.ExecuteReader();
+                var ler = await prodcat.ExecuteReaderAsync();
                 if(ler.HasRows)
                 {
                     while(ler.Read())

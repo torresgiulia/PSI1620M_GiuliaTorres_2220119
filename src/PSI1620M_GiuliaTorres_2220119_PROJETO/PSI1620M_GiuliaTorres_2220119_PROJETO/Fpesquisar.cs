@@ -26,7 +26,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Binding List a listBox
         /// </summary>
-        private void Fpesquisar_Load(object sender, EventArgs e)
+        private async void Fpesquisar_Load(object sender, EventArgs e)
         {
            
             SqlConnection connection = new SqlConnection(connstring);
@@ -34,7 +34,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             //Adicionar a ListBox
             try
             {
-                Cconsultar.consulta_grupo();
+                await Cconsultar.consulta_grupo();
                 bListGrupos = new BindingList<Cgrupos>(Cconsultar.listGrupos.OrderBy(x => x.GrupoId).ToList());
                 lbGrupos.DataSource = bListGrupos;
                 lbGrupos.DisplayMember = "GrupoNome";
@@ -58,14 +58,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Binding List a listBox depois da pesquisa
         /// </summary>
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             Cconsultar.textoPesquisa = tbPesquisa.Text;
 
             // Binding List com a listbox
             try
             {
-                Cconsultar.consulta_grupopesquisa();
+                await Cconsultar.consulta_grupopesquisa();
                 bListGruposPesquisa = new BindingList<CgruposPesquisar>(Cconsultar.listGruposPesquisa.OrderBy(x => x.GrupoPesquisaId).ToList());
                 lbGrupos.DataSource = bListGruposPesquisa;
                 lbGrupos.DisplayMember = "GrupoPesquisaNome";

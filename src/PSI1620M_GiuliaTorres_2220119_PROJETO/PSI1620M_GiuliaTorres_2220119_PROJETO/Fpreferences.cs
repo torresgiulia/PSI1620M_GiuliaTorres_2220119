@@ -31,16 +31,17 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// Função para adicionar cada botão a base de dados
         /// </summary>
         /// <param name="sender"> utilizado para comparar o texto do botão</param>
-        private void select_preferences(object sender, EventArgs e) 
+        private async void select_preferences(object sender, EventArgs e) 
         {
             SqlConnection connection = new SqlConnection(connstring);
 
             connection.Open();
 
-            Cconsultar.consulta_categorias();
+             await Cconsultar.consulta_categorias();
             foreach (var pesquisa in Cconsultar.listCategorias)
             {
-                ((Button)sender).BackColor = Color.Pink;
+                ((Button)sender).BackColor = Color.FromArgb(255, 184, 237);
+
                 if (pesquisa.CategoriaNome == ((Button)sender).Text)
                 {
                     categoriaId = pesquisa.CategoriaId;
@@ -63,14 +64,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Deleta qualquer preferencia que possa já lá estar
         /// </summary>
-        private void Preferences_Load(object sender, EventArgs e) // load do forms
+        private async void Preferences_Load(object sender, EventArgs e) // load do forms
         {
             SqlConnection connection = new SqlConnection(connstring);
 
             connection.Open();
 
 
-            Cconsultar.consulta_utilizadoresCategorias();
+            await Cconsultar.consulta_utilizadoresCategorias();
             foreach (var pesquisa in Cconsultar.listUtilizadoresCategorias)
             {
                 if (pesquisa.utilizadorCategoriaIdUtilizador == Cconsultar.idLoggedUser)

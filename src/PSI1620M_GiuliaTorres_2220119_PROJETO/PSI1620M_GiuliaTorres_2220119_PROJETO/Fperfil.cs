@@ -27,6 +27,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Hide();
         }
 
+
+        /// <summary>
+        /// Redireciona para a Página de Configuração de perfil
+        /// </summary>
         private void bPerfil_Click(object sender, EventArgs e)
         {
             FperfilConfiguracoes perfil = new FperfilConfiguracoes();

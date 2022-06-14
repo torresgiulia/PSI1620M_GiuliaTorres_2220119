@@ -17,10 +17,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
-        private void FcarrinhoProdutoDetalhe_Load(object sender, EventArgs e)
+        private async void FcarrinhoProdutoDetalhe_Load(object sender, EventArgs e)
         {
             lNome.Text = Cconsultar.produtoNome;
-            Cconsultar.consulta_vendedores();
+            await Cconsultar.consulta_vendedores();
             foreach (var pesquisa in Cconsultar.listProdutos)
             {
                 if(pesquisa.ProdutoNome == lNome.Text)

@@ -38,22 +38,21 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bSair.BackColor = System.Drawing.Color.Transparent;
             this.bSair.ForeColor = System.Drawing.Color.Black;
             this.bSair.Image = ((System.Drawing.Image)(resources.GetObject("bSair.Image")));
-            this.bSair.Location = new System.Drawing.Point(2, 2);
-            this.bSair.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bSair.Location = new System.Drawing.Point(3, 3);
             this.bSair.Name = "bSair";
-            this.bSair.Size = new System.Drawing.Size(46, 25);
+            this.bSair.Size = new System.Drawing.Size(69, 38);
             this.bSair.TabIndex = 0;
             this.bSair.UseVisualStyleBackColor = false;
             this.bSair.Click += new System.EventHandler(this.bSair_Click);
             // 
             // UcSair
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.bSair);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UcSair";
-            this.Size = new System.Drawing.Size(50, 33);
+            this.Size = new System.Drawing.Size(75, 51);
             this.ResumeLayout(false);
 
         }

@@ -56,7 +56,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Thistle;
+            this.panel1.BackColor = System.Drawing.Color.LavenderBlush;
             this.panel1.Controls.Add(this.lNomeProduto);
             this.panel1.Controls.Add(this.bdetalhes);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;

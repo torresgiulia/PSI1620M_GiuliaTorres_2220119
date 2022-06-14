@@ -34,8 +34,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1 = new System.Windows.Forms.Label();
             this.lnome = new System.Windows.Forms.Label();
             this.lbGrupos = new System.Windows.Forms.ListBox();
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.SuspendLayout();
             // 
             // bNovoGrupo
@@ -44,9 +44,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bNovoGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.bNovoGrupo.FlatAppearance.BorderSize = 0;
             this.bNovoGrupo.Image = ((System.Drawing.Image)(resources.GetObject("bNovoGrupo.Image")));
-            this.bNovoGrupo.Location = new System.Drawing.Point(763, 253);
+            this.bNovoGrupo.Location = new System.Drawing.Point(1144, 389);
+            this.bNovoGrupo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bNovoGrupo.Name = "bNovoGrupo";
-            this.bNovoGrupo.Size = new System.Drawing.Size(57, 48);
+            this.bNovoGrupo.Size = new System.Drawing.Size(86, 74);
             this.bNovoGrupo.TabIndex = 1;
             this.bNovoGrupo.UseVisualStyleBackColor = false;
             this.bNovoGrupo.Click += new System.EventHandler(this.bNovoGrupo_Click);
@@ -54,52 +55,60 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 23);
+            this.label1.Location = new System.Drawing.Point(111, 35);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 31);
+            this.label1.Size = new System.Drawing.Size(107, 47);
             this.label1.TabIndex = 2;
             this.label1.Text = "Olá, ";
             // 
             // lnome
             // 
             this.lnome.AutoSize = true;
+            this.lnome.BackColor = System.Drawing.Color.Transparent;
             this.lnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnome.Location = new System.Drawing.Point(110, 23);
+            this.lnome.Location = new System.Drawing.Point(200, 35);
+            this.lnome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lnome.Name = "lnome";
-            this.lnome.Size = new System.Drawing.Size(0, 31);
+            this.lnome.Size = new System.Drawing.Size(0, 47);
             this.lnome.TabIndex = 3;
             // 
             // lbGrupos
             // 
             this.lbGrupos.FormattingEnabled = true;
-            this.lbGrupos.Location = new System.Drawing.Point(133, 113);
+            this.lbGrupos.ItemHeight = 20;
+            this.lbGrupos.Location = new System.Drawing.Point(203, 174);
+            this.lbGrupos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lbGrupos.Name = "lbGrupos";
-            this.lbGrupos.Size = new System.Drawing.Size(351, 160);
+            this.lbGrupos.Size = new System.Drawing.Size(524, 244);
             this.lbGrupos.TabIndex = 6;
             this.lbGrupos.DoubleClick += new System.EventHandler(this.lbGrupos_SelectedIndexChanged);
             // 
-            // botoesRodape1
-            // 
-            this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
-            this.botoesRodape1.Name = "botoesRodape1";
-            this.botoesRodape1.Size = new System.Drawing.Size(783, 77);
-            this.botoesRodape1.TabIndex = 4;
-            // 
             // ucSair1
             // 
-            this.ucSair1.Location = new System.Drawing.Point(783, 11);
-            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucSair1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSair1.Location = new System.Drawing.Point(1174, 17);
             this.ucSair1.Name = "ucSair1";
-            this.ucSair1.Size = new System.Drawing.Size(50, 33);
+            this.ucSair1.Size = new System.Drawing.Size(75, 51);
             this.ucSair1.TabIndex = 7;
+            // 
+            // botoesRodape1
+            // 
+            this.botoesRodape1.BackColor = System.Drawing.Color.Transparent;
+            this.botoesRodape1.Location = new System.Drawing.Point(75, 500);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(2);
+            this.botoesRodape1.Name = "botoesRodape1";
+            this.botoesRodape1.Size = new System.Drawing.Size(1174, 118);
+            this.botoesRodape1.TabIndex = 4;
             // 
             // Fhome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 402);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1342, 618);
             this.Controls.Add(this.ucSair1);
             this.Controls.Add(this.lbGrupos);
             this.Controls.Add(this.botoesRodape1);
@@ -107,6 +116,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bNovoGrupo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Fhome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Home";

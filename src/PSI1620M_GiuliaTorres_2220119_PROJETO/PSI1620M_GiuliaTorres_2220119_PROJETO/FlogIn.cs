@@ -32,11 +32,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// verificar o utilizador e passe
         /// </summary>
-        private void bEntrar_Click(object sender, EventArgs e)
+        private async  void bEntrar_Click(object sender, EventArgs e)
         {
             string passe = "";
 
-            Cconsultar.consulta_utilizadores();
+            await Cconsultar.consulta_utilizadores();
             
 
             //Guardar os valores inseridos

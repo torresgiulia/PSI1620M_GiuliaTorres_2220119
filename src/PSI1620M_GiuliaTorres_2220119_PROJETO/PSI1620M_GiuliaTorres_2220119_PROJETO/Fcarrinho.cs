@@ -23,26 +23,32 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
 
+
+
+
         /// <summary>
         /// Adiciona todos os produtos ao flowLayoutPanel
         /// </summary>
-        public void Fcarrinho_Load(object sender, EventArgs e)
+        public async void Fcarrinho_Load(object sender, EventArgs e)
         {
 
             label1.Text = "Produtos";
             userControl = true;
             flowLayoutPanel1.Controls.Clear();
 
-            Cconsultar.consulta_utilizadoresCategorias();
-            Cconsultar.consulta_produtosCategorias();
-            Cconsultar.consulta_produtos();
+            await Cconsultar.consulta_utilizadoresCategorias();
+            await Cconsultar.consulta_produtosCategorias();
+            await Cconsultar.consulta_produtos();
 
+
+            //Adicionar produtos (flowLayoutPanel1)
             foreach (var item in Cconsultar.listProdutos)
             {
                 UcProdutos prdItem = new UcProdutos();
                 prdItem.Label = item.ProdutoNome;
                 flowLayoutPanel1.Controls.Add(prdItem);
             }
+
             cbGrupos.DataSource = Cconsultar.listPerfilGrupos;
 
         }
@@ -52,11 +58,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar os produtos que estão perto do utilizador
         /// </summary>
-        private void bPerto_Click(object sender, EventArgs e)
+        private async void bPerto_Click(object sender, EventArgs e)
         {
             label1.Text = "Perto de mim";
+            label1.BackColor = Color.Transparent;
             flowLayoutPanel1.Controls.Clear();
-            Cconsultar.consulta_vendedores();
+            await Cconsultar.consulta_vendedores();
             foreach (var pesquisa in Cconsultar.listUtilizadores)
             {
                 if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
@@ -69,6 +76,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                             {
                                 if (concelho_vendedor.VendedorId == item.ProdutoIdVendedor)
                                 {
+                                    //utilizar async 
+
                                     UcProdutos prdItem = new UcProdutos();
                                     prdItem.Label = item.ProdutoNome;
                                     flowLayoutPanel1.Controls.Add(prdItem);
@@ -91,6 +100,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public void llMinhasCategorias_Click(object sender, EventArgs e)
         {
             label1.Text = "Minhas Categorias";
+            label1.BackColor = Color.Transparent;
             flowLayoutPanel1.Controls.Clear();
             
 
@@ -125,7 +135,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Abrir as categorias da sidebar
         /// </summary>
-        private void llCategorias_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private async void llCategorias_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (userControl == true)
             {
@@ -133,7 +143,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 int x = 10;
                 int y = 20;
                 int contar = 0;
-                Cconsultar.consulta_categorias();
+                await Cconsultar.consulta_categorias();
                 foreach (var pesquisa in Cconsultar.listCategorias)
                 {
                     LinkLabel llFiltos = new LinkLabel();
@@ -180,6 +190,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     categoriaPesquisa = cat.CategoriaId;
                     label1.Text = cat.CategoriaNome;
+                    label1.BackColor = Color.Transparent;
                 }
             }
 
@@ -204,9 +215,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Pesquisar categorias preferidas do utilizador sorteado
         /// </summary>
-        private void cbGrupos_SelectionChangeCommitted(object sender, EventArgs e)
+        private  void cbGrupos_SelectionChangeCommitted(object sender, EventArgs e)
         {
             label1.Text = "Produtos";
+            label1.BackColor = Color.Transparent;
             int idGrupo = 0;
             int idSorteado = 0;
 

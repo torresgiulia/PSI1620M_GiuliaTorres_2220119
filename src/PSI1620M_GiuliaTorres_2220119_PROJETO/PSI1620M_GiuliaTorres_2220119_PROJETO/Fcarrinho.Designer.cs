@@ -29,6 +29,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Fcarrinho));
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.bPerto = new System.Windows.Forms.Button();
@@ -38,19 +39,19 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.llMinhasCategorias = new System.Windows.Forms.LinkLabel();
             this.llCategorias = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.bPesquisar = new System.Windows.Forms.Button();
             this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.sair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.SuspendLayout();
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(86, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(776, 44);
+            this.label1.Size = new System.Drawing.Size(1164, 68);
             this.label1.TabIndex = 2;
             this.label1.Text = "Todos os produtos";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,18 +59,17 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(149, 77);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(224, 118);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(685, 244);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1028, 375);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // bPerto
             // 
-            this.bPerto.Location = new System.Drawing.Point(251, 54);
-            this.bPerto.Margin = new System.Windows.Forms.Padding(2);
+            this.bPerto.Location = new System.Drawing.Point(376, 83);
             this.bPerto.Name = "bPerto";
-            this.bPerto.Size = new System.Drawing.Size(105, 22);
+            this.bPerto.Size = new System.Drawing.Size(158, 34);
             this.bPerto.TabIndex = 5;
             this.bPerto.Text = "Perto do mim";
             this.bPerto.UseVisualStyleBackColor = true;
@@ -78,27 +78,27 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // cbGrupos
             // 
             this.cbGrupos.FormattingEnabled = true;
-            this.cbGrupos.Location = new System.Drawing.Point(660, 55);
-            this.cbGrupos.Margin = new System.Windows.Forms.Padding(2);
+            this.cbGrupos.Location = new System.Drawing.Point(990, 85);
             this.cbGrupos.Name = "cbGrupos";
-            this.cbGrupos.Size = new System.Drawing.Size(82, 21);
+            this.cbGrupos.Size = new System.Drawing.Size(121, 28);
             this.cbGrupos.TabIndex = 6;
             // 
             // lRecomendaGrupo
             // 
             this.lRecomendaGrupo.AutoSize = true;
-            this.lRecomendaGrupo.Location = new System.Drawing.Point(493, 62);
-            this.lRecomendaGrupo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lRecomendaGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.lRecomendaGrupo.Location = new System.Drawing.Point(740, 95);
             this.lRecomendaGrupo.Name = "lRecomendaGrupo";
-            this.lRecomendaGrupo.Size = new System.Drawing.Size(163, 13);
+            this.lRecomendaGrupo.Size = new System.Drawing.Size(243, 20);
             this.lRecomendaGrupo.TabIndex = 7;
             this.lRecomendaGrupo.Text = "Recomendado para o meu grupo";
             // 
             // bProdutos
             // 
-            this.bProdutos.Location = new System.Drawing.Point(107, 53);
+            this.bProdutos.Location = new System.Drawing.Point(160, 82);
+            this.bProdutos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bProdutos.Name = "bProdutos";
-            this.bProdutos.Size = new System.Drawing.Size(121, 23);
+            this.bProdutos.Size = new System.Drawing.Size(182, 35);
             this.bProdutos.TabIndex = 8;
             this.bProdutos.Text = "Todos os Produtos";
             this.bProdutos.UseVisualStyleBackColor = true;
@@ -107,10 +107,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // llMinhasCategorias
             // 
             this.llMinhasCategorias.AutoSize = true;
-            this.llMinhasCategorias.Location = new System.Drawing.Point(3, 77);
-            this.llMinhasCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.llMinhasCategorias.BackColor = System.Drawing.Color.Transparent;
+            this.llMinhasCategorias.Location = new System.Drawing.Point(4, 118);
             this.llMinhasCategorias.Name = "llMinhasCategorias";
-            this.llMinhasCategorias.Size = new System.Drawing.Size(103, 13);
+            this.llMinhasCategorias.Size = new System.Drawing.Size(153, 20);
             this.llMinhasCategorias.TabIndex = 9;
             this.llMinhasCategorias.TabStop = true;
             this.llMinhasCategorias.Text = "Minhas Preferências";
@@ -119,10 +119,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // llCategorias
             // 
             this.llCategorias.AutoSize = true;
-            this.llCategorias.Location = new System.Drawing.Point(3, 103);
-            this.llCategorias.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.llCategorias.BackColor = System.Drawing.Color.Transparent;
+            this.llCategorias.Location = new System.Drawing.Point(4, 158);
             this.llCategorias.Name = "llCategorias";
-            this.llCategorias.Size = new System.Drawing.Size(57, 13);
+            this.llCategorias.Size = new System.Drawing.Size(86, 20);
             this.llCategorias.TabIndex = 10;
             this.llCategorias.TabStop = true;
             this.llCategorias.Text = "Categorias";
@@ -130,33 +130,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(5, 118);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Location = new System.Drawing.Point(8, 182);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 185);
+            this.panel1.Size = new System.Drawing.Size(210, 285);
             this.panel1.TabIndex = 11;
-            // 
-            // sair1
-            // 
-            this.sair1.Location = new System.Drawing.Point(777, 8);
-            this.sair1.Margin = new System.Windows.Forms.Padding(1);
-            this.sair1.Name = "sair1";
-            this.sair1.Size = new System.Drawing.Size(57, 22);
-            this.sair1.TabIndex = 1;
-            // 
-            // botoesRodape1
-            // 
-            this.botoesRodape1.Location = new System.Drawing.Point(50, 325);
-            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(1);
-            this.botoesRodape1.Name = "botoesRodape1";
-            this.botoesRodape1.Size = new System.Drawing.Size(783, 73);
-            this.botoesRodape1.TabIndex = 0;
             // 
             // bPesquisar
             // 
-            this.bPesquisar.Location = new System.Drawing.Point(747, 53);
+            this.bPesquisar.Location = new System.Drawing.Point(1120, 82);
+            this.bPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bPesquisar.Name = "bPesquisar";
-            this.bPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.bPesquisar.Size = new System.Drawing.Size(112, 35);
             this.bPesquisar.TabIndex = 12;
             this.bPesquisar.Text = "Pesquisar";
             this.bPesquisar.UseVisualStyleBackColor = true;
@@ -164,17 +149,36 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // ucSair1
             // 
-            this.ucSair1.Location = new System.Drawing.Point(783, 13);
-            this.ucSair1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucSair1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSair1.Location = new System.Drawing.Point(1174, 20);
             this.ucSair1.Name = "ucSair1";
-            this.ucSair1.Size = new System.Drawing.Size(50, 33);
+            this.ucSair1.Size = new System.Drawing.Size(75, 51);
             this.ucSair1.TabIndex = 13;
+            // 
+            // sair1
+            // 
+            this.sair1.BackColor = System.Drawing.Color.Transparent;
+            this.sair1.Location = new System.Drawing.Point(1166, 12);
+            this.sair1.Margin = new System.Windows.Forms.Padding(2);
+            this.sair1.Name = "sair1";
+            this.sair1.Size = new System.Drawing.Size(86, 34);
+            this.sair1.TabIndex = 1;
+            // 
+            // botoesRodape1
+            // 
+            this.botoesRodape1.BackColor = System.Drawing.Color.Transparent;
+            this.botoesRodape1.Location = new System.Drawing.Point(75, 500);
+            this.botoesRodape1.Margin = new System.Windows.Forms.Padding(2);
+            this.botoesRodape1.Name = "botoesRodape1";
+            this.botoesRodape1.Size = new System.Drawing.Size(1174, 112);
+            this.botoesRodape1.TabIndex = 0;
             // 
             // Fcarrinho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 402);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1342, 618);
             this.Controls.Add(this.ucSair1);
             this.Controls.Add(this.bPesquisar);
             this.Controls.Add(this.panel1);
@@ -188,6 +192,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.label1);
             this.Controls.Add(this.sair1);
             this.Controls.Add(this.botoesRodape1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Fcarrinho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carrinho";

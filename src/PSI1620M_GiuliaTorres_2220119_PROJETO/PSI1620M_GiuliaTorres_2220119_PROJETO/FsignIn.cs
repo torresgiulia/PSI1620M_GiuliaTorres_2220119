@@ -37,7 +37,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar valor à base de dados
         /// </summary>
-        public void bSubmeter_Click(object sender, EventArgs e)
+        public async void bSubmeter_Click(object sender, EventArgs e)
         {
 
             //Adicionar a base de dados
@@ -49,7 +49,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 connection.Open();
 
                 //Pesquisar o id do concelho selecionado
-                Cconsultar.consulta_concelhos();
+                await Cconsultar.consulta_concelhos();
                 foreach(var pesquisa in Cconsultar.listConcelhos)
                 {
                     if(pesquisa.ConcelhoNome == cbConcelhos.Text)
@@ -69,6 +69,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 utili.Parameters.Add("@username", SqlDbType.VarChar).Value = tbUtilizador.Text;
                 utili.Parameters.Add("@nome", SqlDbType.VarChar).Value = tbNome.Text;
                 utili.Parameters.Add("@id_concelho", SqlDbType.Int).Value = adicionarId;
+
+                //Verificar se o telemóvel é nulo
                 if(tbTelemovel.Text != "")
                 {
                     utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = Convert.ToInt64(tbTelemovel.Text);
@@ -77,8 +79,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     utili.Parameters.Add("@telemovel", SqlDbType.Int).Value = 0;
                 }
-                utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
-                if(tbEmail.Text != "")
+
+                //Verificar se o email é nulo
+                if (tbEmail.Text != "")
                 {
                     utili.Parameters.Add("@email", SqlDbType.VarChar).Value = tbEmail.Text;
                 }
@@ -87,24 +90,42 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     utili.Parameters.Add("@email", SqlDbType.VarChar).Value = "";
                 }
 
-                utili.ExecuteNonQuery();
-
-                Cconsultar.loggedUser = tbUtilizador.Text;
-                // Adicionar id a uma variável
-                Cconsultar.consulta_utilizadores();
-                foreach(var pesquisa in Cconsultar.listUtilizadores)
+                if (tbVpassword.Text == tbPassword.Text)
                 {
-                    if(pesquisa.UtilizadorUsername == tbUtilizador.Text)
+                    utili.Parameters.Add("@password", SqlDbType.VarChar).Value = tbPassword.Text;
+
+                    utili.ExecuteNonQuery();
+
+                    Cconsultar.loggedUser = tbUtilizador.Text;
+                    // Adicionar id a uma variável
+                    await Cconsultar.consulta_utilizadores();
+                    foreach (var pesquisa in Cconsultar.listUtilizadores)
                     {
-                        Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
+                        if (pesquisa.UtilizadorUsername == tbUtilizador.Text)
+                        {
+                            Cconsultar.idLoggedUser = pesquisa.UtilizadorId;
+                        }
                     }
+
+                    //mudar a página
+                    Fpreferences preferences = new Fpreferences();
+                    preferences.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Passwords bão coicidem! ");
+                    tbPassword.Clear();
+                    tbVpassword.Clear();
+
+
                 }
 
-                //mudar a página
+                
 
-                Fpreferences preferences = new Fpreferences();
-                preferences.Show();
-                this.Hide();
+
+                
+
             }
             catch (Exception)
             {
@@ -116,14 +137,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar informação à comboBox (BindingList)
         /// </summary>
-        public void LigacaoComboBox_Concelhos()
+        public async void LigacaoComboBox_Concelhos()
         {
             SqlConnection connection = new SqlConnection(connstring);
             try
             {
 
                 //Adicionar a comboBox
-                Cconsultar.consulta_concelhos();
+                await Cconsultar.consulta_concelhos();
                 bListConcelhos = new BindingList<Cconcelhos>(Cconsultar.listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());               
                 cbConcelhos.DataSource = bListConcelhos;               
                 cbConcelhos.DisplayMember = "ConcelhoNome";

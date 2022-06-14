@@ -50,10 +50,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Mostrar detalhes do grupo
         /// </summary>
-        private void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
+        private async void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
         {
             bParticipar.Show();
-            Cconsultar.consulta_grupo();
+            await Cconsultar.consulta_grupo();
 
 
             //Adicionar valor ás labels
@@ -69,7 +69,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     idGrupo = pesquisa.GrupoId;
 
                     //Buscar username utilizador lider
-                    Cconsultar.consulta_utilizadores();
+                    await Cconsultar.consulta_utilizadores();
                     foreach (var pesquisaUserLider in Cconsultar.listUtilizadores)
                     {
                         if (pesquisa.GrupoUtilizadorLider == pesquisaUserLider.UtilizadorId)
@@ -205,7 +205,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Adicionar participante ao grupo
         /// </summary>
-        public void bParticipar_Click(object sender, EventArgs e)
+        public async void bParticipar_Click(object sender, EventArgs e)
         {
             bool podeEntrar = true;
             SqlConnection connection = new SqlConnection(connstring);
@@ -213,7 +213,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             //Verificar se está aberto
             if (statusGrupo == "aberto")
             {
-                Cconsultar.consulta_utilizadoresGrupos();
+                await Cconsultar.consulta_utilizadoresGrupos();
                 foreach (var pesquisa in Cconsultar.listUtilizadoresGrupos)
                 {
 

@@ -120,10 +120,9 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="bSair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAABrSURBVDhPYxi0gBeIZwPxfhyYaJAPxP+BGJshIEw0qAdikEEUA1IMArleAcLEBMQaJAnEb4D4
-        PhBjNYwUFxkCMU7DsBmELdBhGGQISD2GYTQ1CBcg2WvYAFUDmyrRTxBQLYtQLdMOFsDAAADWcD6LK+Dc
-        oQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAABGdBTUEAALGPC/xhBQAAAGtJREFUOE9j
+        GLSAF4hnA/F+HJhokA/E/4EYmyEgTDSoB2KQQRQDUgwCuV4BwsQExBokCcRvgPg+EGM1jBQXGQIxTsOw
+        GYQt0GEYZAhIPYZhNDUIFyDZa9gAVQObKtFPEFAti1At0w4WwMAAANZwPosr4NyhAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
