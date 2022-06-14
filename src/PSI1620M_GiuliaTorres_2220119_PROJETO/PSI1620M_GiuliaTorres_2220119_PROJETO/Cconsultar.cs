@@ -34,6 +34,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         //Para as configurações de perfil
         public static string labelText { get; set; }
         public static string textBoxText { get; set; }
+        public static int textBoxTextId { get; set; }
 
         //Para as Pesquisas
         public static string textoPesquisa { get; set; }

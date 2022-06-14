@@ -195,7 +195,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 {
                     MessageBox.Show(ex.Message);
                 }
-                MessageBox.Show("Grupo sorteado!! recarregue a página ver quem deverá sortear :)");
+                MessageBox.Show("Grupo sorteado!! recarregue a página ver quem deverá presentear :)");
                 this.Close();
             }
 

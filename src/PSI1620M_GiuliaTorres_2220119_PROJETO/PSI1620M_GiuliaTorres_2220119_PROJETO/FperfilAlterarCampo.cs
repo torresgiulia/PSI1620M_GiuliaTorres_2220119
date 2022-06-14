@@ -22,7 +22,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             label1.Text = Cconsultar.labelText;
         }
 
-        
+        //adicionar valores aos parametros 
         private void bSubmeter_Click(object sender, EventArgs e)
         {
             Cconsultar.textBoxText = tbAlteracao.Text;

@@ -161,6 +161,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     connection.Close();
                 }
             }
+            Cconsultar.listConcelhos.Clear();
         }
 
 

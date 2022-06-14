@@ -40,6 +40,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private async void Fhome_Load(object sender, EventArgs e)
         {
+            
+            await Cconsultar.consulta_concelhos();
+
             lnome.Text = Cconsultar.loggedUser;
             //Descobrir Id
             await Cconsultar.consulta_utilizadores();

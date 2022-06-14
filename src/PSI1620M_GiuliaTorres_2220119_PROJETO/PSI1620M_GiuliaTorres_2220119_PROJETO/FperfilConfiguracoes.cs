@@ -35,14 +35,30 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
             //Adicionar as Labels
             await Cconsultar.consulta_utilizadores();
+
             foreach (var pesquisa in Cconsultar.listUtilizadores)
             {
                 if (pesquisa.UtilizadorUsername == Cconsultar.loggedUser)
                 {
                     llNome.Text = pesquisa.UtilizadorNome;
-                    llEmail.Text = pesquisa.UtilizadorEmail;
+                    
+                    if(pesquisa.UtilizadorEmail == "")
+                    {
+                        llEmail.Text = "(não adicionado)";
+                    }
+                    else
+                    {
+                        llEmail.Text = pesquisa.UtilizadorEmail;
+                    }
                     llTelemovel.Text = pesquisa.UtilizadorTelemovel;
                     llUsername.Text = pesquisa.UtilizadorUsername;
+                    foreach(var concelho in Cconsultar.listConcelhos)
+                    {
+                        if(pesquisa.UtilizadorIdConcelho == concelho.ConcelhoId)
+                        {
+                            llConcelho.Text = concelho.ConcelhoNome;
+                        }
+                    }
                     break;
                 }
             }
@@ -59,6 +75,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public void abrirPagina()
         {
             FperfilAlterarCampo alterarPerfil = new FperfilAlterarCampo();
+            alterarPerfil.ShowDialog();
+        }
+
+        /// <summary>
+        /// Instanciar o forms para a entrada do update concelho
+        /// </summary>
+        public void abrirPaginaConcelho()
+        {
+            FperfilAlterarConcelho alterarPerfil = new FperfilAlterarConcelho();
             alterarPerfil.ShowDialog();
         }
 
@@ -182,6 +207,34 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        /// <summary>
+        /// Mudar o concelho (update)
+        /// </summary>
+        private void llConcelho_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                SqlConnection connection = new SqlConnection(connstring);
+                Cconsultar.labelText = "Email";
+                abrirPaginaConcelho();
+
+                connection.Open();
+                SqlCommand update = connection.CreateCommand();
+                update.CommandType = CommandType.Text;
+                update.CommandText = @"update Utilizadores set id_concelho = @concelho 
+                                        where id = @valorid";
+                update.Parameters.Add("@valorid", SqlDbType.Int).Value = Cconsultar.idLoggedUser;
+                update.Parameters.Add("@concelho", SqlDbType.Int).Value = Cconsultar.textBoxTextId;
+                update.ExecuteNonQuery();
+
+                llConcelho.Text = Cconsultar.textBoxText;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

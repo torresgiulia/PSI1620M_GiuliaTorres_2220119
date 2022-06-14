@@ -179,6 +179,12 @@
     <Compile Include="FperfilAlterarCampo.Designer.cs">
       <DependentUpon>FperfilAlterarCampo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FperfilAlterarConcelho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FperfilAlterarConcelho.Designer.cs">
+      <DependentUpon>FperfilAlterarConcelho.cs</DependentUpon>
+    </Compile>
     <Compile Include="FpesquisarGrupoInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -279,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FperfilAlterarCampo.resx">
       <DependentUpon>FperfilAlterarCampo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FperfilAlterarConcelho.resx">
+      <DependentUpon>FperfilAlterarConcelho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FpesquisarGrupoInfo.resx">
       <DependentUpon>FpesquisarGrupoInfo.cs</DependentUpon>
