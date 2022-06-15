@@ -19,15 +19,19 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
-        private void FperfilAlterarConcelho_Load(object sender, EventArgs e)
+        private async void FperfilAlterarConcelho_Load(object sender, EventArgs e)
         {
+            await Cconsultar.consulta_concelhos();
+
             bListConcelhos = new BindingList<Cconcelhos>(Cconsultar.listConcelhos.OrderBy(x => x.ConcelhoNome).ToList());
             cbConcelhos.DataSource = bListConcelhos;
             cbConcelhos.DisplayMember = "ConcelhoNome";
             cbConcelhos.ValueMember = "ConcelhoId";
 
-        }
+            Cconsultar.listConcelhos.Clear();
 
+        }
+        
         //Adicionar valor ao id e nome dos concelhos para o FperfilConfigurações
         private async void bSubmeter_Click(object sender, EventArgs e)
         {

@@ -20,26 +20,27 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public string statusGrupo { get; set; }
 
         public List<int> listUtilizadoresGrupo { get; set; }
+        public List<string> listUtilizadoresNome { get; set; }
         static Random rnd = new Random();
 
+        //labels que tem o valor do Fpesquisar
         public string LnomeGrupo
         {
             get { return lnomeGrupo.Text; }
             set { lnomeGrupo.Text = value; }
         }
-
         public string LutilizadorSorteado
         {
             get { return lUtilizadorSorteado.Text; }
             set { lUtilizadorSorteado.Text = value; }
         }
-
         public string LutilizadorSorteadoTexto
         {
             get { return lUtilizadorSorteadoTexto.Text; }
             set { lUtilizadorSorteadoTexto.Text = value; }
         }
 
+        public bool status = true;
 
         public FpesquisarGrupoInfo()
         {
@@ -52,9 +53,15 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private async void FpesquisarGrupoInfo_Load(object sender, EventArgs e)
         {
+            listUtilizadoresGrupo = new List<int>();
+            listUtilizadoresNome = new List<string>();
+
             bParticipar.Show();
             await Cconsultar.consulta_grupo();
 
+            lParticipantes.Visible = false;
+            lbutilizadoresGrupos.Visible = false;
+            
 
             //Adicionar valor ás labels
             foreach (var pesquisa in Cconsultar.listGrupos)
@@ -79,20 +86,61 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
 
                 }
-                if (pesquisa.GrupoId == idGrupo && pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser && pesquisa.GrupoEstado != "sorteado")
+
+
+                //Adicionar o botã0 de sortear caso o utilizador seja líder e mostar participantes
+                if (pesquisa.GrupoId == idGrupo && pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser )
                 {
-                    Button sortear = new Button();
+                    if(pesquisa.GrupoEstado != "sorteado")
+                    {
+                        Button sortear = new Button();
 
-                    sortear.Name = "llSortear";
-                    sortear.Text = "Sortear";
-                    sortear.Click += Sortear_Click;
-                    sortear.Visible = true;
-                    sortear.Location = new Point(302, 280);
+                        sortear.Name = "llSortear";
+                        sortear.Text = "Sortear";
+                        sortear.Click += Sortear_Click;
+                        sortear.Visible = true;
+                        sortear.Location = new Point(302, 280);
 
-                    this.Controls.Add(sortear);
-                    sortear.BringToFront();
+                        this.Controls.Add(sortear);
+                        sortear.BringToFront();
+                    }
+                    
+
+                    //mostrar os participantes
+                    lParticipantes.Visible = true;
+                    lbutilizadoresGrupos.Visible = true;
                 }
             }
+
+            //Adicionar os utilizadores do grupo selecionado a uma lista
+            foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
+            {
+                if (utigru.utilizadorGrupoIdGrupo == idGrupo)
+                {
+                    listUtilizadoresGrupo.Add(utigru.utilizadorGrupoIdUtilizador);
+
+                }
+                if (utigru.utilizadorGrupoIdUtilizadorSorteado < 0)
+                {
+                    status = false;
+                }
+
+            }
+
+            //Adicionar nome a lista de utilizadores por grupo
+            foreach (var uti in Cconsultar.listUtilizadores)
+            {
+                foreach (var idUti in listUtilizadoresGrupo)
+                {
+                    if (uti.UtilizadorId == idUti)
+                    {
+                        listUtilizadoresNome.Add(uti.UtilizadorUsername);
+                    }
+                }
+            }
+
+            //Adicionar nomes à listBox
+            lbutilizadoresGrupos.DataSource = listUtilizadoresNome;
 
             //botão de participar
             foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
@@ -110,26 +158,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         public void Sortear_Click(object sender, EventArgs e)
         {
-
-
-            listUtilizadoresGrupo = new List<int>();
+           
             int idSorteado;
-            bool status = true;
-
-            //Adicionar os utilizadores do grupo selecionado a uma lista
-            foreach (var utigru in Cconsultar.listUtilizadoresGrupos)
-            {
-                if (utigru.utilizadorGrupoIdGrupo == idGrupo)
-                {
-                    listUtilizadoresGrupo.Add(utigru.utilizadorGrupoIdUtilizador);
-                    
-                }
-                if (utigru.utilizadorGrupoIdUtilizadorSorteado < 0)
-                {
-                    status = false;
-                }
-
-            }
 
             if (status == true)
             {

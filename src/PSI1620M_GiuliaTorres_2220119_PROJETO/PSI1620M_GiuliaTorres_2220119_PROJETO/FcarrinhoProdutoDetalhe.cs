@@ -17,6 +17,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Adiciona a informação do produto as labels
+        /// </summary>
         private async void FcarrinhoProdutoDetalhe_Load(object sender, EventArgs e)
         {
             lNome.Text = Cconsultar.produtoNome;

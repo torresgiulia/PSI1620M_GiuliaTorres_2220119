@@ -40,16 +40,17 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lLider = new System.Windows.Forms.Label();
             this.lUtilizadorSorteadoTexto = new System.Windows.Forms.Label();
             this.lUtilizadorSorteado = new System.Windows.Forms.Label();
+            this.lbutilizadoresGrupos = new System.Windows.Forms.ListBox();
+            this.lParticipantes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lnomeGrupo
             // 
             this.lnomeGrupo.BackColor = System.Drawing.Color.Transparent;
             this.lnomeGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnomeGrupo.Location = new System.Drawing.Point(3, 28);
-            this.lnomeGrupo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lnomeGrupo.Location = new System.Drawing.Point(2, 18);
             this.lnomeGrupo.Name = "lnomeGrupo";
-            this.lnomeGrupo.Size = new System.Drawing.Size(1014, 48);
+            this.lnomeGrupo.Size = new System.Drawing.Size(676, 31);
             this.lnomeGrupo.TabIndex = 0;
             this.lnomeGrupo.Text = "label1";
             this.lnomeGrupo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,10 +59,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(252, 152);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(168, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 33);
+            this.label1.Size = new System.Drawing.Size(93, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Decrição:";
             // 
@@ -70,10 +70,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(290, 237);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(193, 154);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 33);
+            this.label2.Size = new System.Drawing.Size(65, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Status:";
             // 
@@ -82,19 +81,17 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(189, 312);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(126, 203);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 33);
+            this.label3.Size = new System.Drawing.Size(132, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Utilizador líder:";
             // 
             // bParticipar
             // 
-            this.bParticipar.Location = new System.Drawing.Point(820, 457);
-            this.bParticipar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bParticipar.Location = new System.Drawing.Point(547, 297);
             this.bParticipar.Name = "bParticipar";
-            this.bParticipar.Size = new System.Drawing.Size(177, 80);
+            this.bParticipar.Size = new System.Drawing.Size(118, 52);
             this.bParticipar.TabIndex = 4;
             this.bParticipar.Text = "Participar";
             this.bParticipar.UseVisualStyleBackColor = true;
@@ -105,10 +102,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.ldescricao.AutoSize = true;
             this.ldescricao.BackColor = System.Drawing.Color.Transparent;
             this.ldescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ldescricao.Location = new System.Drawing.Point(448, 166);
-            this.ldescricao.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ldescricao.Location = new System.Drawing.Point(299, 108);
             this.ldescricao.Name = "ldescricao";
-            this.ldescricao.Size = new System.Drawing.Size(70, 26);
+            this.ldescricao.Size = new System.Drawing.Size(46, 18);
             this.ldescricao.TabIndex = 5;
             this.ldescricao.Text = "label4";
             // 
@@ -117,10 +113,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lstatus.AutoSize = true;
             this.lstatus.BackColor = System.Drawing.Color.Transparent;
             this.lstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstatus.Location = new System.Drawing.Point(448, 254);
-            this.lstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lstatus.Location = new System.Drawing.Point(299, 165);
             this.lstatus.Name = "lstatus";
-            this.lstatus.Size = new System.Drawing.Size(70, 26);
+            this.lstatus.Size = new System.Drawing.Size(46, 18);
             this.lstatus.TabIndex = 6;
             this.lstatus.Text = "label5";
             // 
@@ -129,10 +124,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lLider.AutoSize = true;
             this.lLider.BackColor = System.Drawing.Color.Transparent;
             this.lLider.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLider.Location = new System.Drawing.Point(448, 329);
-            this.lLider.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lLider.Location = new System.Drawing.Point(299, 214);
             this.lLider.Name = "lLider";
-            this.lLider.Size = new System.Drawing.Size(70, 26);
+            this.lLider.Size = new System.Drawing.Size(46, 18);
             this.lLider.TabIndex = 7;
             this.lLider.Text = "label6";
             // 
@@ -141,10 +135,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lUtilizadorSorteadoTexto.AutoSize = true;
             this.lUtilizadorSorteadoTexto.BackColor = System.Drawing.Color.Transparent;
             this.lUtilizadorSorteadoTexto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUtilizadorSorteadoTexto.Location = new System.Drawing.Point(122, 383);
-            this.lUtilizadorSorteadoTexto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lUtilizadorSorteadoTexto.Location = new System.Drawing.Point(81, 249);
             this.lUtilizadorSorteadoTexto.Name = "lUtilizadorSorteadoTexto";
-            this.lUtilizadorSorteadoTexto.Size = new System.Drawing.Size(93, 33);
+            this.lUtilizadorSorteadoTexto.Size = new System.Drawing.Size(60, 24);
             this.lUtilizadorSorteadoTexto.TabIndex = 8;
             this.lUtilizadorSorteadoTexto.Text = "label4";
             // 
@@ -153,19 +146,39 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.lUtilizadorSorteado.AutoSize = true;
             this.lUtilizadorSorteado.BackColor = System.Drawing.Color.Transparent;
             this.lUtilizadorSorteado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lUtilizadorSorteado.Location = new System.Drawing.Point(448, 395);
-            this.lUtilizadorSorteado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lUtilizadorSorteado.Location = new System.Drawing.Point(299, 257);
             this.lUtilizadorSorteado.Name = "lUtilizadorSorteado";
-            this.lUtilizadorSorteado.Size = new System.Drawing.Size(70, 26);
+            this.lUtilizadorSorteado.Size = new System.Drawing.Size(46, 18);
             this.lUtilizadorSorteado.TabIndex = 9;
             this.lUtilizadorSorteado.Text = "label4";
             // 
+            // lbutilizadoresGrupos
+            // 
+            this.lbutilizadoresGrupos.FormattingEnabled = true;
+            this.lbutilizadoresGrupos.Location = new System.Drawing.Point(450, 132);
+            this.lbutilizadoresGrupos.Name = "lbutilizadoresGrupos";
+            this.lbutilizadoresGrupos.Size = new System.Drawing.Size(120, 95);
+            this.lbutilizadoresGrupos.TabIndex = 10;
+            // 
+            // lParticipantes
+            // 
+            this.lParticipantes.AutoSize = true;
+            this.lParticipantes.BackColor = System.Drawing.Color.Transparent;
+            this.lParticipantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lParticipantes.Location = new System.Drawing.Point(450, 106);
+            this.lParticipantes.Name = "lParticipantes";
+            this.lParticipantes.Size = new System.Drawing.Size(121, 24);
+            this.lParticipantes.TabIndex = 11;
+            this.lParticipantes.Text = "Participantes:";
+            // 
             // FpesquisarGrupoInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1017, 551);
+            this.ClientSize = new System.Drawing.Size(678, 358);
+            this.Controls.Add(this.lParticipantes);
+            this.Controls.Add(this.lbutilizadoresGrupos);
             this.Controls.Add(this.lUtilizadorSorteado);
             this.Controls.Add(this.lUtilizadorSorteadoTexto);
             this.Controls.Add(this.lLider);
@@ -177,7 +190,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lnomeGrupo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FpesquisarGrupoInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FpesquisarGrupoInfo";
@@ -199,5 +211,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Label lLider;
         private System.Windows.Forms.Label lUtilizadorSorteadoTexto;
         private System.Windows.Forms.Label lUtilizadorSorteado;
+        private System.Windows.Forms.ListBox lbutilizadoresGrupos;
+        private System.Windows.Forms.Label lParticipantes;
     }
 }

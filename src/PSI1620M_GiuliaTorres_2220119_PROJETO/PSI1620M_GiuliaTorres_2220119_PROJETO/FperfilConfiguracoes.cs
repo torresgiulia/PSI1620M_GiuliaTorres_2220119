@@ -15,8 +15,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     public partial class FperfilConfiguracoes : Form
     {
         string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
-        
-        
+
 
         public FperfilConfiguracoes()
         {
@@ -29,7 +28,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private async void FconfiguracoesPerfil_Load(object sender, EventArgs e)
         {
-            
+            await Cconsultar.consulta_concelhos();
 
             SqlConnection connection = new SqlConnection(connstring);
 
@@ -65,7 +64,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
             //Adicionar grupos a ListBox
             lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
-
+            Cconsultar.listConcelhos.Clear();
         }
 
 
@@ -77,6 +76,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             FperfilAlterarCampo alterarPerfil = new FperfilAlterarCampo();
             alterarPerfil.ShowDialog();
         }
+
 
         /// <summary>
         /// Instanciar o forms para a entrada do update concelho
@@ -208,6 +208,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             
         }
+
 
         /// <summary>
         /// Mudar o concelho (update)

@@ -28,7 +28,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
         /// <summary>
-        /// Função para adicionar cada botão a base de dados
+        /// Função para adicionar cada botão a base de dados (utilizadorCategoria)
         /// </summary>
         /// <param name="sender"> utilizado para comparar o texto do botão</param>
         private async void select_preferences(object sender, EventArgs e) 
@@ -64,7 +64,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Deleta qualquer preferencia que possa já lá estar
         /// </summary>
-        private async void Preferences_Load(object sender, EventArgs e) // load do forms
+        private async void Preferences_Load(object sender, EventArgs e) 
         {
             SqlConnection connection = new SqlConnection(connstring);
 
@@ -89,7 +89,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// <summary>
         /// Botão de submeter (vai para o menu)
         /// </summary>
-        private void bSubmit_Click(object sender, EventArgs e) // submeter
+        private void bSubmit_Click(object sender, EventArgs e) 
         {
             Fhome home = new Fhome();
             home.Show();

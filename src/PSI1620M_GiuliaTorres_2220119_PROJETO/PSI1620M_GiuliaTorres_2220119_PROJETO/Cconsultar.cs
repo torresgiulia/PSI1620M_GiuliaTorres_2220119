@@ -14,6 +14,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
     {
         public static string connstring = ConfigurationManager.ConnectionStrings["cnGifty"].ConnectionString;
 
+        //Grupo de Listas para as consultas a base de dados
         public static List<Cconcelhos> listConcelhos { get; set; }
         public static List<Ccategorias> listCategorias { get; set; }
         public static List<Cutilizadores> listUtilizadores { get; set; }
@@ -25,8 +26,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CprodutosCategorias> listprodutosCategorias { get; set; }
         public static List<Cvendedores> listVendedores { get; set; }
 
+        //Lista para saber quais utilizadores se encotram em determinado grupo
         public static List<string> listPerfilGrupos = new List<string>();
 
+        //Atributos para saber o utilizador logado
         public static string loggedUser { get; set; }
         public static int idLoggedUser { get; set; }
         private static int idUtilizadorSorteado { get; set; }
@@ -42,6 +45,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
         //Para Produtos
         public static string produtoNome { get; set; }
+
 
         /// <summary>
         /// Ligação com a base de dados e a Lista concelhos
@@ -195,9 +199,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 
@@ -240,6 +244,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
         }
 
+
         /// <summary>
         /// Query de consulta para o Forms de pesquisa
         /// </summary>
@@ -275,7 +280,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 
@@ -399,7 +404,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw;
             }
         }
 
@@ -437,7 +442,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                throw;
             }
         }
     }

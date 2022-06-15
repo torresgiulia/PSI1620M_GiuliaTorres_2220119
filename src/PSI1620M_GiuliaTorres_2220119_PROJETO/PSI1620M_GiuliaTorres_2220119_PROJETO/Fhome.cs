@@ -23,6 +23,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             
         }
     
+
         /// <summary>
         /// Guiar para o Novo Grupo
         /// </summary>
@@ -31,8 +32,8 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Hide();
             FnovoGrupo novoGrupo = new FnovoGrupo();
             novoGrupo.Show();
+            
         }
-
 
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             }
             // Adicionar na lista
             lbGrupos.DataSource = Cconsultar.listPerfilGrupos;
-            
+            Cconsultar.listConcelhos.Clear();
 
                 
         }

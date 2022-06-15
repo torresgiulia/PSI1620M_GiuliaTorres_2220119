@@ -62,7 +62,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         {
             Cconsultar.textoPesquisa = tbPesquisa.Text;
 
-            // Binding List com a listbox
+            // Binding List com a listbox com os parametros da pesquisa
             try
             {
                 await Cconsultar.consulta_grupopesquisa();

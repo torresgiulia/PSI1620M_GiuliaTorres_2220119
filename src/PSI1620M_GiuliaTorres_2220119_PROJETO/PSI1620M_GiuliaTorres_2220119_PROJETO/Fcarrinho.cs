@@ -49,7 +49,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
 
-
         /// <summary>
         /// Adicionar os produtos que estão perto do utilizador
         /// </summary>
@@ -206,6 +205,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
         }
+
 
         /// <summary>
         /// Pesquisar categorias preferidas do utilizador sorteado
