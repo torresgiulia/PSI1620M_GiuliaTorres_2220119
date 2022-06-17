@@ -26,22 +26,27 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         public static List<CprodutosCategorias> listprodutosCategorias { get; set; }
         public static List<Cvendedores> listVendedores { get; set; }
 
+
         //Lista para saber quais utilizadores se encotram em determinado grupo
         public static List<string> listPerfilGrupos = new List<string>();
+
 
         //Atributos para saber o utilizador logado
         public static string loggedUser { get; set; }
         public static int idLoggedUser { get; set; }
         private static int idUtilizadorSorteado { get; set; }
 
+
         //Para as configurações de perfil
         public static string labelText { get; set; }
         public static string textBoxText { get; set; }
         public static int textBoxTextId { get; set; }
 
+
         //Para as Pesquisas
         public static string textoPesquisa { get; set; }
         public static string nomeGrupo { get; set; }
+
 
         //Para Produtos
         public static string produtoNome { get; set; }
@@ -278,7 +283,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -402,7 +407,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }
@@ -440,7 +445,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

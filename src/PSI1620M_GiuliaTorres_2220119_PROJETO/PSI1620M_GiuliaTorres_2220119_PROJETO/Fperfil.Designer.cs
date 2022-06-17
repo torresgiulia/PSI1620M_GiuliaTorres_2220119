@@ -33,20 +33,20 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.label1 = new System.Windows.Forms.Label();
             this.bPreferencias = new System.Windows.Forms.Button();
             this.bPerfil = new System.Windows.Forms.Button();
-            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.ucSair1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcSair();
+            this.botoesRodape1 = new PSI1620M_GiuliaTorres_2220119_PROJETO.UcBotoesRodape();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(558, 45);
+            this.label1.Location = new System.Drawing.Point(4, 45);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(304, 52);
+            this.label1.Size = new System.Drawing.Size(1338, 68);
             this.label1.TabIndex = 1;
             this.label1.Text = "Configurações";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // bPreferencias
             // 
@@ -70,6 +70,14 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bPerfil.UseVisualStyleBackColor = true;
             this.bPerfil.Click += new System.EventHandler(this.bPerfil_Click);
             // 
+            // ucSair1
+            // 
+            this.ucSair1.BackColor = System.Drawing.Color.Transparent;
+            this.ucSair1.Location = new System.Drawing.Point(1173, 20);
+            this.ucSair1.Name = "ucSair1";
+            this.ucSair1.Size = new System.Drawing.Size(75, 51);
+            this.ucSair1.TabIndex = 5;
+            // 
             // botoesRodape1
             // 
             this.botoesRodape1.BackColor = System.Drawing.Color.Transparent;
@@ -78,14 +86,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.botoesRodape1.Name = "botoesRodape1";
             this.botoesRodape1.Size = new System.Drawing.Size(1174, 112);
             this.botoesRodape1.TabIndex = 4;
-            // 
-            // ucSair1
-            // 
-            this.ucSair1.BackColor = System.Drawing.Color.Transparent;
-            this.ucSair1.Location = new System.Drawing.Point(1173, 20);
-            this.ucSair1.Name = "ucSair1";
-            this.ucSair1.Size = new System.Drawing.Size(75, 51);
-            this.ucSair1.TabIndex = 5;
             // 
             // Fperfil
             // 
@@ -104,7 +104,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

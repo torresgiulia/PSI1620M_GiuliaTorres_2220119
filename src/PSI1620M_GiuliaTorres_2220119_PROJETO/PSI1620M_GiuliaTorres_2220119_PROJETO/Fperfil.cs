@@ -18,11 +18,11 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         }
 
         /// <summary>
-        /// Redireciona para a Página de preferencias
+        /// Redireciona para a Página de mostrar Preferencias
         /// </summary>
         private void bPreferencias_Click(object sender, EventArgs e)
         {
-            Fpreferences preferencias = new Fpreferences();
+            FperfilPreferenciasMostrar preferencias = new FperfilPreferenciasMostrar();
             preferencias.Show();
             this.Hide();
         }

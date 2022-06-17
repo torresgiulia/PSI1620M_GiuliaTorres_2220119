@@ -88,7 +88,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                 }
 
 
-                //Adicionar o botã0 de sortear caso o utilizador seja líder e mostar participantes
+                //Adicionar o botão de sortear caso o utilizador seja líder e mostar participantes
                 if (pesquisa.GrupoId == idGrupo && pesquisa.GrupoUtilizadorLider == Cconsultar.idLoggedUser )
                 {
                     if(pesquisa.GrupoEstado != "sorteado")
@@ -99,7 +99,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         sortear.Text = "Sortear";
                         sortear.Click += Sortear_Click;
                         sortear.Visible = true;
-                        sortear.Location = new Point(302, 280);
+                        sortear.Location = new Point(100, 280);
 
                         this.Controls.Add(sortear);
                         sortear.BringToFront();

@@ -36,6 +36,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bCriarGrupo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.tbDescricao = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -104,12 +105,23 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tbDescricao.Size = new System.Drawing.Size(148, 70);
             this.tbDescricao.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(859, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 36);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Voltar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FnovoGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(986, 477);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.bCriarGrupo);
@@ -134,5 +146,6 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.Button bCriarGrupo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox tbDescricao;
+        private System.Windows.Forms.Button button1;
     }
 }

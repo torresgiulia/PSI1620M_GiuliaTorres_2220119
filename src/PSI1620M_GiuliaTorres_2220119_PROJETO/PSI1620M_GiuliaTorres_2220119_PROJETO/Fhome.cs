@@ -134,12 +134,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
                         if(nome.UtilizadorId == utigru.utilizadorGrupoIdUtilizadorSorteado)
                         {
                             nomeSorteado = nome.UtilizadorUsername;
-                            texto = "Deverá presentear: ";
+                            
                         }
                     }
                 }
             }
-
+            texto = "Deverá presentear: ";
             grupoInfo.LnomeGrupo = lbGrupos.GetItemText(lbGrupos.SelectedItem);           
             grupoInfo.LutilizadorSorteado = nomeSorteado;
             grupoInfo.LutilizadorSorteadoTexto = texto;

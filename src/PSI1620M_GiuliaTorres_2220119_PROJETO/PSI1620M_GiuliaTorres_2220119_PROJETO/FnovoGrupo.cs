@@ -98,5 +98,12 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Fhome home = new Fhome();
+            home.Show();
+        }
     }
 }
