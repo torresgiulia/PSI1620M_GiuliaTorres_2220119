@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    public partial class FlogIn : Form
+    public partial class Login : Form
     {
-        public FlogIn()
+        public Login()
         {
             InitializeComponent();
         }

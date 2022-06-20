@@ -170,7 +170,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FlogIn logIn = new FlogIn();
+            Login logIn = new Login();
             logIn.Show();
             this.Hide();
         }

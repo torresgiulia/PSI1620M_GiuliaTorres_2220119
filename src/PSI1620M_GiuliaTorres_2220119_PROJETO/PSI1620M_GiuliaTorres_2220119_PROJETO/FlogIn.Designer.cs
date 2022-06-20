@@ -1,7 +1,7 @@
 ﻿
 namespace PSI1620M_GiuliaTorres_2220119_PROJETO
 {
-    partial class FlogIn
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FlogIn));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bEntrar.UseVisualStyleBackColor = true;
             this.bEntrar.Click += new System.EventHandler(this.bEntrar_Click);
             // 
-            // FlogIn
+            // Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
@@ -123,7 +123,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(383, 9);
-            this.Name = "FlogIn";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();

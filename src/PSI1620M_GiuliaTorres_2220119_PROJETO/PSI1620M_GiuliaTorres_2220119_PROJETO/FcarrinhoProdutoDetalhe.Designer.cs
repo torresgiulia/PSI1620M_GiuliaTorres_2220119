@@ -208,7 +208,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FcarrinhoProdutoDetalhe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FcarrinhoProdutoDetalhe";
+            this.Text = "Produto";
             this.Load += new System.EventHandler(this.FcarrinhoProdutoDetalhe_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

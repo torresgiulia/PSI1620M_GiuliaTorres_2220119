@@ -99,7 +99,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Fpesquisar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pesquisar";
+            this.Text = "Pesquisar Grupos";
             this.Load += new System.EventHandler(this.Fpesquisar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

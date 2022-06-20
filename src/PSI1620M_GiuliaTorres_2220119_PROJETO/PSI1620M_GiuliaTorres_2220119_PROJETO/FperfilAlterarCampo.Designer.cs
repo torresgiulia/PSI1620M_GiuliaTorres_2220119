@@ -39,25 +39,28 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 18);
+            this.label1.Location = new System.Drawing.Point(6, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(472, 27);
+            this.label1.Size = new System.Drawing.Size(708, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbAlteracao
             // 
-            this.tbAlteracao.Location = new System.Drawing.Point(191, 64);
+            this.tbAlteracao.Location = new System.Drawing.Point(286, 98);
+            this.tbAlteracao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbAlteracao.Name = "tbAlteracao";
-            this.tbAlteracao.Size = new System.Drawing.Size(100, 20);
+            this.tbAlteracao.Size = new System.Drawing.Size(148, 26);
             this.tbAlteracao.TabIndex = 1;
             // 
             // bSubmeter
             // 
-            this.bSubmeter.Location = new System.Drawing.Point(367, 151);
+            this.bSubmeter.Location = new System.Drawing.Point(550, 232);
+            this.bSubmeter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bSubmeter.Name = "bSubmeter";
-            this.bSubmeter.Size = new System.Drawing.Size(86, 36);
+            this.bSubmeter.Size = new System.Drawing.Size(129, 55);
             this.bSubmeter.TabIndex = 2;
             this.bSubmeter.Text = "Submeter";
             this.bSubmeter.UseVisualStyleBackColor = true;
@@ -65,17 +68,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // FperfilAlterarCampo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(474, 199);
+            this.ClientSize = new System.Drawing.Size(711, 306);
             this.Controls.Add(this.bSubmeter);
             this.Controls.Add(this.tbAlteracao);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FperfilAlterarCampo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FalterarPerfil";
+            this.Text = "Perfil - Configuração";
             this.Load += new System.EventHandler(this.FalterarPerfil_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

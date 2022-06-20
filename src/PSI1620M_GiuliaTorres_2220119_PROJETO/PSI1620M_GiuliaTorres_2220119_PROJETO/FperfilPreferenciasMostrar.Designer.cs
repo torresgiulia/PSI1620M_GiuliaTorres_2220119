@@ -91,7 +91,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FperfilPreferenciasMostrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FperfilPreferenciasMostrar";
+            this.Text = "Minhas Preferências";
             this.Load += new System.EventHandler(this.FperfilPreferenciasMostrar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

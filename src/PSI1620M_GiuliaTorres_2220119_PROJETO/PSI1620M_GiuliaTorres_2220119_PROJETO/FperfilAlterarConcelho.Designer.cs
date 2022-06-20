@@ -39,9 +39,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 9);
+            this.label1.Location = new System.Drawing.Point(2, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 23);
+            this.label1.Size = new System.Drawing.Size(706, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Novo concelho:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -49,16 +50,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // cbConcelhos
             // 
             this.cbConcelhos.FormattingEnabled = true;
-            this.cbConcelhos.Location = new System.Drawing.Point(168, 88);
+            this.cbConcelhos.Location = new System.Drawing.Point(252, 135);
+            this.cbConcelhos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbConcelhos.Name = "cbConcelhos";
-            this.cbConcelhos.Size = new System.Drawing.Size(121, 21);
+            this.cbConcelhos.Size = new System.Drawing.Size(180, 28);
             this.cbConcelhos.TabIndex = 1;
             // 
             // bSubmeter
             // 
-            this.bSubmeter.Location = new System.Drawing.Point(367, 153);
+            this.bSubmeter.Location = new System.Drawing.Point(550, 235);
+            this.bSubmeter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bSubmeter.Name = "bSubmeter";
-            this.bSubmeter.Size = new System.Drawing.Size(82, 34);
+            this.bSubmeter.Size = new System.Drawing.Size(123, 52);
             this.bSubmeter.TabIndex = 2;
             this.bSubmeter.Text = "Submeter";
             this.bSubmeter.UseVisualStyleBackColor = true;
@@ -66,16 +69,18 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             // FperfilAlterarConcelho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(474, 199);
+            this.ClientSize = new System.Drawing.Size(711, 306);
             this.Controls.Add(this.bSubmeter);
             this.Controls.Add(this.cbConcelhos);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FperfilAlterarConcelho";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FperfilAlterarConcelho";
+            this.Text = "Perfil - Concelho";
             this.Load += new System.EventHandler(this.FperfilAlterarConcelho_Load);
             this.ResumeLayout(false);
 
