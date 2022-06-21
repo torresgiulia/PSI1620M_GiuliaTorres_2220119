@@ -125,6 +125,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Location = new System.Drawing.Point(383, 9);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "LogIn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
