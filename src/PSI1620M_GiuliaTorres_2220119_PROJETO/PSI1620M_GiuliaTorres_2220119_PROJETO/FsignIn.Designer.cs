@@ -48,6 +48,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.cbConcelhos = new System.Windows.Forms.ComboBox();
             this.bSubmeter = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             LCriarConta = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +74,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lnome.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lnome.Location = new System.Drawing.Point(3, 0);
             this.Lnome.Name = "Lnome";
-            this.Lnome.Size = new System.Drawing.Size(63, 20);
+            this.Lnome.Size = new System.Drawing.Size(94, 29);
             this.Lnome.TabIndex = 1;
             this.Lnome.Text = "Nome:";
             // 
@@ -80,9 +84,9 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lemail.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lemail.Location = new System.Drawing.Point(3, 75);
             this.Lemail.Name = "Lemail";
-            this.Lemail.Size = new System.Drawing.Size(61, 20);
+            this.Lemail.Size = new System.Drawing.Size(96, 29);
             this.Lemail.TabIndex = 7;
-            this.Lemail.Text = "Email:";
+            this.Lemail.Text = "Email: ";
             // 
             // Lutilizador
             // 
@@ -90,7 +94,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lutilizador.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lutilizador.Location = new System.Drawing.Point(3, 150);
             this.Lutilizador.Name = "Lutilizador";
-            this.Lutilizador.Size = new System.Drawing.Size(93, 40);
+            this.Lutilizador.Size = new System.Drawing.Size(133, 58);
             this.Lutilizador.TabIndex = 8;
             this.Lutilizador.Text = "Nome de utilizador:";
             // 
@@ -100,7 +104,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lconcelho.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lconcelho.Location = new System.Drawing.Point(388, 0);
             this.Lconcelho.Name = "Lconcelho";
-            this.Lconcelho.Size = new System.Drawing.Size(90, 20);
+            this.Lconcelho.Size = new System.Drawing.Size(134, 29);
             this.Lconcelho.TabIndex = 9;
             this.Lconcelho.Text = "Concelho:";
             // 
@@ -110,7 +114,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Lpassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lpassword.Location = new System.Drawing.Point(388, 75);
             this.Lpassword.Name = "Lpassword";
-            this.Lpassword.Size = new System.Drawing.Size(93, 20);
+            this.Lpassword.Size = new System.Drawing.Size(138, 29);
             this.Lpassword.TabIndex = 10;
             this.Lpassword.Text = "Password:";
             // 
@@ -120,7 +124,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.LvPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LvPassword.Location = new System.Drawing.Point(388, 150);
             this.LvPassword.Name = "LvPassword";
-            this.LvPassword.Size = new System.Drawing.Size(93, 40);
+            this.LvPassword.Size = new System.Drawing.Size(138, 58);
             this.LvPassword.TabIndex = 11;
             this.LvPassword.Text = "Verificar Password:";
             // 
@@ -170,21 +174,21 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // 
             this.tbEmail.Location = new System.Drawing.Point(164, 78);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 22);
+            this.tbEmail.Size = new System.Drawing.Size(100, 29);
             this.tbEmail.TabIndex = 13;
             // 
             // tbUtilizador
             // 
             this.tbUtilizador.Location = new System.Drawing.Point(164, 153);
             this.tbUtilizador.Name = "tbUtilizador";
-            this.tbUtilizador.Size = new System.Drawing.Size(100, 22);
+            this.tbUtilizador.Size = new System.Drawing.Size(100, 29);
             this.tbUtilizador.TabIndex = 14;
             // 
             // tbTelemovel
             // 
             this.tbTelemovel.Location = new System.Drawing.Point(164, 235);
             this.tbTelemovel.Name = "tbTelemovel";
-            this.tbTelemovel.Size = new System.Drawing.Size(100, 22);
+            this.tbTelemovel.Size = new System.Drawing.Size(100, 29);
             this.tbTelemovel.TabIndex = 15;
             // 
             // tbPassword
@@ -192,7 +196,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tbPassword.Location = new System.Drawing.Point(535, 78);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(100, 22);
+            this.tbPassword.Size = new System.Drawing.Size(100, 29);
             this.tbPassword.TabIndex = 16;
             // 
             // tbVpassword
@@ -200,7 +204,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.tbVpassword.Location = new System.Drawing.Point(535, 153);
             this.tbVpassword.Name = "tbVpassword";
             this.tbVpassword.PasswordChar = '*';
-            this.tbVpassword.Size = new System.Drawing.Size(100, 22);
+            this.tbVpassword.Size = new System.Drawing.Size(100, 29);
             this.tbVpassword.TabIndex = 17;
             // 
             // Ltelemovel
@@ -209,7 +213,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.Ltelemovel.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ltelemovel.Location = new System.Drawing.Point(3, 232);
             this.Ltelemovel.Name = "Ltelemovel";
-            this.Ltelemovel.Size = new System.Drawing.Size(93, 20);
+            this.Ltelemovel.Size = new System.Drawing.Size(134, 29);
             this.Ltelemovel.TabIndex = 18;
             this.Ltelemovel.Text = "Telemovel";
             // 
@@ -218,7 +222,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.cbConcelhos.FormattingEnabled = true;
             this.cbConcelhos.Location = new System.Drawing.Point(535, 3);
             this.cbConcelhos.Name = "cbConcelhos";
-            this.cbConcelhos.Size = new System.Drawing.Size(121, 24);
+            this.cbConcelhos.Size = new System.Drawing.Size(121, 31);
             this.cbConcelhos.TabIndex = 19;
             // 
             // bSubmeter
@@ -234,25 +238,77 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel1.Location = new System.Drawing.Point(409, 394);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(108, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(162, 20);
             this.linkLabel1.TabIndex = 13;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Já tem conta? Entrar!";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(65, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 26);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "*";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(64, 329);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 26);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "*";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(223, 399);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 26);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Location = new System.Drawing.Point(237, 399);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Opcional";
             // 
             // FsignIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(932, 460);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(LCriarConta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FsignIn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Criar conta";
             this.Load += new System.EventHandler(this.SignIn_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -281,6 +337,10 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
         private System.Windows.Forms.ComboBox cbConcelhos;
         private System.Windows.Forms.Button bSubmeter;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
