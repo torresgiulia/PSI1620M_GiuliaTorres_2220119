@@ -113,7 +113,7 @@ namespace PSI1620M_GiuliaTorres_2220119_PROJETO
             this.bPerfumes.Name = "bPerfumes";
             this.bPerfumes.Size = new System.Drawing.Size(157, 60);
             this.bPerfumes.TabIndex = 18;
-            this.bPerfumes.Text = "Perfume";
+            this.bPerfumes.Text = "Perfumes";
             this.bPerfumes.UseVisualStyleBackColor = true;
             this.bPerfumes.Click += new System.EventHandler(this.select_preferences);
             // 
